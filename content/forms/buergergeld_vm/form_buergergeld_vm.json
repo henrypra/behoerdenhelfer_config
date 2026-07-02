@@ -1,0 +1,2292 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "A. Persönliche Daten & B. Immobilien",
+      "fields": [
+        {
+          "name": "section_header_A_vm",
+          "type": "section_header",
+          "title": "A. Persönliche Daten der antragstellenden Person"
+        },
+        {
+          "name": "txtfPersonVorname",
+          "type": "input",
+          "title": "1 – Vorname",
+          "profile_key": "FIRST_NAME"
+        },
+        {
+          "name": "txtfPersonNachname",
+          "type": "input",
+          "title": "2 – Nachname",
+          "profile_key": "LAST_NAME"
+        },
+        {
+          "name": "datePersonGebDatum",
+          "type": "date",
+          "title": "3 – Geburtsdatum (TT.MM.JJJJ)",
+          "profile_key": "BIRTH_DATE"
+        },
+        {
+          "name": "txtfBGNr",
+          "type": "input",
+          "title": "4 – Nummer der Bedarfsgemeinschaft (falls vorhanden)"
+        },
+        {
+          "name": "section_header_B_vm",
+          "type": "section_header",
+          "title": "B. Immobilien"
+        },
+        {
+          "name": "rbtnBGImmobBewohnt",
+          "type": "yesno",
+          "title": "5 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft ein selbst bewohntes Hausgrundstück oder eine selbst bewohnte Eigentumswohnung?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "rbtnBGImmobWeitere",
+          "type": "yesno",
+          "title": "6 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft nicht selbst bewohnte Hausgrundstücke und/oder Eigentumswohnungen?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "numfBGlImmobAntei",
+          "type": "input",
+          "title": "7 – Miteigentumsanteil in Prozent",
+          "show_when": {
+            "field": "rbtnBGImmobWeitere",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBGImmobWert",
+          "type": "input",
+          "title": "8 – Verkehrswert in Euro",
+          "hints": [
+            22
+          ],
+          "show_when": {
+            "field": "rbtnBGImmobWeitere",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnBGGrund",
+          "type": "yesno",
+          "title": "9 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft unbebaute Grundstücke?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "numfBGlGrundAntei",
+          "type": "input",
+          "title": "10 – Miteigentumsanteil in Prozent (Grundstücke)",
+          "show_when": {
+            "field": "rbtnBGGrund",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBGGrundWert",
+          "type": "input",
+          "title": "11 – Verkehrswert in Euro (Grundstücke)",
+          "hints": [
+            22
+          ],
+          "show_when": {
+            "field": "rbtnBGGrund",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "C. Kraftfahrzeuge & D. Schenkungen & E. Bargeld",
+      "fields": [
+        {
+          "name": "section_header_C_vm",
+          "type": "section_header",
+          "title": "C. Kraftfahrzeuge"
+        },
+        {
+          "name": "rbtnBGKfZ",
+          "type": "yesno",
+          "title": "12 – Besitzen Sie und/oder die Personen in der Bedarfsgemeinschaft Kraftfahrzeuge, zum Beispiel PKW, Motorrad, Wohnmobil?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_kfz_Z1",
+          "type": "section_header",
+          "title": "13 – Fahrzeug 1",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZNameZ1",
+          "type": "input",
+          "title": "Name der Eigentümerin/des Eigentümers",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZModellZ1",
+          "type": "input",
+          "title": "Fabrikat/Modell des Kraftfahrzeugs",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateKfZBaujahrZ1",
+          "type": "date",
+          "title": "Baujahr",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZKmStandZ1",
+          "type": "input",
+          "title": "Kilometerstand",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZWertZ1",
+          "type": "input",
+          "title": "Wert des Kraftfahrzeugs in Euro",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kfz_Z2",
+          "type": "section_header",
+          "title": "13 – Fahrzeug 2",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZNameZ2",
+          "type": "input",
+          "title": "Name der Eigentümerin/des Eigentümers",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZModellZ2",
+          "type": "input",
+          "title": "Fabrikat/Modell des Kraftfahrzeugs",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateKfZBaujahrZ2",
+          "type": "date",
+          "title": "Baujahr",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZKmStandZ2",
+          "type": "input",
+          "title": "Kilometerstand",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZWertZ2",
+          "type": "input",
+          "title": "Wert des Kraftfahrzeugs in Euro",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kfz_Z3",
+          "type": "section_header",
+          "title": "13 – Fahrzeug 3",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZNameZ3",
+          "type": "input",
+          "title": "Name der Eigentümerin/des Eigentümers",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZModellZ3",
+          "type": "input",
+          "title": "Fabrikat/Modell des Kraftfahrzeugs",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateKfZBaujahrZ3",
+          "type": "date",
+          "title": "Baujahr",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZKmStandZ3",
+          "type": "input",
+          "title": "Kilometerstand",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZWertZ3",
+          "type": "input",
+          "title": "Wert des Kraftfahrzeugs in Euro",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kfz_Z4",
+          "type": "section_header",
+          "title": "13 – Fahrzeug 4",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZNameZ4",
+          "type": "input",
+          "title": "Name der Eigentümerin/des Eigentümers",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZModellZ4",
+          "type": "input",
+          "title": "Fabrikat/Modell des Kraftfahrzeugs",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateKfZBaujahrZ4",
+          "type": "date",
+          "title": "Baujahr",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZKmStandZ4",
+          "type": "input",
+          "title": "Kilometerstand",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZWertZ4",
+          "type": "input",
+          "title": "Wert des Kraftfahrzeugs in Euro",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kfz_Z5",
+          "type": "section_header",
+          "title": "13 – Fahrzeug 5",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZNameZ5",
+          "type": "input",
+          "title": "Name der Eigentümerin/des Eigentümers",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZModellZ5",
+          "type": "input",
+          "title": "Fabrikat/Modell des Kraftfahrzeugs",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateKfZBaujahrZ5",
+          "type": "date",
+          "title": "Baujahr",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZKmStandZ5",
+          "type": "input",
+          "title": "Kilometerstand",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZWertZ5",
+          "type": "input",
+          "title": "Wert des Kraftfahrzeugs in Euro",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kfz_Z6",
+          "type": "section_header",
+          "title": "13 – Fahrzeug 6",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZNameZ6",
+          "type": "input",
+          "title": "Name der Eigentümerin/des Eigentümers",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKfZModellZ6",
+          "type": "input",
+          "title": "Fabrikat/Modell des Kraftfahrzeugs",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateKfZBaujahrZ6",
+          "type": "date",
+          "title": "Baujahr",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZKmStandZ6",
+          "type": "input",
+          "title": "Kilometerstand",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKfZWertZ6",
+          "type": "input",
+          "title": "Wert des Kraftfahrzeugs in Euro",
+          "show_when": {
+            "field": "rbtnBGKfZ",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_D_vm",
+          "type": "section_header",
+          "title": "D. Schenkungen/Spenden/Übertragungen"
+        },
+        {
+          "name": "rbtnSchenkung",
+          "type": "yesno",
+          "title": "14 – Hat eine Person in der Bedarfsgemeinschaft innerhalb der letzten 10 Jahre Werte aus dem Vermögen verschenkt, gespendet oder übertragen, zum Beispiel Geldbeträge, Schmuck?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfBGSchenkungName",
+          "type": "input",
+          "title": "15 – Name der Person",
+          "show_when": {
+            "field": "rbtnSchenkung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBGSchenkungArt",
+          "type": "input",
+          "title": "16 – Art der Schenkung/Spende/Übertragung",
+          "show_when": {
+            "field": "rbtnSchenkung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSchenkungWert",
+          "type": "input",
+          "title": "17 – Werte in Euro",
+          "show_when": {
+            "field": "rbtnSchenkung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_E_bargeld_vm",
+          "type": "section_header",
+          "title": "E. Konten, Geldanlagen und sonstiges Vermögen – Bargeld"
+        },
+        {
+          "name": "rbtnBargeld",
+          "type": "yesno",
+          "title": "18 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft Bargeld?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_bargeld_Z1",
+          "type": "section_header",
+          "title": "18 – Person 1",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBargeldNameZ1",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBargeldGesamtZ1",
+          "type": "input",
+          "title": "Gesamtbetrag des Bargelds in Euro",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_bargeld_Z2",
+          "type": "section_header",
+          "title": "18 – Person 2",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBargeldNameZ2",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBargeldGesamtZ2",
+          "type": "input",
+          "title": "Gesamtbetrag des Bargelds in Euro",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_bargeld_Z3",
+          "type": "section_header",
+          "title": "18 – Person 3",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBargeldNameZ3",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBargeldGesamtZ3",
+          "type": "input",
+          "title": "Gesamtbetrag des Bargelds in Euro",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_bargeld_Z4",
+          "type": "section_header",
+          "title": "18 – Person 4",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBargeldNameZ4",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBargeldGesamtZ4",
+          "type": "input",
+          "title": "Gesamtbetrag des Bargelds in Euro",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_bargeld_Z5",
+          "type": "section_header",
+          "title": "18 – Person 5",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBargeldNameZ5",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBargeldGesamtZ5",
+          "type": "input",
+          "title": "Gesamtbetrag des Bargelds in Euro",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_bargeld_Z6",
+          "type": "section_header",
+          "title": "18 – Person 6",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBargeldNameZ6",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBargeldGesamtZ6",
+          "type": "input",
+          "title": "Gesamtbetrag des Bargelds in Euro",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_bargeld_Z7",
+          "type": "section_header",
+          "title": "18 – Person 7",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBargeldNameZ7",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBargeldGesamtZ7",
+          "type": "input",
+          "title": "Gesamtbetrag des Bargelds in Euro",
+          "show_when": {
+            "field": "rbtnBargeld",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "E. Konten & E. Spareinlagen",
+      "fields": [
+        {
+          "name": "section_header_E_konten_vm",
+          "type": "section_header",
+          "title": "E. Konten, Geldanlagen und sonstiges Vermögen – Konten"
+        },
+        {
+          "name": "rbtnKonto",
+          "type": "yesno",
+          "title": "19 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft Konten, zum Beispiel Girokonten, Kreditkartenkonten, PayPal und weitere (Online-)Konten?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_konto_Z1",
+          "type": "section_header",
+          "title": "19 – Konto 1",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNameZ1",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNrZ1",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKontoStandZ1",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_konto_Z2",
+          "type": "section_header",
+          "title": "19 – Konto 2",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNameZ2",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNrZ2",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKontoStandZ2",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_konto_Z3",
+          "type": "section_header",
+          "title": "19 – Konto 3",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNameZ3",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNrZ3",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKontoStandZ3",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_konto_Z4",
+          "type": "section_header",
+          "title": "19 – Konto 4",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNameZ4",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNrZ4",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKontoStandZ4",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_konto_Z5",
+          "type": "section_header",
+          "title": "19 – Konto 5",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNameZ5",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNrZ5",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKontoStandZ5",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_konto_Z6",
+          "type": "section_header",
+          "title": "19 – Konto 6",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNameZ6",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNrZ6",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKontoStandZ6",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_konto_Z7",
+          "type": "section_header",
+          "title": "19 – Konto 7",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNameZ7",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNrZ7",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKontoStandZ7",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_konto_Z8",
+          "type": "section_header",
+          "title": "19 – Konto 8",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNameZ8",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNrZ8",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKontoStandZ8",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_konto_Z9",
+          "type": "section_header",
+          "title": "19 – Konto 9",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNameZ9",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNrZ9",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKontoStandZ9",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_konto_Z10",
+          "type": "section_header",
+          "title": "19 – Konto 10",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNameZ10",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfKontoNrZ10",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfKontoStandZ10",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnKonto",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_E_spareinlagen_vm",
+          "type": "section_header",
+          "title": "E. Konten, Geldanlagen und sonstiges Vermögen – Spareinlagen"
+        },
+        {
+          "name": "rbtnSparEinlagen",
+          "type": "yesno",
+          "title": "20 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft Spareinlagen, zum Beispiel Sparkonten, Sparbücher, Tagesgeldkonten, Prämiensparen?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_spareinlage_Z1",
+          "type": "section_header",
+          "title": "20 – Spareinlage 1",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageNameZ1",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageKontoNrZ1",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparEinlageStandZ1",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_spareinlage_Z2",
+          "type": "section_header",
+          "title": "20 – Spareinlage 2",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageNameZ2",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageKontoNrZ2",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparEinlageStandZ2",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_spareinlage_Z3",
+          "type": "section_header",
+          "title": "20 – Spareinlage 3",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageNameZ3",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageKontoNrZ3",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparEinlageStandZ3",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_spareinlage_Z4",
+          "type": "section_header",
+          "title": "20 – Spareinlage 4",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageNameZ4",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageKontoNrZ4",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparEinlageStandZ4",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_spareinlage_Z5",
+          "type": "section_header",
+          "title": "20 – Spareinlage 5",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageNameZ5",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageKontoNrZ5",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparEinlageStandZ5",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_spareinlage_Z6",
+          "type": "section_header",
+          "title": "20 – Spareinlage 6",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageNameZ6",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageKontoNrZ6",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparEinlageStandZ6",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_spareinlage_Z7",
+          "type": "section_header",
+          "title": "20 – Spareinlage 7",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageNameZ7",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageKontoNrZ7",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparEinlageStandZ7",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_spareinlage_Z8",
+          "type": "section_header",
+          "title": "20 – Spareinlage 8",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageNameZ8",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparEinlageKontoNrZ8",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparEinlageStandZ8",
+          "type": "input",
+          "title": "Aktueller Kontostand in Euro",
+          "show_when": {
+            "field": "rbtnSparEinlagen",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "title": "E. Sparbriefe & E. Bausparverträge & E. Altersvorsorge",
+      "fields": [
+        {
+          "name": "section_header_E_sparbriefe_vm",
+          "type": "section_header",
+          "title": "E. Konten, Geldanlagen und sonstiges Vermögen – Sparbriefe/Wertpapiere"
+        },
+        {
+          "name": "rbtnSparBrief",
+          "type": "yesno",
+          "title": "21 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft Sparbriefe oder sonstige Wertpapiere, zum Beispiel Aktien, Kryptowährungen, Anleihen, Fondsanteile?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_sparbrief_Z1",
+          "type": "section_header",
+          "title": "21 – Wertpapier 1",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparBriefNameZ1",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparBriefKontoNrZ1",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparBriefWertZ1",
+          "type": "input",
+          "title": "Derzeitiger Wert in Euro",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_sparbrief_Z2",
+          "type": "section_header",
+          "title": "21 – Wertpapier 2",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparBriefNameZ2",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparBriefKontoNrZ2",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparBriefWertZ2",
+          "type": "input",
+          "title": "Derzeitiger Wert in Euro",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_sparbrief_Z3",
+          "type": "section_header",
+          "title": "21 – Wertpapier 3",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparBriefNameZ3",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparBriefKontoNrZ3",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparBriefWertZ3",
+          "type": "input",
+          "title": "Derzeitiger Wert in Euro",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_sparbrief_Z4",
+          "type": "section_header",
+          "title": "21 – Wertpapier 4",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparBriefNameZ4",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparBriefKontoNrZ4",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparBriefWertZ4",
+          "type": "input",
+          "title": "Derzeitiger Wert in Euro",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_sparbrief_Z5",
+          "type": "section_header",
+          "title": "21 – Wertpapier 5",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparBriefNameZ5",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSparBriefKontoNrZ5",
+          "type": "input",
+          "title": "Kontoart und Kontonummer",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSparBriefWertZ5",
+          "type": "input",
+          "title": "Derzeitiger Wert in Euro",
+          "show_when": {
+            "field": "rbtnSparBrief",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_E_bauspar_vm",
+          "type": "section_header",
+          "title": "E. Konten, Geldanlagen und sonstiges Vermögen – Bausparverträge"
+        },
+        {
+          "name": "rbtnBauspar",
+          "type": "yesno",
+          "title": "22 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft Bausparverträge?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_bauspar_Z1",
+          "type": "section_header",
+          "title": "22 – Bausparvertrag 1",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBausparNameZ1",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBausparKontoZ1",
+          "type": "input",
+          "title": "Kontodaten",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBausparStandZ1",
+          "type": "input",
+          "title": "Aktueller Stand des Guthabens in Euro",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_bauspar_Z2",
+          "type": "section_header",
+          "title": "22 – Bausparvertrag 2",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBausparNameZ2",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBausparKontoZ2",
+          "type": "input",
+          "title": "Kontodaten",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBausparStandZ2",
+          "type": "input",
+          "title": "Aktueller Stand des Guthabens in Euro",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_bauspar_Z3",
+          "type": "section_header",
+          "title": "22 – Bausparvertrag 3",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBausparNameZ3",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBausparKontoZ3",
+          "type": "input",
+          "title": "Kontodaten",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBausparStandZ3",
+          "type": "input",
+          "title": "Aktueller Stand des Guthabens in Euro",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_bauspar_Z4",
+          "type": "section_header",
+          "title": "22 – Bausparvertrag 4",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBausparNameZ4",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBausparKontoZ4",
+          "type": "input",
+          "title": "Kontodaten",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBausparStandZ4",
+          "type": "input",
+          "title": "Aktueller Stand des Guthabens in Euro",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_bauspar_Z5",
+          "type": "section_header",
+          "title": "22 – Bausparvertrag 5",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBausparNameZ5",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfBausparKontoZ5",
+          "type": "input",
+          "title": "Kontodaten",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfBausparStandZ5",
+          "type": "input",
+          "title": "Aktueller Stand des Guthabens in Euro",
+          "show_when": {
+            "field": "rbtnBauspar",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_E_altersvorsorge_vm",
+          "type": "section_header",
+          "title": "E. Konten, Geldanlagen und sonstiges Vermögen – Altersvorsorgevermögen"
+        },
+        {
+          "name": "rbtnAltersvorsorge",
+          "type": "yesno",
+          "title": "23 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft Altersvorsorgevermögen, zum Beispiel Riesterrente oder für die Altersvorsorge bestimmte Versicherungsverträge?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_altersvorsorge_Z1",
+          "type": "section_header",
+          "title": "23 – Altersvorsorge 1",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAltersvorsorgeNameZ1",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAltersvorsorgeVermoegenArtZ1",
+          "type": "input",
+          "title": "Vermögensart",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfAltersvorsorgeWertZ1",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_altersvorsorge_Z2",
+          "type": "section_header",
+          "title": "23 – Altersvorsorge 2",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAltersvorsorgeNameZ2",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAltersvorsorgeVermoegenArtZ2",
+          "type": "input",
+          "title": "Vermögensart",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfAltersvorsorgeWertZ2",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_altersvorsorge_Z3",
+          "type": "section_header",
+          "title": "23 – Altersvorsorge 3",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAltersvorsorgeNameZ3",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAltersvorsorgeVermoegenArtZ3",
+          "type": "input",
+          "title": "Vermögensart",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfAltersvorsorgeWertZ3",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_altersvorsorge_Z4",
+          "type": "section_header",
+          "title": "23 – Altersvorsorge 4",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAltersvorsorgeNameZ4",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAltersvorsorgeVermoegenArtZ4",
+          "type": "input",
+          "title": "Vermögensart",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfAltersvorsorgeWertZ4",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_altersvorsorge_Z5",
+          "type": "section_header",
+          "title": "23 – Altersvorsorge 5",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAltersvorsorgeNameZ5",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAltersvorsorgeVermoegenArtZ5",
+          "type": "input",
+          "title": "Vermögensart",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfAltersvorsorgeWertZ5",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnAltersvorsorge",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 5,
+      "title": "E. Versicherungen & E. Sonstiges Vermögen & F. Selbständigkeit",
+      "fields": [
+        {
+          "name": "section_header_E_versicherung_vm",
+          "type": "section_header",
+          "title": "E. Konten, Geldanlagen und sonstiges Vermögen – Versicherungen"
+        },
+        {
+          "name": "rbtnVersicherung",
+          "type": "yesno",
+          "title": "24 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft Versicherungen mit Prämienrückgewähr, zum Beispiel Berufsunfähigkeitsversicherungen, Sterbegeldversicherungen, Unfallversicherungen?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_versicherung_Z1",
+          "type": "section_header",
+          "title": "24 – Versicherung 1",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVersicherungNameZ1",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVersicherungArtZ1",
+          "type": "input",
+          "title": "Versicherungsart",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfVersicherungWertZ1",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_versicherung_Z2",
+          "type": "section_header",
+          "title": "24 – Versicherung 2",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVersicherungNameZ2",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVersicherungArtZ2",
+          "type": "input",
+          "title": "Versicherungsart",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfVersicherungWertZ2",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_versicherung_Z3",
+          "type": "section_header",
+          "title": "24 – Versicherung 3",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVersicherungNameZ3",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVersicherungArtZ3",
+          "type": "input",
+          "title": "Versicherungsart",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfVersicherungWertZ3",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_versicherung_Z4",
+          "type": "section_header",
+          "title": "24 – Versicherung 4",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVersicherungNameZ4",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVersicherungArtZ4",
+          "type": "input",
+          "title": "Versicherungsart",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfVersicherungWertZ4",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnVersicherung",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_E_vermoegen_vm",
+          "type": "section_header",
+          "title": "E. Konten, Geldanlagen und sonstiges Vermögen – Sonstiges Vermögen"
+        },
+        {
+          "name": "rbtnVermoegen",
+          "type": "yesno",
+          "title": "25 – Haben Sie und/oder die Personen in der Bedarfsgemeinschaft sonstiges Vermögen, zum Beispiel Edelmetalle, Schmuck, Antiquitäten, Gemälde?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_vermoegen_Z1",
+          "type": "section_header",
+          "title": "25 – Vermögenswert 1",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermoegenNameZ1",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermoegenArtZ1",
+          "type": "input",
+          "title": "Vermögensart",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfVermoegenWertZ1",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_vermoegen_Z2",
+          "type": "section_header",
+          "title": "25 – Vermögenswert 2",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermoegenNameZ2",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermoegenArtZ2",
+          "type": "input",
+          "title": "Vermögensart",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfVermoegenWertZ2",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_vermoegen_Z3",
+          "type": "section_header",
+          "title": "25 – Vermögenswert 3",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermoegenNameZ3",
+          "type": "input",
+          "title": "Name der Person",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermoegenArtZ3",
+          "type": "input",
+          "title": "Vermögensart",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfVermoegenWertZ3",
+          "type": "input",
+          "title": "Aktueller Wert in Euro",
+          "show_when": {
+            "field": "rbtnVermoegen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_F_vm",
+          "type": "section_header",
+          "title": "F. Angaben zur Rentenversicherungspflicht und Selbständigkeit"
+        },
+        {
+          "name": "rbtnSelbstaendig",
+          "type": "yesno",
+          "title": "26 – Wird oder wurde von einer Person in der Bedarfsgemeinschaft eine selbständige Tätigkeit ausgeübt?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfSelbstaendigName",
+          "type": "input",
+          "title": "27 – Name der Person",
+          "show_when": {
+            "field": "rbtnSelbstaendig",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfSelbstaendigJahre",
+          "type": "input",
+          "title": "28 – Anzahl der Jahre, in denen eine selbständige Tätigkeit insgesamt ausgeübt wurde",
+          "show_when": {
+            "field": "rbtnSelbstaendig",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnSelbstaendigGRV",
+          "type": "yesno",
+          "title": "29 – Wurden in diesen Jahren für die vorgenannte Person Beiträge an die gesetzliche Rentenversicherung, an eine öffentlich-rechtliche Versicherungseinrichtung oder an eine Versorgungseinrichtung einer Berufsgruppe entrichtet?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "show_when": {
+            "field": "rbtnSelbstaendig",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfSelbstaendigVermoegen",
+          "type": "input",
+          "title": "30 – Vermögenswerte aus Abschnitt E, die für die Altersvorsorge der vorgenannten Person bestimmt sind",
+          "show_when": {
+            "field": "rbtnSelbstaendig",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnSelbstaendigRVPflicht",
+          "type": "yesno",
+          "title": "31 – Besteht oder bestand für die vorgenannte Person eine Versicherungspflicht in der gesetzlichen Rentenversicherung aufgrund der selbständigen Tätigkeit?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "show_when": {
+            "field": "rbtnSelbstaendig",
+            "value": "yes"
+          }
+        }
+      ]
+    }
+  ],
+  "pdfAssetPath": "anlage_vm.pdf"
+}

@@ -1,0 +1,558 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "A. Persönliche Daten & B. Allgemeine Angaben zur Unterkunft",
+      "fields": [
+        {
+          "name": "section_header_A_kdu",
+          "type": "section_header",
+          "title": "A. Persönliche Daten"
+        },
+        {
+          "name": "txtfPersonVorname",
+          "type": "input",
+          "title": "1 – Vorname",
+          "profile_key": "FIRST_NAME"
+        },
+        {
+          "name": "txtfPersonNachname",
+          "type": "input",
+          "title": "2 – Nachname",
+          "profile_key": "LAST_NAME"
+        },
+        {
+          "name": "datePersonGebDatum",
+          "type": "date",
+          "title": "3 – Geburtsdatum (TT.MM.JJJJ)",
+          "profile_key": "BIRTH_DATE"
+        },
+        {
+          "name": "txtfBGNr",
+          "type": "input",
+          "title": "4 – Nummer der Bedarfsgemeinschaft (falls vorhanden)"
+        },
+        {
+          "name": "txtfPersonStr",
+          "type": "input",
+          "title": "5 – Straße",
+          "profile_key": "STREET"
+        },
+        {
+          "name": "txtfPersonHausNr",
+          "type": "input",
+          "title": "6 – Hausnummer",
+          "profile_key": "HOUSE_NUMBER"
+        },
+        {
+          "name": "txtfPersonPlz",
+          "type": "input",
+          "title": "7 – Postleitzahl",
+          "profile_key": "POSTAL_CODE"
+        },
+        {
+          "name": "txtfPersonOrt",
+          "type": "input",
+          "title": "8 – Ort",
+          "profile_key": "CITY"
+        },
+        {
+          "name": "section_header_B_kdu",
+          "type": "section_header",
+          "title": "B. Allgemeine Angaben zur Unterkunft"
+        },
+        {
+          "name": "numfUnterkunftAnzahlPersonen",
+          "type": "input",
+          "title": "9 – Wie viele Personen wohnen in der Unterkunft? (inkl. sich selbst)"
+        },
+        {
+          "name": "txtfUnterkunftBaujahr",
+          "type": "input",
+          "title": "10 – Baujahr der Unterkunft (falls bekannt)"
+        },
+        {
+          "name": "numfUnterkunftAnzahlRaum",
+          "type": "input",
+          "title": "11 – Anzahl der Räume"
+        },
+        {
+          "name": "numfUnterkunftAnzahlKueche",
+          "type": "input",
+          "title": "12 – Anzahl der Küchen"
+        },
+        {
+          "name": "numfUnterkunftAnzahlBad",
+          "type": "input",
+          "title": "13 – Anzahl der Bäder"
+        },
+        {
+          "name": "numfUnterkunftGesamt",
+          "type": "input",
+          "title": "14 – Gesamtfläche der Unterkunft in m²"
+        },
+        {
+          "name": "numfUnterkunftSelbst",
+          "type": "input",
+          "title": "15 – Selbst bewohnter Anteil in m²"
+        },
+        {
+          "name": "numfUnterkunftVermietet",
+          "type": "input",
+          "title": "16 – Vermieteter/Verpachteter Anteil in m²"
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "B. (Forts.) & C. Miete & D. Eigentum & E. Energiequellen",
+      "fields": [
+        {
+          "name": "numfUnterkunftLeer",
+          "type": "input",
+          "title": "17 – Leer stehender Anteil in m²"
+        },
+        {
+          "name": "numfUnterkunftGewerbe",
+          "type": "input",
+          "title": "18 – Gewerberäume/Gewerbliche Nutzung in m²"
+        },
+        {
+          "name": "radio_wohnsituation",
+          "type": "radio",
+          "title": "19 – Wohnsituation",
+          "children": [
+            {
+              "name": "chbxWohnenMiete",
+              "type": "option",
+              "title": "Wohnen zur Miete oder in einem sonstigen Wohnverhältnis"
+            },
+            {
+              "name": "chbxWohnenEigentum",
+              "type": "option",
+              "title": "Wohnen im Eigentum (weiter mit Abschnitt D)"
+            }
+          ]
+        },
+        {
+          "name": "section_header_C_kdu",
+          "type": "section_header",
+          "title": "C. Miete"
+        },
+        {
+          "name": "section_bedarf_kdu",
+          "type": "section_header",
+          "title": "20 – Welche Bedarfe für die Unterkunft und Heizung entstehen?"
+        },
+        {
+          "name": "chbxBedarfGrundmiete",
+          "type": "checkbox",
+          "title": "Grundmiete (ohne Nebenkosten und Heizkosten)",
+          "children": [
+            {
+              "name": "numfBedarfGrundmiete",
+              "type": "input",
+              "title": "Monatlich in Euro"
+            }
+          ]
+        },
+        {
+          "name": "chbxBedarfNebenkosten",
+          "type": "checkbox",
+          "title": "Nebenkosten (ohne Heizkosten)",
+          "children": [
+            {
+              "name": "numfBedarfNebenkosten",
+              "type": "input",
+              "title": "Monatlich in Euro"
+            }
+          ]
+        },
+        {
+          "name": "chbxBedarfHeizkosten",
+          "type": "checkbox",
+          "title": "Heizkosten",
+          "children": [
+            {
+              "name": "numfBedarfHeizkosten",
+              "type": "input",
+              "title": "Monatlich in Euro"
+            }
+          ]
+        },
+        {
+          "name": "chbxBedarfSonstiges",
+          "type": "checkbox",
+          "title": "Sonstige Wohnkosten",
+          "hints": [
+            26
+          ],
+          "children": [
+            {
+              "name": "numfBedarfSonstiges",
+              "type": "input",
+              "title": "Monatlich in Euro"
+            }
+          ]
+        },
+        {
+          "name": "chbxBedarfPauschalmiete",
+          "type": "checkbox",
+          "title": "Oder Pauschalmiete (Inklusivmiete mit allen Kosten)",
+          "children": [
+            {
+              "name": "numfBedarfPauschalmiete",
+              "type": "input",
+              "title": "Monatlich in Euro"
+            }
+          ]
+        },
+        {
+          "name": "section_header_D_kdu",
+          "type": "section_header",
+          "title": "D. Eigentum"
+        },
+        {
+          "name": "rbtnWohneinheit",
+          "type": "yesno",
+          "title": "21 – Verfügt das Eigenheim über mehrere Wohneinheiten?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "numfWohneinheitAnzahl",
+          "type": "input",
+          "title": "22 – Anzahl der Wohneinheiten",
+          "show_when": {
+            "field": "rbtnWohneinheit",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "multi_eigentum_nebenkosten",
+          "type": "multiselect",
+          "title": "23 – Welche Kosten entstehen Ihnen? (Eigentum)",
+          "children": [
+            {
+              "name": "chbxEigentumSchuldzinsen",
+              "type": "option",
+              "title": "Schuldzinsen ohne Tilgungsraten",
+              "hints": [
+                27
+              ]
+            },
+            {
+              "name": "chbxEigentumHeizkosten",
+              "type": "option",
+              "title": "Heizkosten"
+            },
+            {
+              "name": "chbxEigentumWartung",
+              "type": "option",
+              "title": "Heizungswartung"
+            },
+            {
+              "name": "chbxEigentumGrundsteuern",
+              "type": "option",
+              "title": "Grundsteuern"
+            },
+            {
+              "name": "chbxEigentumVersicherung",
+              "type": "option",
+              "title": "Gebäudeversicherung"
+            },
+            {
+              "name": "chbxEigentumWasser",
+              "type": "option",
+              "title": "Wasser"
+            },
+            {
+              "name": "chbxEigentumAbwasser",
+              "type": "option",
+              "title": "Abwasser"
+            },
+            {
+              "name": "chbxEigentumMuell",
+              "type": "option",
+              "title": "Müllgebühren"
+            },
+            {
+              "name": "chbxEigentumSchornstein",
+              "type": "option",
+              "title": "Schornsteinfegergebühren"
+            },
+            {
+              "name": "chbxEigentumStrassenreinigung",
+              "type": "option",
+              "title": "Straßenreinigung"
+            },
+            {
+              "name": "chbxEigentumSonstiges",
+              "type": "option",
+              "title": "Sonstige Nebenkosten"
+            }
+          ]
+        },
+        {
+          "name": "txtfEigentumSonstige",
+          "type": "input",
+          "title": "23 – Sonstige Nebenkosten (Beschreibung)",
+          "show_when": {
+            "field": "chbxEigentumSonstiges",
+            "value": "true"
+          }
+        },
+        {
+          "name": "section_header_E_kdu",
+          "type": "section_header",
+          "title": "E. Energiequellen"
+        },
+        {
+          "name": "multi_energiequellen",
+          "type": "multiselect",
+          "title": "24 – Welche Brennstoffe/Energiequellen werden genutzt?",
+          "children": [
+            {
+              "name": "chbxEnergiequellenStrom",
+              "type": "option",
+              "title": "Strom"
+            },
+            {
+              "name": "chbxEnergiequellenGas",
+              "type": "option",
+              "title": "Gas"
+            },
+            {
+              "name": "chbxEnergiequellenOel",
+              "type": "option",
+              "title": "Heizöl"
+            },
+            {
+              "name": "chbxEnergiequellenFernwaerme",
+              "type": "option",
+              "title": "Fernwärme"
+            },
+            {
+              "name": "chbxEnergiequellenHolz",
+              "type": "option",
+              "title": "Holz"
+            },
+            {
+              "name": "chbxEnergiequellenSonstiges",
+              "type": "option",
+              "title": "Sonstiges"
+            }
+          ]
+        },
+        {
+          "name": "txtfEnergiequellenSonstiges",
+          "type": "input",
+          "title": "24 – Brennstoff Sonstiges (Beschreibung)",
+          "show_when": {
+            "field": "chbxEnergiequellenSonstiges",
+            "value": "true"
+          }
+        },
+        {
+          "name": "rbtnBrenstoff",
+          "type": "yesno",
+          "title": "25 – Beschaffen Sie die Brennstoffe selbst?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "E. (Forts.) & F. Überweisung an Vermieter & G. Unterschrift",
+      "fields": [
+        {
+          "name": "multi_heizungsart",
+          "type": "multiselect",
+          "title": "26 – Heizungsart",
+          "children": [
+            {
+              "name": "chbxHeizungZentralheizung",
+              "type": "option",
+              "title": "Zentralheizung"
+            },
+            {
+              "name": "chbxHeizungsartEinzelofen",
+              "type": "option",
+              "title": "Einzelofen"
+            },
+            {
+              "name": "chbxHeizungsartNachtspeicherofen",
+              "type": "option",
+              "title": "Nachtspeicherofen"
+            }
+          ]
+        },
+        {
+          "name": "multi_kochen",
+          "type": "multiselect",
+          "title": "27 – Kochen mit",
+          "children": [
+            {
+              "name": "chbxKochenStrom",
+              "type": "option",
+              "title": "Strom"
+            },
+            {
+              "name": "chbxKochenGas",
+              "type": "option",
+              "title": "Gas"
+            },
+            {
+              "name": "chbxKochenSonstiges",
+              "type": "option",
+              "title": "Sonstiges"
+            }
+          ]
+        },
+        {
+          "name": "txtfKochenSonstiges",
+          "type": "input",
+          "title": "27 – Kochen Sonstiges (Beschreibung)",
+          "show_when": {
+            "field": "chbxKochenSonstiges",
+            "value": "true"
+          }
+        },
+        {
+          "name": "radio_warmwasser",
+          "type": "radio",
+          "title": "28 – Wie erzeugen Sie Ihr Warmwasser?",
+          "hints": [
+            28
+          ],
+          "children": [
+            {
+              "name": "chbxWasserZentral",
+              "type": "option",
+              "title": "Zentral (z. B. zentrale Heizungsanlage)"
+            },
+            {
+              "name": "chbxWasserDezentral",
+              "type": "option",
+              "title": "Dezentral (z. B. Boiler, Durchlauferhitzer)"
+            }
+          ]
+        },
+        {
+          "name": "multi_warmwasser_dezentral",
+          "type": "multiselect",
+          "title": "29 – Dezentraler Warmwasser-Brennstoff",
+          "children": [
+            {
+              "name": "chbxWarmwasserStrom",
+              "type": "option",
+              "title": "Strom"
+            },
+            {
+              "name": "chbxWarmwasserGas",
+              "type": "option",
+              "title": "Gas"
+            },
+            {
+              "name": "chbxWarmwasserHeizoel",
+              "type": "option",
+              "title": "Heizöl"
+            },
+            {
+              "name": "chbxWarmwasserHolz",
+              "type": "option",
+              "title": "Holz"
+            },
+            {
+              "name": "chbxWarmwasserKohle",
+              "type": "option",
+              "title": "Kohle"
+            },
+            {
+              "name": "chbxWarmwasserSonstiges",
+              "type": "option",
+              "title": "Sonstiges"
+            }
+          ]
+        },
+        {
+          "name": "txtfWarmwasserSonstiges",
+          "type": "input",
+          "title": "29 – Dezentraler Brennstoff Sonstiges (Beschreibung)",
+          "show_when": {
+            "field": "chbxWarmwasserSonstiges",
+            "value": "true"
+          }
+        },
+        {
+          "name": "section_header_F_kdu",
+          "type": "section_header",
+          "title": "F. Überweisung an Vermieter"
+        },
+        {
+          "name": "rbtnMieteDirekt",
+          "type": "yesno",
+          "title": "30 – Soll die Miete direkt an die Vermieterin/den Vermieter überwiesen werden?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfVermieterName",
+          "type": "input",
+          "title": "31 – Name der Vermieterin/des Vermieters",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermieterStr",
+          "type": "input",
+          "title": "32 – Straße (Vermieter)",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermieterHausNr",
+          "type": "input",
+          "title": "33 – Hausnummer (Vermieter)",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermieterPlz",
+          "type": "input",
+          "title": "34 – Postleitzahl (Vermieter)",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermieterOrt",
+          "type": "input",
+          "title": "35 – Ort (Vermieter)",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermieterIBAN",
+          "type": "input",
+          "title": "36 – IBAN (22-stellig)",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        }
+      ]
+    }
+  ],
+  "pdfAssetPath": "anlage_kdu.pdf"
+}

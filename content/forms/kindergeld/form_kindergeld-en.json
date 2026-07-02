@@ -1,0 +1,843 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "1. Applicant",
+      "fields": [
+        {
+          "name": "section_header_allgemein_kg",
+          "type": "section_header",
+          "title": "General information"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].#area[0].Kopfzeile[0].KG-Nr[0]",
+          "type": "input",
+          "title": "1 – Child benefit number (if available)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].#area[0].Kopfzeile[0].#area[3].Telefon[0]",
+          "type": "input",
+          "title": "2 – Daytime telephone number for queries"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].#area[0].Überschrift[0].Anzahl-Anlagen[0]",
+          "type": "input",
+          "title": "3 – Number of attached “Anlage Kind” annexes"
+        },
+        {
+          "name": "section_header_1_kg",
+          "type": "section_header",
+          "title": "1. Applicant"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Steuer-ID[0].Steuer-ID-1[0]",
+          "type": "input",
+          "title": "4 – Tax ID – block 1 of 4 (mandatory if assigned)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Steuer-ID[0].Steuer-ID-2[0]",
+          "type": "input",
+          "title": "5 – Tax ID – block 2 of 4 (mandatory if assigned)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Steuer-ID[0].Steuer-ID-3[0]",
+          "type": "input",
+          "title": "6 – Tax ID – block 3 of 4 (mandatory if assigned)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Steuer-ID[0].Steuer-ID-4[0]",
+          "type": "input",
+          "title": "7 – Tax ID – block 4 of 4 (mandatory if assigned)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-1[0].Name-Antragsteller[0]",
+          "type": "input",
+          "title": "8 – Surname",
+          "profile_key": "LAST_NAME"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-1[0].Titel-Antragsteller[0]",
+          "type": "input",
+          "title": "9 – Title"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-2[0].Vorname-Antragsteller[0]",
+          "type": "input",
+          "title": "10 – First name",
+          "profile_key": "FIRST_NAME"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-2[0].Geburtsname-Antragsteller[0]",
+          "type": "input",
+          "title": "11 – Birth name/surname from a previous marriage, if applicable"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-3[0].Geburtsdatum-Antragsteller[0]",
+          "type": "date",
+          "title": "12 – Date of birth (DD.MM.YYYY)",
+          "profile_key": "BIRTH_DATE"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-3[0].Geburtsort-Antragsteller[0]",
+          "type": "input",
+          "title": "13 – Place of birth"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-3[0].Geschlecht-Antragsteller[0]",
+          "type": "input",
+          "title": "14 – Gender"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-3[0].Staatsangehörigkeit-Antragsteller[0]",
+          "type": "input",
+          "title": "15 – Nationality (see notes)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Anschrift-Antragsteller[0]",
+          "type": "input",
+          "title": "16 – Address (street/square, house number, postal code, city, country)"
+        },
+        {
+          "name": "multi_familienstand",
+          "type": "radio",
+          "title": "17 – Marital status",
+          "children": [
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].ledig[0]",
+              "type": "option",
+              "title": "single"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].verheiratet[0]",
+              "type": "option",
+              "title": "married"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].Partner[0]",
+              "type": "option",
+              "title": "living in a registered civil partnership"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].geschieden[0]",
+              "type": "option",
+              "title": "divorced"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].aufgehoben[0]",
+              "type": "option",
+              "title": "annulled civil partnership"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].verwitwet[0]",
+              "type": "option",
+              "title": "widowed"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].getrennt[0]",
+              "type": "option",
+              "title": "permanently separated"
+            }
+          ]
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].seit[0]",
+          "type": "date",
+          "title": "18 – Marital status since (DD.MM.YYYY)"
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "2. Partner & 3. Payment details",
+      "fields": [
+        {
+          "name": "section_header_2_kg",
+          "type": "section_header",
+          "title": "2. Spouse/partner or other parent in the shared household"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].Steuer-ID-2[1].Steuer-ID-2\\.1[0]",
+          "type": "input",
+          "title": "19 – Tax ID – block 1 of 4 (if assigned)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].Steuer-ID-2[1].Steuer-ID-2\\.2[0]",
+          "type": "input",
+          "title": "20 – Tax ID – block 2 of 4 (if assigned)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].Steuer-ID-2[1].Steuer-ID-2\\.3[0]",
+          "type": "input",
+          "title": "21 – Tax ID – block 3 of 4 (if assigned)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].Steuer-ID-2[1].Steuer-ID-2\\.4[0]",
+          "type": "input",
+          "title": "22 – Tax ID – block 4 of 4 (if assigned)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Name-Partner[0]",
+          "type": "input",
+          "title": "23 – Surname"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Vorname-Partner[0]",
+          "type": "input",
+          "title": "24 – First name"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Titel-Partner[0]",
+          "type": "input",
+          "title": "25 – Title"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Geburtsdatum-Partner[0]",
+          "type": "date",
+          "title": "26 – Date of birth (DD.MM.YYYY)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Staatsangehörigkeit-Partner[0]",
+          "type": "input",
+          "title": "27 – Nationality"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Geschlecht-Partner[0]",
+          "type": "input",
+          "title": "28 – Gender"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Geburtsname-Partner[0]",
+          "type": "input",
+          "title": "29 – Birth name/surname from a previous marriage, if applicable"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Anschrift-Partner[0]",
+          "type": "input",
+          "title": "30 – Address, if different (street/square, house no., postal code, city, country)"
+        },
+        {
+          "name": "section_header_3_kg",
+          "type": "section_header",
+          "title": "3. Payment details"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-3[0].IBAN[0]",
+          "type": "input",
+          "title": "31 – IBAN"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-3[0].BIC[0]",
+          "type": "input",
+          "title": "32 – BIC"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-3[0].Bank[0]",
+          "type": "input",
+          "title": "33 – Bank, financial institution (incl. branch, if applicable)"
+        },
+        {
+          "name": "multi_kontoinhaber",
+          "type": "radio",
+          "title": "34 – Account holder is",
+          "children": [
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-3[0].Antragsteller[0]",
+              "type": "option",
+              "title": "the applicant as stated under no. 1"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-3[0].andere-Person[0]",
+              "type": "option",
+              "title": "not the applicant, but:"
+            }
+          ]
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-3[0].Name-Kontoinhaber[0]",
+          "type": "input",
+          "title": "35 – Surname, first name of the account holder"
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "4. Notice & 5. Children with child benefit",
+      "fields": [
+        {
+          "name": "section_header_4_kg",
+          "type": "section_header",
+          "title": "4. Notice to another person"
+        },
+        {
+          "name": "ui_rbtnBescheidAbweichend",
+          "type": "yesno",
+          "title": "36 – Should the decision notice be sent to another person instead of you (e.g. tax advisor, lawyer)?"
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-4[0].Name-abweichende-Person[0]",
+          "type": "input",
+          "title": "37 – Surname",
+          "show_when": {
+            "field": "ui_rbtnBescheidAbweichend",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-4[0].Vorname-abweichende-Person[0]",
+          "type": "input",
+          "title": "38 – First name",
+          "show_when": {
+            "field": "ui_rbtnBescheidAbweichend",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-4[0].Anschrift-abweichende-Person[0]",
+          "type": "input",
+          "title": "39 – Address (street/square, house number, postal code, city, country)",
+          "show_when": {
+            "field": "ui_rbtnBescheidAbweichend",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_5_kg",
+          "type": "section_header",
+          "title": "5. Children for whom you already receive child benefit"
+        },
+        {
+          "name": "ui_rbtnKinderBezug",
+          "type": "yesno",
+          "title": "40 – Do you already receive child benefit for children (incl. cases of a different bank account, diversion or reimbursement)?"
+        },
+        {
+          "name": "section_kind5_1_kg",
+          "type": "section_header",
+          "title": "Child 1",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile1[0].Zelle1[0]",
+          "type": "input",
+          "title": "41 – Child's first name (different surname, if applicable)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile1[0].Zelle2[0]",
+          "type": "date",
+          "title": "42 – Date of birth (DD.MM.YYYY)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile1[0].Zelle3[0]",
+          "type": "input",
+          "title": "43 – Gender",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile1[0].Zelle4[0]",
+          "type": "input",
+          "title": "44 – At which Familienkasse (child benefit number)?",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind5_2_kg",
+          "type": "section_header",
+          "title": "Child 2",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile2[0].Zelle1[0]",
+          "type": "input",
+          "title": "45 – Child's first name (different surname, if applicable)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile2[0].Zelle2[0]",
+          "type": "date",
+          "title": "46 – Date of birth (DD.MM.YYYY)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile2[0].Zelle3[0]",
+          "type": "input",
+          "title": "47 – Gender",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile2[0].Zelle4[0]",
+          "type": "input",
+          "title": "48 – At which Familienkasse (child benefit number)?",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind5_3_kg",
+          "type": "section_header",
+          "title": "Child 3",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile3[0].Zelle1[0]",
+          "type": "input",
+          "title": "49 – Child's first name (different surname, if applicable)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile3[0].Zelle2[0]",
+          "type": "date",
+          "title": "50 – Date of birth (DD.MM.YYYY)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile3[0].Zelle3[0]",
+          "type": "input",
+          "title": "51 – Gender",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile3[0].Zelle4[0]",
+          "type": "input",
+          "title": "52 – At which Familienkasse (child benefit number)?",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind5_4_kg",
+          "type": "section_header",
+          "title": "Child 4",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile4[0].Zelle1[0]",
+          "type": "input",
+          "title": "53 – Child's first name (different surname, if applicable)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile4[0].Zelle2[0]",
+          "type": "date",
+          "title": "54 – Date of birth (DD.MM.YYYY)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile4[0].Zelle3[0]",
+          "type": "input",
+          "title": "55 – Gender",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile4[0].Zelle4[0]",
+          "type": "input",
+          "title": "56 – At which Familienkasse (child benefit number)?",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind5_5_kg",
+          "type": "section_header",
+          "title": "Child 5",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile5[0].Zelle1[0]",
+          "type": "input",
+          "title": "57 – Child's first name (different surname, if applicable)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile5[0].Zelle2[0]",
+          "type": "date",
+          "title": "58 – Date of birth (DD.MM.YYYY)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile5[0].Zelle3[0]",
+          "type": "input",
+          "title": "59 – Gender",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile5[0].Zelle4[0]",
+          "type": "input",
+          "title": "60 – At which Familienkasse (child benefit number)?",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "title": "6. Counted children & signature",
+      "fields": [
+        {
+          "name": "section_header_6_kg",
+          "type": "section_header",
+          "title": "6. Other own children for whom another person receives child benefit"
+        },
+        {
+          "name": "ui_rbtnZaehlkinder",
+          "type": "yesno",
+          "title": "61 – Are there other children of your own for whom another person receives child benefit?"
+        },
+        {
+          "name": "section_kind6_1_kg",
+          "type": "section_header",
+          "title": "Child 1",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile1[0].Zelle1[0]",
+          "type": "input",
+          "title": "62 – Child's first name (different surname, if applicable)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile1[0].Zelle2[0]",
+          "type": "date",
+          "title": "63 – Date of birth (DD.MM.YYYY)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile1[0].Zelle3[0]",
+          "type": "input",
+          "title": "64 – Gender",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile1[0].Zelle4[0]",
+          "type": "input",
+          "title": "65 – Who receives the child benefit (surname, first name)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile1[0].Zelle5[0]",
+          "type": "input",
+          "title": "66 – At which Familienkasse (child benefit number)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind6_2_kg",
+          "type": "section_header",
+          "title": "Child 2",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile2[0].Zelle1[0]",
+          "type": "input",
+          "title": "67 – Child's first name (different surname, if applicable)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile2[0].Zelle2[0]",
+          "type": "date",
+          "title": "68 – Date of birth (DD.MM.YYYY)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile2[0].Zelle3[0]",
+          "type": "input",
+          "title": "69 – Gender",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile2[0].Zelle4[0]",
+          "type": "input",
+          "title": "70 – Who receives the child benefit (surname, first name)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile2[0].Zelle5[0]",
+          "type": "input",
+          "title": "71 – At which Familienkasse (child benefit number)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind6_3_kg",
+          "type": "section_header",
+          "title": "Child 3",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile3[0].Zelle1[0]",
+          "type": "input",
+          "title": "72 – Child's first name (different surname, if applicable)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile3[0].Zelle2[0]",
+          "type": "date",
+          "title": "73 – Date of birth (DD.MM.YYYY)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile3[0].Zelle3[0]",
+          "type": "input",
+          "title": "74 – Gender",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile3[0].Zelle4[0]",
+          "type": "input",
+          "title": "75 – Who receives the child benefit (surname, first name)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile3[0].Zelle5[0]",
+          "type": "input",
+          "title": "76 – At which Familienkasse (child benefit number)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind6_4_kg",
+          "type": "section_header",
+          "title": "Child 4",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile4[0].Zelle1[0]",
+          "type": "input",
+          "title": "77 – Child's first name (different surname, if applicable)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile4[0].Zelle2[0]",
+          "type": "date",
+          "title": "78 – Date of birth (DD.MM.YYYY)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile4[0].Zelle3[0]",
+          "type": "input",
+          "title": "79 – Gender",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile4[0].Zelle4[0]",
+          "type": "input",
+          "title": "80 – Who receives the child benefit (surname, first name)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile4[0].Zelle5[0]",
+          "type": "input",
+          "title": "81 – At which Familienkasse (child benefit number)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind6_5_kg",
+          "type": "section_header",
+          "title": "Child 5",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile5[0].Zelle1[0]",
+          "type": "input",
+          "title": "82 – Child's first name (different surname, if applicable)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile5[0].Zelle2[0]",
+          "type": "date",
+          "title": "83 – Date of birth (DD.MM.YYYY)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile5[0].Zelle3[0]",
+          "type": "input",
+          "title": "84 – Gender",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile5[0].Zelle4[0]",
+          "type": "input",
+          "title": "85 – Who receives the child benefit (surname, first name)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile5[0].Zelle5[0]",
+          "type": "input",
+          "title": "86 – At which Familienkasse (child benefit number)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_unterschrift_kg",
+          "type": "section_header",
+          "title": "Signature"
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Unterschrift-1[0].Datum-1[0]",
+          "type": "date",
+          "title": "87 – Date (signature of the applicant)"
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Unterschrift-2[0].Datum-2[0]",
+          "type": "date",
+          "title": "88 – Date (signature of the person named under point 2)"
+        }
+      ]
+    }
+  ],
+  "pdfAssetPath": "kg1_antrag_kindergeld.pdf"
+}

@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Lint
+        run: ./gradlew spotlessCheck
+      - name: Unit tests
+        run: ./gradlew test
+      - name: Validate content
+        run: ./gradlew validate
+
+  publish:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Generate dist
+        run: ./gradlew generate
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      # TODO: deploy dist/ to the static host once the target is decided (S3 /
+      # GitHub Pages / nginx). Requirements, see README:
+      #   - upload must be additive — never delete or rewrite already-published
+      #     version folders or config/<config>.json snapshots
+      #   - version folders + config/: Cache-Control: public, max-age=31536000, immutable
+      #   - latest.json: Cache-Control: no-cache, and upload it LAST (atomic flip)
+      #   - afterwards: commit dist/config/<config>.json back to the repo as
+      #     published-config.json so the config counter and version-bump check
+      #     have a baseline
+      - name: Deploy (stub)
+        run: echo "TODO deploy dist/ to static host"
