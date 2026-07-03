@@ -1,0 +1,843 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "1. Antragstellende Person",
+      "fields": [
+        {
+          "name": "section_header_allgemein_kg",
+          "type": "section_header",
+          "title": "Allgemeine Angaben: TEST IGNORE"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].#area[0].Kopfzeile[0].KG-Nr[0]",
+          "type": "input",
+          "title": "1 – Kindergeld-Nr. (falls vorhanden)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].#area[0].Kopfzeile[0].#area[3].Telefon[0]",
+          "type": "input",
+          "title": "2 – Telefonische Rückfrage tagsüber unter Nr."
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].#area[0].Überschrift[0].Anzahl-Anlagen[0]",
+          "type": "input",
+          "title": "3 – Anzahl der beigefügten „Anlage Kind“"
+        },
+        {
+          "name": "section_header_1_kg",
+          "type": "section_header",
+          "title": "1. Antragstellende Person"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Steuer-ID[0].Steuer-ID-1[0]",
+          "type": "input",
+          "title": "4 – Steuer-ID – Block 1 von 4 (zwingend, soweit vergeben)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Steuer-ID[0].Steuer-ID-2[0]",
+          "type": "input",
+          "title": "5 – Steuer-ID – Block 2 von 4 (zwingend, soweit vergeben)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Steuer-ID[0].Steuer-ID-3[0]",
+          "type": "input",
+          "title": "6 – Steuer-ID – Block 3 von 4 (zwingend, soweit vergeben)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Steuer-ID[0].Steuer-ID-4[0]",
+          "type": "input",
+          "title": "7 – Steuer-ID – Block 4 von 4 (zwingend, soweit vergeben)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-1[0].Name-Antragsteller[0]",
+          "type": "input",
+          "title": "8 – Familienname",
+          "profile_key": "LAST_NAME"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-1[0].Titel-Antragsteller[0]",
+          "type": "input",
+          "title": "9 – Titel"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-2[0].Vorname-Antragsteller[0]",
+          "type": "input",
+          "title": "10 – Vorname",
+          "profile_key": "FIRST_NAME"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-2[0].Geburtsname-Antragsteller[0]",
+          "type": "input",
+          "title": "11 – ggf. Geburtsname/Familienname aus früherer Ehe"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-3[0].Geburtsdatum-Antragsteller[0]",
+          "type": "date",
+          "title": "12 – Geburtsdatum (TT.MM.JJJJ)",
+          "profile_key": "BIRTH_DATE"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-3[0].Geburtsort-Antragsteller[0]",
+          "type": "input",
+          "title": "13 – Geburtsort"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-3[0].Geschlecht-Antragsteller[0]",
+          "type": "input",
+          "title": "14 – Geschlecht"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Pkt-1-Zeile-3[0].Staatsangehörigkeit-Antragsteller[0]",
+          "type": "input",
+          "title": "15 – Staatsangehörigkeit (siehe Hinweise)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Anschrift-Antragsteller[0]",
+          "type": "input",
+          "title": "16 – Anschrift (Straße/Platz, Hausnummer, PLZ, Wohnort, Staat)"
+        },
+        {
+          "name": "multi_familienstand",
+          "type": "radio",
+          "title": "17 – Familienstand",
+          "children": [
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].ledig[0]",
+              "type": "option",
+              "title": "ledig"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].verheiratet[0]",
+              "type": "option",
+              "title": "verheiratet"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].Partner[0]",
+              "type": "option",
+              "title": "in eingetragener Lebenspartnerschaft lebend"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].geschieden[0]",
+              "type": "option",
+              "title": "geschieden"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].aufgehoben[0]",
+              "type": "option",
+              "title": "aufgehobene Lebenspartnerschaft"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].verwitwet[0]",
+              "type": "option",
+              "title": "verwitwet"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].getrennt[0]",
+              "type": "option",
+              "title": "dauernd getrennt lebend"
+            }
+          ]
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-1[0].Familienstand[0].#area[12].seit[0]",
+          "type": "date",
+          "title": "18 – Familienstand seit (TT.MM.JJJJ)"
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "2. Partner(in) & 3. Zahlungsweg",
+      "fields": [
+        {
+          "name": "section_header_2_kg",
+          "type": "section_header",
+          "title": "2. Ehe-/Lebenspartner(in) bzw. anderer Elternteil im gemeinsamen Haushalt"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].Steuer-ID-2[1].Steuer-ID-2\\.1[0]",
+          "type": "input",
+          "title": "19 – Steuer-ID – Block 1 von 4 (soweit vergeben)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].Steuer-ID-2[1].Steuer-ID-2\\.2[0]",
+          "type": "input",
+          "title": "20 – Steuer-ID – Block 2 von 4 (soweit vergeben)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].Steuer-ID-2[1].Steuer-ID-2\\.3[0]",
+          "type": "input",
+          "title": "21 – Steuer-ID – Block 3 von 4 (soweit vergeben)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].Steuer-ID-2[1].Steuer-ID-2\\.4[0]",
+          "type": "input",
+          "title": "22 – Steuer-ID – Block 4 von 4 (soweit vergeben)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Name-Partner[0]",
+          "type": "input",
+          "title": "23 – Familienname"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Vorname-Partner[0]",
+          "type": "input",
+          "title": "24 – Vorname"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Titel-Partner[0]",
+          "type": "input",
+          "title": "25 – Titel"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Geburtsdatum-Partner[0]",
+          "type": "date",
+          "title": "26 – Geburtsdatum (TT.MM.JJJJ)"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Staatsangehörigkeit-Partner[0]",
+          "type": "input",
+          "title": "27 – Staatsangehörigkeit"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Geschlecht-Partner[0]",
+          "type": "input",
+          "title": "28 – Geschlecht"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Geburtsname-Partner[0]",
+          "type": "input",
+          "title": "29 – ggf. Geburtsname/Familienname aus früherer Ehe"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-2[0].#area[15].Anschrift-Partner[0]",
+          "type": "input",
+          "title": "30 – Anschrift, wenn abweichend (Str./Platz, Hausnr., PLZ, Wohnort, Staat)"
+        },
+        {
+          "name": "section_header_3_kg",
+          "type": "section_header",
+          "title": "3. Zahlungsweg"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-3[0].IBAN[0]",
+          "type": "input",
+          "title": "31 – IBAN"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-3[0].BIC[0]",
+          "type": "input",
+          "title": "32 – BIC"
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-3[0].Bank[0]",
+          "type": "input",
+          "title": "33 – Bank, Finanzinstitut (ggf. auch Zweigstelle)"
+        },
+        {
+          "name": "multi_kontoinhaber",
+          "type": "radio",
+          "title": "34 – Kontoinhaber(in) ist",
+          "children": [
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-3[0].Antragsteller[0]",
+              "type": "option",
+              "title": "antragstellende Person wie unter Nr. 1"
+            },
+            {
+              "name": "topmostSubform[0].Seite1[0].Punkt-3[0].andere-Person[0]",
+              "type": "option",
+              "title": "nicht antragstellende Person, sondern:"
+            }
+          ]
+        },
+        {
+          "name": "topmostSubform[0].Seite1[0].Punkt-3[0].Name-Kontoinhaber[0]",
+          "type": "input",
+          "title": "35 – Familienname, Vorname der Kontoinhaberin/des Kontoinhabers"
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "4. Bescheid & 5. Kinder mit Kindergeldbezug",
+      "fields": [
+        {
+          "name": "section_header_4_kg",
+          "type": "section_header",
+          "title": "4. Bescheid an andere Person"
+        },
+        {
+          "name": "ui_rbtnBescheidAbweichend",
+          "type": "yesno",
+          "title": "36 – Soll der Bescheid nicht Ihnen, sondern einer anderen Person zugesandt werden (z. B. Steuerberater, Rechtsanwalt)?"
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-4[0].Name-abweichende-Person[0]",
+          "type": "input",
+          "title": "37 – Familienname",
+          "show_when": {
+            "field": "ui_rbtnBescheidAbweichend",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-4[0].Vorname-abweichende-Person[0]",
+          "type": "input",
+          "title": "38 – Vorname",
+          "show_when": {
+            "field": "ui_rbtnBescheidAbweichend",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-4[0].Anschrift-abweichende-Person[0]",
+          "type": "input",
+          "title": "39 – Anschrift (Straße/Platz, Hausnummer, PLZ, Wohnort, Staat)",
+          "show_when": {
+            "field": "ui_rbtnBescheidAbweichend",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_5_kg",
+          "type": "section_header",
+          "title": "5. Kinder, für die Sie bereits Kindergeld beziehen"
+        },
+        {
+          "name": "ui_rbtnKinderBezug",
+          "type": "yesno",
+          "title": "40 – Beziehen Sie bereits für Kinder Kindergeld (auch bei abweichender Kontoverbindung, Abzweigung oder Erstattung)?"
+        },
+        {
+          "name": "section_kind5_1_kg",
+          "type": "section_header",
+          "title": "Kind 1",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile1[0].Zelle1[0]",
+          "type": "input",
+          "title": "41 – Vorname des Kindes (ggf. abweichender Familienname)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile1[0].Zelle2[0]",
+          "type": "date",
+          "title": "42 – Geburtsdatum (TT.MM.JJJJ)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile1[0].Zelle3[0]",
+          "type": "input",
+          "title": "43 – Geschlecht",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile1[0].Zelle4[0]",
+          "type": "input",
+          "title": "44 – Bei welcher Familienkasse (Kindergeldnummer)?",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind5_2_kg",
+          "type": "section_header",
+          "title": "Kind 2",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile2[0].Zelle1[0]",
+          "type": "input",
+          "title": "45 – Vorname des Kindes (ggf. abweichender Familienname)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile2[0].Zelle2[0]",
+          "type": "date",
+          "title": "46 – Geburtsdatum (TT.MM.JJJJ)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile2[0].Zelle3[0]",
+          "type": "input",
+          "title": "47 – Geschlecht",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile2[0].Zelle4[0]",
+          "type": "input",
+          "title": "48 – Bei welcher Familienkasse (Kindergeldnummer)?",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind5_3_kg",
+          "type": "section_header",
+          "title": "Kind 3",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile3[0].Zelle1[0]",
+          "type": "input",
+          "title": "49 – Vorname des Kindes (ggf. abweichender Familienname)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile3[0].Zelle2[0]",
+          "type": "date",
+          "title": "50 – Geburtsdatum (TT.MM.JJJJ)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile3[0].Zelle3[0]",
+          "type": "input",
+          "title": "51 – Geschlecht",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile3[0].Zelle4[0]",
+          "type": "input",
+          "title": "52 – Bei welcher Familienkasse (Kindergeldnummer)?",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind5_4_kg",
+          "type": "section_header",
+          "title": "Kind 4",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile4[0].Zelle1[0]",
+          "type": "input",
+          "title": "53 – Vorname des Kindes (ggf. abweichender Familienname)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile4[0].Zelle2[0]",
+          "type": "date",
+          "title": "54 – Geburtsdatum (TT.MM.JJJJ)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile4[0].Zelle3[0]",
+          "type": "input",
+          "title": "55 – Geschlecht",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile4[0].Zelle4[0]",
+          "type": "input",
+          "title": "56 – Bei welcher Familienkasse (Kindergeldnummer)?",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind5_5_kg",
+          "type": "section_header",
+          "title": "Kind 5",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile5[0].Zelle1[0]",
+          "type": "input",
+          "title": "57 – Vorname des Kindes (ggf. abweichender Familienname)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile5[0].Zelle2[0]",
+          "type": "date",
+          "title": "58 – Geburtsdatum (TT.MM.JJJJ)",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile5[0].Zelle3[0]",
+          "type": "input",
+          "title": "59 – Geschlecht",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-5[0].Tabelle1-Kinder[0].Zeile5[0].Zelle4[0]",
+          "type": "input",
+          "title": "60 – Bei welcher Familienkasse (Kindergeldnummer)?",
+          "show_when": {
+            "field": "ui_rbtnKinderBezug",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "title": "6. Zählkinder & Unterschrift",
+      "fields": [
+        {
+          "name": "section_header_6_kg",
+          "type": "section_header",
+          "title": "6. Weitere eigene Kinder, für die eine andere Person Kindergeld bezieht"
+        },
+        {
+          "name": "ui_rbtnZaehlkinder",
+          "type": "yesno",
+          "title": "61 – Gibt es weitere eigene Kinder, für die eine andere Person Kindergeld bezieht?"
+        },
+        {
+          "name": "section_kind6_1_kg",
+          "type": "section_header",
+          "title": "Kind 1",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile1[0].Zelle1[0]",
+          "type": "input",
+          "title": "62 – Vorname des Kindes (ggf. abweichender Familienname)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile1[0].Zelle2[0]",
+          "type": "date",
+          "title": "63 – Geburtsdatum (TT.MM.JJJJ)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile1[0].Zelle3[0]",
+          "type": "input",
+          "title": "64 – Geschlecht",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile1[0].Zelle4[0]",
+          "type": "input",
+          "title": "65 – Wer bezieht das Kindergeld (Familienname, Vorname)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile1[0].Zelle5[0]",
+          "type": "input",
+          "title": "66 – Bei welcher Familienkasse (Kindergeldnummer)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind6_2_kg",
+          "type": "section_header",
+          "title": "Kind 2",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile2[0].Zelle1[0]",
+          "type": "input",
+          "title": "67 – Vorname des Kindes (ggf. abweichender Familienname)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile2[0].Zelle2[0]",
+          "type": "date",
+          "title": "68 – Geburtsdatum (TT.MM.JJJJ)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile2[0].Zelle3[0]",
+          "type": "input",
+          "title": "69 – Geschlecht",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile2[0].Zelle4[0]",
+          "type": "input",
+          "title": "70 – Wer bezieht das Kindergeld (Familienname, Vorname)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile2[0].Zelle5[0]",
+          "type": "input",
+          "title": "71 – Bei welcher Familienkasse (Kindergeldnummer)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind6_3_kg",
+          "type": "section_header",
+          "title": "Kind 3",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile3[0].Zelle1[0]",
+          "type": "input",
+          "title": "72 – Vorname des Kindes (ggf. abweichender Familienname)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile3[0].Zelle2[0]",
+          "type": "date",
+          "title": "73 – Geburtsdatum (TT.MM.JJJJ)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile3[0].Zelle3[0]",
+          "type": "input",
+          "title": "74 – Geschlecht",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile3[0].Zelle4[0]",
+          "type": "input",
+          "title": "75 – Wer bezieht das Kindergeld (Familienname, Vorname)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile3[0].Zelle5[0]",
+          "type": "input",
+          "title": "76 – Bei welcher Familienkasse (Kindergeldnummer)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind6_4_kg",
+          "type": "section_header",
+          "title": "Kind 4",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile4[0].Zelle1[0]",
+          "type": "input",
+          "title": "77 – Vorname des Kindes (ggf. abweichender Familienname)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile4[0].Zelle2[0]",
+          "type": "date",
+          "title": "78 – Geburtsdatum (TT.MM.JJJJ)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile4[0].Zelle3[0]",
+          "type": "input",
+          "title": "79 – Geschlecht",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile4[0].Zelle4[0]",
+          "type": "input",
+          "title": "80 – Wer bezieht das Kindergeld (Familienname, Vorname)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile4[0].Zelle5[0]",
+          "type": "input",
+          "title": "81 – Bei welcher Familienkasse (Kindergeldnummer)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_kind6_5_kg",
+          "type": "section_header",
+          "title": "Kind 5",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile5[0].Zelle1[0]",
+          "type": "input",
+          "title": "82 – Vorname des Kindes (ggf. abweichender Familienname)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile5[0].Zelle2[0]",
+          "type": "date",
+          "title": "83 – Geburtsdatum (TT.MM.JJJJ)",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile5[0].Zelle3[0]",
+          "type": "input",
+          "title": "84 – Geschlecht",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile5[0].Zelle4[0]",
+          "type": "input",
+          "title": "85 – Wer bezieht das Kindergeld (Familienname, Vorname)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Punkt-6[0].Tabelle2-Zählkinder[0].Zeile5[0].Zelle5[0]",
+          "type": "input",
+          "title": "86 – Bei welcher Familienkasse (Kindergeldnummer)?",
+          "show_when": {
+            "field": "ui_rbtnZaehlkinder",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_unterschrift_kg",
+          "type": "section_header",
+          "title": "Unterschrift"
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Unterschrift-1[0].Datum-1[0]",
+          "type": "date",
+          "title": "87 – Datum (Unterschrift der antragstellenden Person)"
+        },
+        {
+          "name": "topmostSubform[0].Page2[0].Unterschrift-2[0].Datum-2[0]",
+          "type": "date",
+          "title": "88 – Datum (Unterschrift der unter Punkt 2 genannten Person)"
+        }
+      ]
+    }
+  ],
+  "pdfAssetPath": "kg1_antrag_kindergeld.pdf"
+}
