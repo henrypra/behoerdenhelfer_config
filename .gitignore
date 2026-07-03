@@ -5,6 +5,7 @@ build/
 
 # Generated output — deployed by CI, never checked in
 dist/
+published-config.json
 
 # IDE
 .idea/

@@ -22,17 +22,39 @@ jobs:
       - name: Validate content
         run: ./gradlew validate
 
+  # Publishes dist/ to GitHub Pages via the gh-pages branch. The copy is
+  # additive: files are only ever added on top of what the branch already
+  # holds, so published version folders and config/<config>.json snapshots
+  # survive forever. One commit per publish means latest.json flips atomically
+  # together with the content it points to. gh-pages is also the baseline for
+  # the version counter — the previously published manifest is restored as
+  # published-config.json before generating, so nothing needs to be committed
+  # back to main.
   publish:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: check
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: publish-gh-pages
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: site
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
       - uses: gradle/actions/setup-gradle@v4
+      - name: Restore published baseline from gh-pages
+        run: |
+          if [ -f site/latest.json ]; then
+            cp "site/$(jq -r .configPath site/latest.json)" published-config.json
+          fi
       - name: Generate dist
         run: ./gradlew generate
       - name: Upload dist artifact
@@ -40,14 +62,17 @@ jobs:
         with:
           name: dist
           path: dist/
-      # TODO: deploy dist/ to the static host once the target is decided (S3 /
-      # GitHub Pages / nginx). Requirements, see README:
-      #   - upload must be additive — never delete or rewrite already-published
-      #     version folders or config/<config>.json snapshots
-      #   - version folders + config/: Cache-Control: public, max-age=31536000, immutable
-      #   - latest.json: Cache-Control: no-cache, and upload it LAST (atomic flip)
-      #   - afterwards: commit dist/config/<config>.json back to the repo as
-      #     published-config.json so the config counter and version-bump check
-      #     have a baseline
-      - name: Deploy (stub)
-        run: echo "TODO deploy dist/ to static host"
+      - name: Publish to gh-pages
+        run: |
+          cp -R dist/. site/
+          touch site/.nojekyll
+          cd site
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Output identical to published state — nothing to publish."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publish config $(jq -r .config latest.json) from ${GITHUB_SHA::7}"
+          git push origin gh-pages

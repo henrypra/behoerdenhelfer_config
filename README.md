@@ -57,6 +57,11 @@ resolve, published paths stay immutable.
 
 ## CI
 
-PRs run lint, tests and `validate`. Merging to `main` generates and deploys `dist/`,
-then writes the deployed snapshot back to `published-config.json` — the baseline all
-versions are derived against.
+PRs run lint, tests and `validate`. Merging to `main` generates `dist/` and publishes
+it to GitHub Pages by committing it additively onto the `gh-pages` branch — files are
+only ever added, so published versions survive forever, and the single commit flips
+`latest.json` atomically. Before generating, CI restores the previously published
+manifest from `gh-pages` as `published-config.json` — the baseline all versions are
+derived against.
+
+Live at <https://henrypra.github.io/behoerdenhelfer_config/latest.json>.
