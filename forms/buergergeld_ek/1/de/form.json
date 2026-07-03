@@ -1,0 +1,507 @@
+{
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "A. Persönliche Daten & B. Person der BG & C. Einkommen",
+      "fields": [
+        {
+          "name": "section_header_A_ek",
+          "type": "section_header",
+          "title": "A. Persönliche Daten"
+        },
+        {
+          "name": "txtfPersonVorname",
+          "type": "input",
+          "title": "1 – Vorname",
+          "profile_key": "FIRST_NAME"
+        },
+        {
+          "name": "txtfPersonNachname",
+          "type": "input",
+          "title": "2 – Nachname",
+          "profile_key": "LAST_NAME"
+        },
+        {
+          "name": "datePersonGebDatum",
+          "type": "date",
+          "title": "3 – Geburtsdatum (TT.MM.JJJJ)",
+          "profile_key": "BIRTH_DATE"
+        },
+        {
+          "name": "txtfBGNr",
+          "type": "input",
+          "title": "4 – Nummer der Bedarfsgemeinschaft (falls vorhanden)"
+        },
+        {
+          "name": "section_header_B_ek",
+          "type": "section_header",
+          "title": "B. Person der Bedarfsgemeinschaft"
+        },
+        {
+          "name": "txtfBGVorname",
+          "type": "input",
+          "title": "5 – Vorname (Person, für die diese Anlage ausgefüllt wird)"
+        },
+        {
+          "name": "txtfBGNachname",
+          "type": "input",
+          "title": "6 – Nachname (Person, für die diese Anlage ausgefüllt wird)"
+        },
+        {
+          "name": "dateBGGebDatum",
+          "type": "date",
+          "title": "7 – Geburtsdatum (TT.MM.JJJJ) (Person der BG)"
+        },
+        {
+          "name": "section_header_C_ek",
+          "type": "section_header",
+          "title": "C. Einkommen"
+        },
+        {
+          "name": "rbtnEinkommen",
+          "type": "yesno",
+          "title": "8 – Hat die Person Einkommen aus Erwerbstätigkeit?",
+          "hints": [
+            23
+          ],
+          "yes_option_id": "683R",
+          "no_option_id": "679R"
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "C. Einkommen (Arbeitgeber & Einnahmen)",
+      "fields": [
+        {
+          "name": "txtfAGName",
+          "type": "input",
+          "title": "9 – Name der Arbeitgeberin/des Arbeitgebers"
+        },
+        {
+          "name": "txtfAGStr",
+          "type": "input",
+          "title": "10 – Straße (Arbeitgeber)"
+        },
+        {
+          "name": "txtfAGHausNr",
+          "type": "input",
+          "title": "11 – Hausnummer (Arbeitgeber)"
+        },
+        {
+          "name": "txtfAGPlz",
+          "type": "input",
+          "title": "12 – Postleitzahl (Arbeitgeber)"
+        },
+        {
+          "name": "txtfAGOrt",
+          "type": "input",
+          "title": "13 – Ort (Arbeitgeber)"
+        },
+        {
+          "name": "multi_einkommenZahlzeit",
+          "type": "radio",
+          "title": "14 – Wann erfolgt die Zahlung des Arbeitseinkommens?",
+          "children": [
+            {
+              "name": "chbxEinkommenMonat",
+              "type": "option",
+              "title": "Im laufenden Monat"
+            },
+            {
+              "name": "chbxEinkommenFolgemonat",
+              "type": "option",
+              "title": "Im Folgemonat"
+            }
+          ]
+        },
+        {
+          "name": "txtfAG2Name",
+          "type": "input",
+          "title": "15 – Name einer weiteren Arbeitgeberin/eines weiteren Arbeitgebers"
+        },
+        {
+          "name": "txtfAG2Str",
+          "type": "input",
+          "title": "16 – Straße (weitere Arbeitgeberin)"
+        },
+        {
+          "name": "txtfAG2HausNr",
+          "type": "input",
+          "title": "17 – Hausnummer (weitere Arbeitgeberin)"
+        },
+        {
+          "name": "txtfAG2Plz",
+          "type": "input",
+          "title": "18 – Postleitzahl (weitere Arbeitgeberin)"
+        },
+        {
+          "name": "txtfAG2Ort",
+          "type": "input",
+          "title": "19 – Ort (weitere Arbeitgeberin)"
+        },
+        {
+          "name": "multi_weitereEinkommenZahlzeit",
+          "type": "radio",
+          "title": "20 – Wann erfolgt die Zahlung (weitere Arbeitgeberin)?",
+          "children": [
+            {
+              "name": "chbxWeitereEinkommenMonat",
+              "type": "option",
+              "title": "Im laufenden Monat"
+            },
+            {
+              "name": "chbxWeitereEinkommenFolgemonat",
+              "type": "option",
+              "title": "Im Folgemonat"
+            }
+          ]
+        },
+        {
+          "name": "rbtnEinkommenFreiberuflich",
+          "type": "yesno",
+          "title": "21 – Übt die Person eine selbständige oder freiberufliche Tätigkeit aus?",
+          "yes_option_id": "376R",
+          "no_option_id": "372R"
+        },
+        {
+          "name": "rbtnAufwandEhrenamtlich",
+          "type": "yesno",
+          "title": "22 – Erhält die Person Aufwandsentschädigungen aus einer gemeinnützigen oder ehrenamtlichen Tätigkeit?",
+          "hints": [
+            24
+          ],
+          "yes_option_id": "361R",
+          "no_option_id": "365R"
+        },
+        {
+          "name": "multi_einnahmen",
+          "type": "multiselect",
+          "title": "23 – Welche weiteren Einnahmen hat die Person?",
+          "hints": [
+            20
+          ],
+          "children": [
+            {
+              "name": "chbxEinnahmeWohngeld",
+              "type": "option",
+              "title": "Wohngeld"
+            },
+            {
+              "name": "chbxEinnahmeArbeitslosengeld",
+              "type": "option",
+              "title": "Arbeitslosengeld (Agentur für Arbeit)"
+            },
+            {
+              "name": "chbxEinnahmeKrankengeld",
+              "type": "option",
+              "title": "Krankengeld"
+            },
+            {
+              "name": "chbxEinnahmeÜbergangsgeld",
+              "type": "option",
+              "title": "Übergangsgeld"
+            },
+            {
+              "name": "chbxEinnahmeKurzarbeitergeld",
+              "type": "option",
+              "title": "Kurzarbeitergeld"
+            },
+            {
+              "name": "chbxEinnahmeInsolvenzgeld",
+              "type": "option",
+              "title": "Insolvenzgeld"
+            },
+            {
+              "name": "chbxEinnahmeElterngeld",
+              "type": "option",
+              "title": "Elterngeld"
+            },
+            {
+              "name": "chbxEinnahmeKindergeld",
+              "type": "option",
+              "title": "Kindergeld"
+            },
+            {
+              "name": "chbxEinnahmeKinderzuschlag",
+              "type": "option",
+              "title": "Kinderzuschlag"
+            },
+            {
+              "name": "chbxEinnahmeUnterhalt",
+              "type": "option",
+              "title": "Unterhalt"
+            },
+            {
+              "name": "chbxEinnahmeUnterhaltsvorschuss",
+              "type": "option",
+              "title": "Unterhaltsvorschuss"
+            },
+            {
+              "name": "chbxEinnahmeBAfoeG",
+              "type": "option",
+              "title": "BAföG (Leistung nach dem Bundesausbildungsförderungsgesetz)"
+            },
+            {
+              "name": "chbxEinnahmeBAB",
+              "type": "option",
+              "title": "Berufsausbildungsbeihilfe (BAB)"
+            },
+            {
+              "name": "chbxEinnahmeAusbildungsgeld",
+              "type": "option",
+              "title": "Ausbildungsgeld"
+            },
+            {
+              "name": "chbxEinnahmeRenten",
+              "type": "option",
+              "title": "Renten"
+            },
+            {
+              "name": "chbxEinnahmeVermietung",
+              "type": "option",
+              "title": "Einnahmen aus Vermietung, Untervermietung oder Verpachtung"
+            },
+            {
+              "name": "chbxEinnahmeSozialhilfe",
+              "type": "option",
+              "title": "Sozialhilfe"
+            },
+            {
+              "name": "chbxEinnahmeSachbezuege",
+              "type": "option",
+              "title": "Sachbezüge (z. B. kostenfreie Verpflegung)"
+            },
+            {
+              "name": "chbxEinnahmeDigital",
+              "type": "option",
+              "title": "Einnahmen aus digitalen Plattformen"
+            },
+            {
+              "name": "chbxEinnahmeSonstige",
+              "type": "option",
+              "title": "Sonstige und/oder unregelmäßige Einnahmen"
+            },
+            {
+              "name": "chbxEinnahmeKeine",
+              "type": "option",
+              "title": "Keine der Einnahmen",
+              "exclusive": true
+            }
+          ]
+        },
+        {
+          "name": "txtfEinnahmeAndere",
+          "type": "input",
+          "title": "23 – Sonstige Einnahmen (Beschreibung)",
+          "show_when": {
+            "field": "chbxEinnahmeSonstige",
+            "value": "true"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "D. Werbungskosten/Absetzungen",
+      "fields": [
+        {
+          "name": "section_header_D_ek",
+          "type": "section_header",
+          "title": "D. Werbungskosten/Absetzungen"
+        },
+        {
+          "name": "rbtnAusgabeFahrt",
+          "type": "yesno",
+          "title": "24 – Entstehen Ausgaben für die Fahrten zwischen Wohnung und Arbeitsstätte?",
+          "hints": [
+            25
+          ],
+          "yes_option_id": "576R",
+          "no_option_id": "572R"
+        },
+        {
+          "name": "txtfArbeitsstaetteStr",
+          "type": "input",
+          "title": "25 – Straße (Arbeitsstätte)",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfArbeitsstaetteHausNr",
+          "type": "input",
+          "title": "26 – Hausnummer (Arbeitsstätte)",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfArbeitsstaettePlz",
+          "type": "input",
+          "title": "27 – Postleitzahl (Arbeitsstätte)",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfArbeitsstaetteOrt",
+          "type": "input",
+          "title": "28 – Ort (Arbeitsstätte)",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfArbeitsstaetteStrecke",
+          "type": "input",
+          "title": "29 – Kürzeste Strecke zwischen Wohnung und Arbeitsstätte in km",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfArbeitsstaetteFahrtWoche",
+          "type": "input",
+          "title": "30 – An wie vielen Tagen je Woche wird die Strecke gefahren?",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "multi_fahrtmittel",
+          "type": "multiselect",
+          "title": "31 – Wie wird die Strecke zurückgelegt?",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          },
+          "children": [
+            {
+              "name": "chbxArbeitsstaetteFahrtKFZ",
+              "type": "option",
+              "title": "Mit einem Kraftfahrzeug"
+            },
+            {
+              "name": "chbxArbeitsstaetteFahrtOeffis",
+              "type": "option",
+              "title": "Mit öffentlichen Verkehrsmitteln"
+            },
+            {
+              "name": "chbxArbeitsstaetteFahrtSonstiges",
+              "type": "option",
+              "title": "Mit sonstigen Fahrzeugen (z. B. Fahrrad, E-Roller)"
+            }
+          ]
+        },
+        {
+          "name": "txtfArbeitsstaetteFahrtSonstiges",
+          "type": "input",
+          "title": "31 – Sonstiges Fahrtmittel (Beschreibung)",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnFahrkostenZuschuss",
+          "type": "yesno",
+          "title": "32 – Werden Zuschüsse zu den Fahrtkosten gezahlt?",
+          "yes_option_id": "550R",
+          "no_option_id": "546R",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnAusgabe",
+          "type": "yesno",
+          "title": "33 – Gibt es weitere Ausgaben aus einem Arbeitsverhältnis, die nicht vom Arbeitgeber erstattet werden?",
+          "yes_option_id": "544R",
+          "no_option_id": "540R",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "title": "D. (Forts.) Versicherungen & E. Unterschrift",
+      "fields": [
+        {
+          "name": "multi_versicherungen",
+          "type": "multiselect",
+          "title": "34 – Werden Beiträge zu folgenden Versicherungen gezahlt?",
+          "children": [
+            {
+              "name": "chbxVersicherungKfz",
+              "type": "option",
+              "title": "Kraftfahrzeug-Haftpflichtversicherung (ohne Teilkasko, Vollkasko, Schutzbrief)"
+            },
+            {
+              "name": "chbxVersicherungGesetzlich",
+              "type": "option",
+              "title": "Weitere gesetzlich vorgeschriebene Versicherungen"
+            },
+            {
+              "name": "chbxVersicherungAltersvorsorge",
+              "type": "option",
+              "title": "Beiträge zur geförderten Altersvorsorge nach § 82 EStG (z. B. Riester-Rente)"
+            },
+            {
+              "name": "chbxVersicherungPrivat",
+              "type": "option",
+              "title": "Private Versicherung von Kindern unter 18 Jahren"
+            }
+          ]
+        },
+        {
+          "name": "rbtnKind",
+          "type": "yesno",
+          "title": "35 – Hat die Person mindestens ein Kind unter 18 Jahren, welches nicht bei der Person wohnt?",
+          "yes_option_id": "331R",
+          "no_option_id": "327R"
+        },
+        {
+          "name": "rbtnUnterhaltszahlung",
+          "type": "yesno",
+          "title": "36 – Zahlt die Person Unterhalt?",
+          "yes_option_id": "325R",
+          "no_option_id": "321R"
+        },
+        {
+          "name": "rbtnAusbildungsfoerderung",
+          "type": "yesno",
+          "title": "37 – Wird bei der Einnahme aus Ausbildungsförderung für ein Kind (BAB, Ausbildungsgeld, BAföG) Einkommen der Eltern berücksichtigt?",
+          "yes_option_id": "319R",
+          "no_option_id": "315R"
+        },
+        {
+          "name": "section_header_E_ek",
+          "type": "section_header",
+          "title": "E. Unterschrift"
+        },
+        {
+          "name": "dateUnterschriftPerson",
+          "type": "date",
+          "title": "38 – Datum (Unterschrift antragstellende Person)"
+        },
+        {
+          "name": "dateUnterschriftBetreuer",
+          "type": "date",
+          "title": "40 – Datum (Unterschrift Betreuerin/Betreuer/Vormund)"
+        }
+      ]
+    }
+  ],
+  "pdfAssetPath": "anlage_ek.pdf"
+}
