@@ -7,7 +7,7 @@
         {
           "name": "section_header_allgemein_kg",
           "type": "section_header",
-          "title": "Allgemeine Angaben"
+          "title": "Allgemeine Angaben: TEST IGNORE"
         },
         {
           "name": "topmostSubform[0].Seite1[0].#area[0].Kopfzeile[0].KG-Nr[0]",
