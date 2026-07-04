@@ -1,0 +1,934 @@
+{
+  "date": "04/2026",
+  "pdfAssetPath": "anlage_ha.pdf",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "A. Personal details & B. Nationality",
+      "fields": [
+        {
+          "name": "section_header_A_ha",
+          "type": "section_header",
+          "title": "A. Personal details"
+        },
+        {
+          "name": "txtfPersonVorname",
+          "type": "input",
+          "title": "1 – First name",
+          "profile_key": "FIRST_NAME"
+        },
+        {
+          "name": "txtfPersonNachname",
+          "type": "input",
+          "title": "2 – Last name",
+          "profile_key": "LAST_NAME"
+        },
+        {
+          "name": "datePersonGebDatum",
+          "type": "date",
+          "title": "3 – Date of birth (DD.MM.YYYY)",
+          "profile_key": "BIRTH_DATE"
+        },
+        {
+          "name": "txtfPersonGebName",
+          "type": "input",
+          "title": "4 – Name at birth/former name"
+        },
+        {
+          "name": "txtfPersonGebOrt",
+          "type": "input",
+          "title": "5 – Place of birth",
+          "profile_key": "BIRTH_PLACE"
+        },
+        {
+          "name": "txtfPersonGebLand",
+          "type": "input",
+          "title": "6 – Country of birth"
+        },
+        {
+          "name": "txtfPersonStaat",
+          "type": "input",
+          "title": "7 – Nationality"
+        },
+        {
+          "name": "radio_gender",
+          "type": "radio",
+          "title": "8 – Gender",
+          "children": [
+            {
+              "name": "chbxMaennlich",
+              "type": "option",
+              "title": "male"
+            },
+            {
+              "name": "chbxWeiblich",
+              "type": "option",
+              "title": "female"
+            },
+            {
+              "name": "chbxDivers",
+              "type": "option",
+              "title": "diverse"
+            },
+            {
+              "name": "chbxKeineAngabe",
+              "type": "option",
+              "title": "not specified"
+            }
+          ]
+        },
+        {
+          "name": "txtfPersonStr",
+          "type": "input",
+          "title": "9 – Street",
+          "profile_key": "STREET"
+        },
+        {
+          "name": "txtfPersonHausNr",
+          "type": "input",
+          "title": "10 – House number",
+          "profile_key": "HOUSE_NUMBER"
+        },
+        {
+          "name": "txtfPersonPlz",
+          "type": "input",
+          "title": "11 – Postal code",
+          "profile_key": "POSTAL_CODE"
+        },
+        {
+          "name": "txtfPersonOrt",
+          "type": "input",
+          "title": "12 – Place of residence",
+          "profile_key": "CITY"
+        },
+        {
+          "name": "txtfPersonPostfach",
+          "type": "input",
+          "title": "13 – P.O. box address"
+        },
+        {
+          "name": "txtfPersonTel",
+          "type": "input",
+          "title": "14 – Phone (optional)"
+        },
+        {
+          "name": "rbtnWohnsitz",
+          "type": "yesno",
+          "title": "15 – Do you have no fixed place of residence?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtareaWohnhaft",
+          "type": "input",
+          "title": "16 – If applicable, residing with (name and address of person/institution)"
+        },
+        {
+          "name": "txtfKonto",
+          "type": "input",
+          "title": "17 – Account holder"
+        },
+        {
+          "name": "txtfKontoIBAN",
+          "type": "input",
+          "title": "18 – IBAN (22 digits)",
+          "hints": [
+            1
+          ]
+        },
+        {
+          "name": "txtareaKontoGrund",
+          "type": "input",
+          "title": "19 – If you cannot provide bank details, why you cannot open a basic account",
+          "hints": [
+            1
+          ]
+        },
+        {
+          "name": "radio_rvnummer",
+          "type": "radio",
+          "title": "20 – Details of your pension/social insurance number",
+          "children": [
+            {
+              "name": "chbxRVNrVorhanden",
+              "type": "option",
+              "title": "It exists and is:"
+            },
+            {
+              "name": "chbxRVNrKeine",
+              "type": "option",
+              "title": "It does not exist."
+            },
+            {
+              "name": "chbxRVNrBeantragt",
+              "type": "option",
+              "title": "It has been applied for."
+            }
+          ],
+          "hints": [
+            2
+          ]
+        },
+        {
+          "name": "txtfRVNr",
+          "type": "input",
+          "title": "20 – Pension/social insurance number (please specify)",
+          "show_when": {
+            "field": "radio_rvnummer",
+            "value": "chbxRVNrVorhanden"
+          }
+        },
+        {
+          "name": "numfStIDNr",
+          "type": "input",
+          "title": "21 – (Tax) identification number",
+          "hints": [
+            2
+          ]
+        },
+        {
+          "name": "rbtnBetreuer",
+          "type": "yesno",
+          "title": "22 – Do you have a legally appointed carer, authorised representative or guardian?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_header_B_ha",
+          "type": "section_header",
+          "title": "B. Nationality"
+        },
+        {
+          "name": "rbtnAufenthalt",
+          "type": "yesno",
+          "title": "23 – Do you have a valid residence permit?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "rbtnAsylbLG",
+          "type": "yesno",
+          "title": "24 – Do you receive benefits under the Asylum Seekers Benefits Act?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            9
+          ]
+        },
+        {
+          "name": "dateAsylbLG",
+          "type": "date",
+          "title": "25 – Until when do you receive asylum seeker benefits?",
+          "show_when": {
+            "field": "rbtnAsylbLG",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAZRNr",
+          "type": "input",
+          "title": "26 – Central Register of Foreigners number (if available)"
+        },
+        {
+          "name": "rbtnKostenUebernahme",
+          "type": "yesno",
+          "title": "27 – Has anyone agreed to cover all costs during your stay (formal obligation)?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            3
+          ]
+        },
+        {
+          "name": "txtfNatIDNr",
+          "type": "input",
+          "title": "28 – National personal identification number of your country of origin (if available)",
+          "hints": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "C. Application & D. Current life situation",
+      "fields": [
+        {
+          "name": "section_header_C_ha",
+          "type": "section_header",
+          "title": "C. Application"
+        },
+        {
+          "name": "radio_antrag_zeit",
+          "type": "radio",
+          "title": "29 – From which date would you like to apply for Citizen's benefit?",
+          "children": [
+            {
+              "name": "chbxBUEGSofort",
+              "type": "option",
+              "title": "immediately"
+            },
+            {
+              "name": "chbxBUEGSpaeter",
+              "type": "option",
+              "title": "from a later date"
+            }
+          ],
+          "hints": [
+            4
+          ]
+        },
+        {
+          "name": "dateBUEGSpaeter",
+          "type": "date",
+          "title": "30 – Later date (DD.MM.YYYY)",
+          "show_when": {
+            "field": "radio_antrag_zeit",
+            "value": "chbxBUEGSpaeter"
+          }
+        },
+        {
+          "name": "dateEinreise",
+          "type": "date",
+          "title": "31 – Date of your entry into Germany (if applicable)"
+        },
+        {
+          "name": "section_header_D_ha",
+          "type": "section_header",
+          "title": "D. Current life situation"
+        },
+        {
+          "name": "radio_famstand",
+          "type": "radio",
+          "title": "32 – Marital status",
+          "children": [
+            {
+              "name": "chbxFamStandLedig",
+              "type": "option",
+              "title": "single"
+            },
+            {
+              "name": "chbxFamStandVerheiratet",
+              "type": "option",
+              "title": "married"
+            },
+            {
+              "name": "chbxFamStandVerwitwet",
+              "type": "option",
+              "title": "widowed"
+            },
+            {
+              "name": "chbxFamStandEingetragen",
+              "type": "option",
+              "title": "registered civil partnership"
+            },
+            {
+              "name": "chbxFamStandGetrennt",
+              "type": "option",
+              "title": "permanently separated"
+            },
+            {
+              "name": "chbxFamStandGeschieden",
+              "type": "option",
+              "title": "divorced"
+            },
+            {
+              "name": "chbxFamStandAufgehoben",
+              "type": "option",
+              "title": "dissolved civil partnership"
+            }
+          ]
+        },
+        {
+          "name": "dateGetrennt",
+          "type": "date",
+          "title": "33 – Since when permanently separated/divorced/dissolved?"
+        },
+        {
+          "name": "rtbnErwerbsfaehig",
+          "type": "yesno",
+          "title": "34 – Are you able to work?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            5
+          ]
+        },
+        {
+          "name": "rbtnAlleinerziehend",
+          "type": "yesno",
+          "title": "35 – Are you a single parent?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "rbtnSchwanger",
+          "type": "yesno",
+          "title": "36 – Are you pregnant?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            11
+          ]
+        },
+        {
+          "name": "dateEntbindung",
+          "type": "date",
+          "title": "37 – Expected due date",
+          "show_when": {
+            "field": "rbtnSchwanger",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnElternAusserhalb",
+          "type": "yesno",
+          "title": "38 – Are you under 25 and does at least one parent live outside the benefit community?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            8
+          ]
+        },
+        {
+          "name": "rbtnSchueler",
+          "type": "yesno",
+          "title": "39 – Are you a pupil, student or trainee?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            6
+          ]
+        },
+        {
+          "name": "rbtnKostenBuecher",
+          "type": "yesno",
+          "title": "40 – Are there costs for school books/workbooks?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            7
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "D. (cont.) – Benefits, health & accommodation",
+      "fields": [
+        {
+          "name": "rbtnAusbildungUneterkunft",
+          "type": "yesno",
+          "title": "41 – Are you accommodated away from home during your training?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            6
+          ]
+        },
+        {
+          "name": "rbtnLeistungAndere",
+          "type": "yesno",
+          "title": "42 – Have you already applied for other benefits or do you intend to?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "multi_leistungen",
+          "type": "multiselect",
+          "title": "43 – Which other benefits?",
+          "show_when": {
+            "field": "rbtnLeistungAndere",
+            "value": "yes"
+          },
+          "children": [
+            {
+              "name": "chbxLeistungBafoeg",
+              "type": "option",
+              "title": "BAföG (student grant)"
+            },
+            {
+              "name": "chbxLeistungBAB",
+              "type": "option",
+              "title": "BAB (vocational training allowance)"
+            },
+            {
+              "name": "chbxLeistungWohngeld",
+              "type": "option",
+              "title": "Housing benefit"
+            },
+            {
+              "name": "chbxLeistungArbeitslosengeld",
+              "type": "option",
+              "title": "Unemployment benefit"
+            },
+            {
+              "name": "chbxLeistungRente",
+              "type": "option",
+              "title": "Pension"
+            },
+            {
+              "name": "chbxLeistungKRG",
+              "type": "option",
+              "title": "Sickness benefit"
+            },
+            {
+              "name": "chbxLeistungKG",
+              "type": "option",
+              "title": "Child benefit"
+            },
+            {
+              "name": "chbxLeistungKIZ",
+              "type": "option",
+              "title": "Child supplement"
+            },
+            {
+              "name": "chbxLeistungSonstiges",
+              "type": "option",
+              "title": "Other"
+            }
+          ]
+        },
+        {
+          "name": "txtfLeistungSonstiges",
+          "type": "input",
+          "title": "43 – Other benefit (description)",
+          "show_when": {
+            "field": "chbxLeistungSonstiges",
+            "value": "true"
+          }
+        },
+        {
+          "name": "rbtnMEB",
+          "type": "yesno",
+          "title": "44 – Do you require a costly diet for medical reasons?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            12
+          ]
+        },
+        {
+          "name": "rbtnBehinderung",
+          "type": "yesno",
+          "title": "45 – Do you have a disability?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "rbtnLeistungTeilhabe",
+          "type": "yesno",
+          "title": "46 – Do you receive benefits for participation in working life (§ 49 SGB IX) or similar?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "rbtnBB",
+          "type": "yesno",
+          "title": "47 – Do you have an unavoidable special need?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            13
+          ]
+        },
+        {
+          "name": "rbtnStationaer",
+          "type": "yesno",
+          "title": "48 – Are you (soon) in a residential institution?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            14
+          ]
+        },
+        {
+          "name": "txtfStationaerArt",
+          "type": "input",
+          "title": "49 – Type of residential institution",
+          "show_when": {
+            "field": "rbtnStationaer",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateStationaerVon",
+          "type": "date",
+          "title": "50 – Duration of stay from",
+          "show_when": {
+            "field": "rbtnStationaer",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateStationaerBis",
+          "type": "date",
+          "title": "50 – Duration of stay to",
+          "show_when": {
+            "field": "rbtnStationaer",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "title": "E. Information about your previous life situation",
+      "fields": [
+        {
+          "name": "section_header_E_ha",
+          "type": "section_header",
+          "title": "E. Information about your previous life situation"
+        },
+        {
+          "name": "rbtnBUEG",
+          "type": "yesno",
+          "title": "51 – Have you already applied for/received Citizen's benefit/social assistance within the last three years?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfLeistungArt",
+          "type": "input",
+          "title": "52 – Type of benefit",
+          "show_when": {
+            "field": "rbtnBUEG",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateLeistungVon",
+          "type": "date",
+          "title": "53 – Period from",
+          "show_when": {
+            "field": "rbtnBUEG",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateLeistungBis",
+          "type": "date",
+          "title": "53 – Period to",
+          "show_when": {
+            "field": "rbtnBUEG",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfTraegerName",
+          "type": "input",
+          "title": "54 – Name of the benefit provider",
+          "show_when": {
+            "field": "rbtnBUEG",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfTraegerStr",
+          "type": "input",
+          "title": "55 – Street (benefit provider)",
+          "show_when": {
+            "field": "rbtnBUEG",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfTraegerHausNr",
+          "type": "input",
+          "title": "56 – House number (benefit provider)",
+          "show_when": {
+            "field": "rbtnBUEG",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfTraegerPlz",
+          "type": "input",
+          "title": "57 – Postal code (benefit provider)",
+          "show_when": {
+            "field": "rbtnBUEG",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfTraegerOrt",
+          "type": "input",
+          "title": "58 – City (benefit provider)",
+          "show_when": {
+            "field": "rbtnBUEG",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnAngestellt",
+          "type": "yesno",
+          "title": "59 – Were you employed by an employer?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "dateBeschaeftigtVon",
+          "type": "date",
+          "title": "60 – Period of employment from",
+          "show_when": {
+            "field": "rbtnAngestellt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateBeschaeftigtBis",
+          "type": "date",
+          "title": "60 – Period of employment to",
+          "show_when": {
+            "field": "rbtnAngestellt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateBeschaeftigt2Von",
+          "type": "date",
+          "title": "60 – Second period from",
+          "show_when": {
+            "field": "rbtnAngestellt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateBeschaeftigt2Bis",
+          "type": "date",
+          "title": "60 – Second period to",
+          "show_when": {
+            "field": "rbtnAngestellt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnLohnanspruch",
+          "type": "yesno",
+          "title": "61 – Do you have outstanding wage claims?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            10
+          ]
+        },
+        {
+          "name": "txtfAGName",
+          "type": "input",
+          "title": "62 – Name of (former) employer",
+          "show_when": {
+            "field": "rbtnLohnanspruch",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAGStr",
+          "type": "input",
+          "title": "63 – Street (employer)",
+          "show_when": {
+            "field": "rbtnLohnanspruch",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAGHausNr",
+          "type": "input",
+          "title": "64 – House number (employer)",
+          "show_when": {
+            "field": "rbtnLohnanspruch",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAGPlz",
+          "type": "input",
+          "title": "65 – Postal code (employer)",
+          "show_when": {
+            "field": "rbtnLohnanspruch",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAGOrt",
+          "type": "input",
+          "title": "66 – City (employer)",
+          "show_when": {
+            "field": "rbtnLohnanspruch",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnSelbstaendig",
+          "type": "yesno",
+          "title": "67 – Were you self-employed/working freelance?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "rbtnEntgeltersatz",
+          "type": "yesno",
+          "title": "68 – Did you receive wage replacement benefits?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfEntgeltersatz",
+          "type": "input",
+          "title": "69 – Type of wage replacement benefit",
+          "show_when": {
+            "field": "rbtnEntgeltersatz",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateEntgeltersatzVon",
+          "type": "date",
+          "title": "70 – Period from",
+          "show_when": {
+            "field": "rbtnEntgeltersatz",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateEntgeltersatzBis",
+          "type": "date",
+          "title": "70 – Period to",
+          "show_when": {
+            "field": "rbtnEntgeltersatz",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 5,
+      "title": "E. (cont.) & F. Health insurance & G. Housing",
+      "fields": [
+        {
+          "name": "rbtnWehrdienst",
+          "type": "yesno",
+          "title": "71 – Did you perform military or voluntary service?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "rbtnPflege",
+          "type": "yesno",
+          "title": "72 – Did you care for relatives?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtareaLebensunterhalt",
+          "type": "input",
+          "title": "73 – How did you support yourself? (if none of the above applies)"
+        },
+        {
+          "name": "rbtnAnspruchDritte",
+          "type": "yesno",
+          "title": "74 – Do you have a claim against third parties?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            10
+          ]
+        },
+        {
+          "name": "rbtnSchadenDritte",
+          "type": "yesno",
+          "title": "75 – Did you suffer an accident or health damage caused by a third party?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_header_F_ha",
+          "type": "section_header",
+          "title": "F. Health insurance"
+        },
+        {
+          "name": "rbtnKVPV",
+          "type": "yesno",
+          "title": "76 – Are/were you most recently covered by statutory health and long-term care insurance as a family member or compulsorily insured?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            15
+          ]
+        },
+        {
+          "name": "txtfKV",
+          "type": "input",
+          "title": "77 – Name of the health insurance fund"
+        },
+        {
+          "name": "rbtnPKV",
+          "type": "yesno",
+          "title": "78 – Are you privately insured, voluntarily insured under the statutory scheme, or uninsured?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_header_G_ha",
+          "type": "section_header",
+          "title": "G. Housing"
+        },
+        {
+          "name": "rbtnWohnsituation",
+          "type": "yesno",
+          "title": "79 – Do you live alone?",
+          "yes_option_id": "0",
+          "no_option_id": "1",
+          "hints": [
+            8,
+            16,
+            17
+          ]
+        },
+        {
+          "name": "multi_wohnen",
+          "type": "multiselect",
+          "title": "80 – Who else lives with you?",
+          "children": [
+            {
+              "name": "chbxWohnenEhegatte",
+              "type": "option",
+              "title": "Spouse/registered civil partner/partner (marriage-like community)"
+            },
+            {
+              "name": "chbxWohnenKind",
+              "type": "option",
+              "title": "Unmarried children aged 15 to 24"
+            },
+            {
+              "name": "chbxWohnenKindU15",
+              "type": "option",
+              "title": "Children under 15"
+            },
+            {
+              "name": "chbxWohnenEltern",
+              "type": "option",
+              "title": "Parents or one parent"
+            },
+            {
+              "name": "chbxWohnenVerwandte",
+              "type": "option",
+              "title": "Other relatives or in-laws"
+            },
+            {
+              "name": "chbxWohnenSonstige",
+              "type": "option",
+              "title": "Other persons"
+            }
+          ]
+        },
+        {
+          "name": "rbtnBedarfUnterkunft",
+          "type": "yesno",
+          "title": "81 – Do you have needs for accommodation and heating?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        }
+      ]
+    }
+  ]
+}

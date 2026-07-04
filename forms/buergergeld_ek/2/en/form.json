@@ -1,0 +1,508 @@
+{
+  "date": "04/2026",
+  "pdfAssetPath": "anlage_ek.pdf",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "A. Personal details & B. Person of the benefit community & C. Income",
+      "fields": [
+        {
+          "name": "section_header_A_ek",
+          "type": "section_header",
+          "title": "A. Personal details"
+        },
+        {
+          "name": "txtfPersonVorname",
+          "type": "input",
+          "title": "1 – First name",
+          "profile_key": "FIRST_NAME"
+        },
+        {
+          "name": "txtfPersonNachname",
+          "type": "input",
+          "title": "2 – Last name",
+          "profile_key": "LAST_NAME"
+        },
+        {
+          "name": "datePersonGebDatum",
+          "type": "date",
+          "title": "3 – Date of birth (DD.MM.YYYY)",
+          "profile_key": "BIRTH_DATE"
+        },
+        {
+          "name": "txtfBGNr",
+          "type": "input",
+          "title": "4 – Benefit community number (if available)"
+        },
+        {
+          "name": "section_header_B_ek",
+          "type": "section_header",
+          "title": "B. Person of the benefit community"
+        },
+        {
+          "name": "txtfBGVorname",
+          "type": "input",
+          "title": "5 – First name (person this annex is filled out for)"
+        },
+        {
+          "name": "txtfBGNachname",
+          "type": "input",
+          "title": "6 – Last name (person this annex is filled out for)"
+        },
+        {
+          "name": "dateBGGebDatum",
+          "type": "date",
+          "title": "7 – Date of birth (DD.MM.YYYY) (person of the benefit community)"
+        },
+        {
+          "name": "section_header_C_ek",
+          "type": "section_header",
+          "title": "C. Income"
+        },
+        {
+          "name": "rbtnEinkommen",
+          "type": "yesno",
+          "title": "8 – Does the person have income from employment?",
+          "hints": [
+            23
+          ],
+          "yes_option_id": "683R",
+          "no_option_id": "679R"
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "C. Income (employer & earnings)",
+      "fields": [
+        {
+          "name": "txtfAGName",
+          "type": "input",
+          "title": "9 – Name of the employer"
+        },
+        {
+          "name": "txtfAGStr",
+          "type": "input",
+          "title": "10 – Street (employer)"
+        },
+        {
+          "name": "txtfAGHausNr",
+          "type": "input",
+          "title": "11 – House number (employer)"
+        },
+        {
+          "name": "txtfAGPlz",
+          "type": "input",
+          "title": "12 – Postal code (employer)"
+        },
+        {
+          "name": "txtfAGOrt",
+          "type": "input",
+          "title": "13 – City (employer)"
+        },
+        {
+          "name": "multi_einkommenZahlzeit",
+          "type": "radio",
+          "title": "14 – When is the employment income paid?",
+          "children": [
+            {
+              "name": "chbxEinkommenMonat",
+              "type": "option",
+              "title": "In the current month"
+            },
+            {
+              "name": "chbxEinkommenFolgemonat",
+              "type": "option",
+              "title": "In the following month"
+            }
+          ]
+        },
+        {
+          "name": "txtfAG2Name",
+          "type": "input",
+          "title": "15 – Name of an additional employer"
+        },
+        {
+          "name": "txtfAG2Str",
+          "type": "input",
+          "title": "16 – Street (additional employer)"
+        },
+        {
+          "name": "txtfAG2HausNr",
+          "type": "input",
+          "title": "17 – House number (additional employer)"
+        },
+        {
+          "name": "txtfAG2Plz",
+          "type": "input",
+          "title": "18 – Postal code (additional employer)"
+        },
+        {
+          "name": "txtfAG2Ort",
+          "type": "input",
+          "title": "19 – City (additional employer)"
+        },
+        {
+          "name": "multi_weitereEinkommenZahlzeit",
+          "type": "radio",
+          "title": "20 – When is the payment made (additional employer)?",
+          "children": [
+            {
+              "name": "chbxWeitereEinkommenMonat",
+              "type": "option",
+              "title": "In the current month"
+            },
+            {
+              "name": "chbxWeitereEinkommenFolgemonat",
+              "type": "option",
+              "title": "In the following month"
+            }
+          ]
+        },
+        {
+          "name": "rbtnEinkommenFreiberuflich",
+          "type": "yesno",
+          "title": "21 – Does the person carry out a self-employed or freelance activity?",
+          "yes_option_id": "376R",
+          "no_option_id": "372R"
+        },
+        {
+          "name": "rbtnAufwandEhrenamtlich",
+          "type": "yesno",
+          "title": "22 – Does the person receive expense allowances from a charitable or voluntary activity?",
+          "hints": [
+            24
+          ],
+          "yes_option_id": "361R",
+          "no_option_id": "365R"
+        },
+        {
+          "name": "multi_einnahmen",
+          "type": "multiselect",
+          "title": "23 – What other income does the person have?",
+          "hints": [
+            20
+          ],
+          "children": [
+            {
+              "name": "chbxEinnahmeWohngeld",
+              "type": "option",
+              "title": "Housing benefit"
+            },
+            {
+              "name": "chbxEinnahmeArbeitslosengeld",
+              "type": "option",
+              "title": "Unemployment benefit (Employment Agency)"
+            },
+            {
+              "name": "chbxEinnahmeKrankengeld",
+              "type": "option",
+              "title": "Sickness benefit"
+            },
+            {
+              "name": "chbxEinnahmeÜbergangsgeld",
+              "type": "option",
+              "title": "Transitional allowance"
+            },
+            {
+              "name": "chbxEinnahmeKurzarbeitergeld",
+              "type": "option",
+              "title": "Short-time work allowance"
+            },
+            {
+              "name": "chbxEinnahmeInsolvenzgeld",
+              "type": "option",
+              "title": "Insolvency benefit"
+            },
+            {
+              "name": "chbxEinnahmeElterngeld",
+              "type": "option",
+              "title": "Parental allowance"
+            },
+            {
+              "name": "chbxEinnahmeKindergeld",
+              "type": "option",
+              "title": "Child benefit"
+            },
+            {
+              "name": "chbxEinnahmeKinderzuschlag",
+              "type": "option",
+              "title": "Child supplement"
+            },
+            {
+              "name": "chbxEinnahmeUnterhalt",
+              "type": "option",
+              "title": "Maintenance"
+            },
+            {
+              "name": "chbxEinnahmeUnterhaltsvorschuss",
+              "type": "option",
+              "title": "Advance maintenance payment"
+            },
+            {
+              "name": "chbxEinnahmeBAfoeG",
+              "type": "option",
+              "title": "BAföG (benefit under the Federal Training Assistance Act)"
+            },
+            {
+              "name": "chbxEinnahmeBAB",
+              "type": "option",
+              "title": "Vocational training allowance (BAB)"
+            },
+            {
+              "name": "chbxEinnahmeAusbildungsgeld",
+              "type": "option",
+              "title": "Training allowance"
+            },
+            {
+              "name": "chbxEinnahmeRenten",
+              "type": "option",
+              "title": "Pensions"
+            },
+            {
+              "name": "chbxEinnahmeVermietung",
+              "type": "option",
+              "title": "Income from renting, subletting or leasing"
+            },
+            {
+              "name": "chbxEinnahmeSozialhilfe",
+              "type": "option",
+              "title": "Social assistance"
+            },
+            {
+              "name": "chbxEinnahmeSachbezuege",
+              "type": "option",
+              "title": "Benefits in kind (e.g. free meals)"
+            },
+            {
+              "name": "chbxEinnahmeDigital",
+              "type": "option",
+              "title": "Income from digital platforms"
+            },
+            {
+              "name": "chbxEinnahmeSonstige",
+              "type": "option",
+              "title": "Other and/or irregular income"
+            },
+            {
+              "name": "chbxEinnahmeKeine",
+              "type": "option",
+              "title": "None of the income types",
+              "exclusive": true
+            }
+          ]
+        },
+        {
+          "name": "txtfEinnahmeAndere",
+          "type": "input",
+          "title": "23 – Other income (description)",
+          "show_when": {
+            "field": "chbxEinnahmeSonstige",
+            "value": "true"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "D. Work-related expenses/deductions",
+      "fields": [
+        {
+          "name": "section_header_D_ek",
+          "type": "section_header",
+          "title": "D. Work-related expenses/deductions"
+        },
+        {
+          "name": "rbtnAusgabeFahrt",
+          "type": "yesno",
+          "title": "24 – Are there expenses for travel between home and workplace?",
+          "hints": [
+            25
+          ],
+          "yes_option_id": "576R",
+          "no_option_id": "572R"
+        },
+        {
+          "name": "txtfArbeitsstaetteStr",
+          "type": "input",
+          "title": "25 – Street (workplace)",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfArbeitsstaetteHausNr",
+          "type": "input",
+          "title": "26 – House number (workplace)",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfArbeitsstaettePlz",
+          "type": "input",
+          "title": "27 – Postal code (workplace)",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfArbeitsstaetteOrt",
+          "type": "input",
+          "title": "28 – City (workplace)",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfArbeitsstaetteStrecke",
+          "type": "input",
+          "title": "29 – Shortest distance between home and workplace in km",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfArbeitsstaetteFahrtWoche",
+          "type": "input",
+          "title": "30 – On how many days per week is the route travelled?",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "multi_fahrtmittel",
+          "type": "multiselect",
+          "title": "31 – How is the route travelled?",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          },
+          "children": [
+            {
+              "name": "chbxArbeitsstaetteFahrtKFZ",
+              "type": "option",
+              "title": "By motor vehicle"
+            },
+            {
+              "name": "chbxArbeitsstaetteFahrtOeffis",
+              "type": "option",
+              "title": "By public transport"
+            },
+            {
+              "name": "chbxArbeitsstaetteFahrtSonstiges",
+              "type": "option",
+              "title": "By other vehicles (e.g. bicycle, e-scooter)"
+            }
+          ]
+        },
+        {
+          "name": "txtfArbeitsstaetteFahrtSonstiges",
+          "type": "input",
+          "title": "31 – Other means of transport (description)",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnFahrkostenZuschuss",
+          "type": "yesno",
+          "title": "32 – Are subsidies paid towards the travel costs?",
+          "yes_option_id": "550R",
+          "no_option_id": "546R",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnAusgabe",
+          "type": "yesno",
+          "title": "33 – Are there further expenses from an employment relationship that are not reimbursed by the employer?",
+          "yes_option_id": "544R",
+          "no_option_id": "540R",
+          "show_when": {
+            "field": "rbtnAusgabeFahrt",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "title": "D. (cont.) Insurance & E. Signature",
+      "fields": [
+        {
+          "name": "multi_versicherungen",
+          "type": "multiselect",
+          "title": "34 – Are contributions paid for the following insurances?",
+          "children": [
+            {
+              "name": "chbxVersicherungKfz",
+              "type": "option",
+              "title": "Motor vehicle liability insurance (excluding partial/comprehensive cover, breakdown cover)"
+            },
+            {
+              "name": "chbxVersicherungGesetzlich",
+              "type": "option",
+              "title": "Other legally required insurances"
+            },
+            {
+              "name": "chbxVersicherungAltersvorsorge",
+              "type": "option",
+              "title": "Contributions to subsidised pension provision under § 82 EStG (e.g. Riester pension)"
+            },
+            {
+              "name": "chbxVersicherungPrivat",
+              "type": "option",
+              "title": "Private insurance of children under 18"
+            }
+          ]
+        },
+        {
+          "name": "rbtnKind",
+          "type": "yesno",
+          "title": "35 – Does the person have at least one child under 18 who does not live with the person?",
+          "yes_option_id": "331R",
+          "no_option_id": "327R"
+        },
+        {
+          "name": "rbtnUnterhaltszahlung",
+          "type": "yesno",
+          "title": "36 – Does the person pay maintenance?",
+          "yes_option_id": "325R",
+          "no_option_id": "321R"
+        },
+        {
+          "name": "rbtnAusbildungsfoerderung",
+          "type": "yesno",
+          "title": "37 – For income from training support for a child (BAB, training allowance, BAföG), is the parents' income taken into account?",
+          "yes_option_id": "319R",
+          "no_option_id": "315R"
+        },
+        {
+          "name": "section_header_E_ek",
+          "type": "section_header",
+          "title": "E. Signature"
+        },
+        {
+          "name": "dateUnterschriftPerson",
+          "type": "date",
+          "title": "38 – Date (signature of the applicant)"
+        },
+        {
+          "name": "dateUnterschriftBetreuer",
+          "type": "date",
+          "title": "40 – Date (signature of carer/guardian)"
+        }
+      ]
+    }
+  ]
+}
