@@ -1,4 +1,6 @@
 {
+  "date": "04/2026",
+  "pdfAssetPath": "anlage_ek.pdf",
   "pages": [
     {
       "pageNumber": 1,
@@ -502,6 +504,5 @@
         }
       ]
     }
-  ],
-  "pdfAssetPath": "anlage_ek.pdf"
+  ]
 }

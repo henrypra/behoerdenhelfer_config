@@ -1,4 +1,6 @@
 {
+  "date": "09/2025",
+  "pdfAssetPath": "kg1_antrag_kindergeld.pdf",
   "pages": [
     {
       "pageNumber": 1,
@@ -838,6 +840,5 @@
         }
       ]
     }
-  ],
-  "pdfAssetPath": "kg1_antrag_kindergeld.pdf"
+  ]
 }

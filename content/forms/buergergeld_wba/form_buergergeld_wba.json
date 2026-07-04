@@ -1,4 +1,6 @@
 {
+  "date": "04/2026",
+  "pdfAssetPath": "anlage_wba.pdf",
   "pages": [
     {
       "pageNumber": 1,
@@ -1244,6 +1246,5 @@
         }
       ]
     }
-  ],
-  "pdfAssetPath": "anlage_wba.pdf"
+  ]
 }

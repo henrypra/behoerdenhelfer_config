@@ -1,4 +1,6 @@
 {
+  "date": "04/2026",
+  "pdfAssetPath": "anlage_ha.pdf",
   "pages": [
     {
       "pageNumber": 1,
@@ -928,6 +930,5 @@
         }
       ]
     }
-  ],
-  "pdfAssetPath": "anlage_ha.pdf"
+  ]
 }
