@@ -7,6 +7,7 @@ import kotlinx.serialization.Serializable
 data class FormDto(
     val pages: List<PageDto>,
     val pdfAssetPath: String,
+    val date: String? = null,
 )
 
 @Serializable
