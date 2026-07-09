@@ -1,0 +1,144 @@
+{
+    "schemaVersion": 1,
+    "config": 4,
+    "generatedAt": "2026-07-09T23:45:05Z",
+    "forms": [
+        {
+            "formId": "BUERGERGELD_EK",
+            "version": 3,
+            "minContentSchema": 1,
+            "jsonDe": {
+                "path": "forms/buergergeld_ek/3/de/form.json",
+                "sha256": "43b8ea2242832be723b99aabf61df93dc29506ec98c164bd1ec163a953cc2579",
+                "bytes": 15448
+            },
+            "jsonEn": {
+                "path": "forms/buergergeld_ek/3/en/form.json",
+                "sha256": "e8911c61d7546a5895e95a73ed25b2156ee1e149026767e272c8c977c41c9f02",
+                "bytes": 15259
+            },
+            "pdf": {
+                "path": "forms/buergergeld_ek/3/anlage_ek.pdf",
+                "sha256": "60d4666491a1cfec7234927f5120ba195f71f6e9897e41587d5c4027c0e95b9c",
+                "bytes": 388522
+            }
+        },
+        {
+            "formId": "BUERGERGELD_HA",
+            "version": 3,
+            "minContentSchema": 1,
+            "jsonDe": {
+                "path": "forms/buergergeld_ha/3/de/form.json",
+                "sha256": "8a0bd724b155913c5b364669078c0b3b3564b29d8b34cf1242196231ec423d35",
+                "bytes": 26494
+            },
+            "jsonEn": {
+                "path": "forms/buergergeld_ha/3/en/form.json",
+                "sha256": "07d4b72355a0aafb5e83df617a993dacea4df0bd4d0cf2833217f027bb066862",
+                "bytes": 26011
+            },
+            "pdf": {
+                "path": "forms/buergergeld_ha/3/anlage_ha.pdf",
+                "sha256": "5901f5fb3ab2d3d1be882326b5f016183bde902f5baa0d9dc4caf907f1707282",
+                "bytes": 492597
+            }
+        },
+        {
+            "formId": "BUERGERGELD_KDU",
+            "version": 3,
+            "minContentSchema": 1,
+            "jsonDe": {
+                "path": "forms/buergergeld_kdu/3/de/form.json",
+                "sha256": "51417f30b51d866aee40971a377a022a5652a6d2fa31590c7266c1963c692c6b",
+                "bytes": 15850
+            },
+            "jsonEn": {
+                "path": "forms/buergergeld_kdu/3/en/form.json",
+                "sha256": "69241a6098d5efe6326a0633ed0a1dcbba1960da0e6ae394c8b189a0a7bf2198",
+                "bytes": 15820
+            },
+            "pdf": {
+                "path": "forms/buergergeld_kdu/3/anlage_kdu.pdf",
+                "sha256": "68ce4d99abf5b2f0b2cc3d5a57aee6506de02116a9274fd2277ee36c22aad72c",
+                "bytes": 475482
+            }
+        },
+        {
+            "formId": "BUERGERGELD_VM",
+            "version": 3,
+            "minContentSchema": 1,
+            "jsonDe": {
+                "path": "forms/buergergeld_vm/3/de/form.json",
+                "sha256": "297923972a6f75253af90f67daab8e551b901a613402496554e0801e9650baf5",
+                "bytes": 62884
+            },
+            "jsonEn": {
+                "path": "forms/buergergeld_vm/3/en/form.json",
+                "sha256": "c2424c0639ddd2dda3936b4719b79947b72119d20e04339e01285280312804cc",
+                "bytes": 62931
+            },
+            "pdf": {
+                "path": "forms/buergergeld_vm/3/anlage_vm.pdf",
+                "sha256": "3edbbb8876747f4e8c42c0b56b03b9c3cbdbbaed147e670999e6e1eeabea454c",
+                "bytes": 312856
+            }
+        },
+        {
+            "formId": "BUERGERGELD_WBA",
+            "version": 3,
+            "minContentSchema": 1,
+            "jsonDe": {
+                "path": "forms/buergergeld_wba/3/de/form.json",
+                "sha256": "f44bedf643da3b5ae007f1bae4bf2d1e42651685fa39fe10a7241d56e4f987c0",
+                "bytes": 35765
+            },
+            "jsonEn": {
+                "path": "forms/buergergeld_wba/3/en/form.json",
+                "sha256": "b7a90e2a9ebf0601cd85bab551a63dbd24149dcd1db19b931f2414b3f90b3a88",
+                "bytes": 35296
+            },
+            "pdf": {
+                "path": "forms/buergergeld_wba/3/anlage_wba.pdf",
+                "sha256": "4920513e6cc2efe9d9df29eed9906a48c31c5cc1a22c101637a2d026e02489d7",
+                "bytes": 307498
+            }
+        },
+        {
+            "formId": "KINDERGELD",
+            "version": 4,
+            "minContentSchema": 2,
+            "jsonDe": {
+                "path": "forms/kindergeld/4/de/form.json",
+                "sha256": "9ee51b32e47af78423e8d598c7ea42a51e07c28a3592efff5022a2ad79e7cc8e",
+                "bytes": 29839
+            },
+            "jsonEn": {
+                "path": "forms/kindergeld/4/en/form.json",
+                "sha256": "abd8acc109f17c00a088efc01493c8e06d1e0e9129da9c0ee49cfc3224858ed1",
+                "bytes": 29753
+            },
+            "pdf": {
+                "path": "forms/kindergeld/4/kg1_antrag_kindergeld.pdf",
+                "sha256": "53651bbe336039b6ca3852f1fa7288b4841349afd1978a4b91469fea15eaac43",
+                "bytes": 1508259
+            }
+        }
+    ],
+    "hints": [
+        {
+            "hintsId": "BUERGERGELD",
+            "version": 1,
+            "minContentSchema": 1,
+            "jsonDe": {
+                "path": "hints/buergergeld/1/de/hints.json",
+                "sha256": "ad779f592434a0b1a641149d7a370f713b00bbc46a6aa66b7c42adb824733c38",
+                "bytes": 21583
+            },
+            "jsonEn": {
+                "path": "hints/buergergeld/1/en/hints.json",
+                "sha256": "3ac682cd0e9f17e99d9b5d9cc6561144a4eca7173256962a540f84526d3b9787",
+                "bytes": 19552
+            }
+        }
+    ]
+}

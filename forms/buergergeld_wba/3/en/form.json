@@ -1,0 +1,1250 @@
+{
+  "date": "04/2026",
+  "pdfAssetPath": "anlage_wba.pdf",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "A. Personal details & B. Information about the housing situation",
+      "fields": [
+        {
+          "name": "section_header_A_wba",
+          "type": "section_header",
+          "title": "A. Personal details"
+        },
+        {
+          "name": "txtfPersonVorname",
+          "type": "input",
+          "title": "1 – First name",
+          "profile_key": "FIRST_NAME"
+        },
+        {
+          "name": "txtfPersonNachname",
+          "type": "input",
+          "title": "2 – Last name",
+          "profile_key": "LAST_NAME"
+        },
+        {
+          "name": "datePersonGebDatum",
+          "type": "date",
+          "title": "3 – Date of birth",
+          "profile_key": "BIRTH_DATE"
+        },
+        {
+          "name": "txtfBGNr",
+          "type": "input",
+          "title": "4 – Benefit community number"
+        },
+        {
+          "name": "txtfPersonStr",
+          "type": "input",
+          "title": "5 – Street",
+          "profile_key": "STREET"
+        },
+        {
+          "name": "txtfPersonHausNr",
+          "type": "input",
+          "title": "6 – House number",
+          "profile_key": "HOUSE_NUMBER"
+        },
+        {
+          "name": "txtfPersonPlz",
+          "type": "input",
+          "title": "7 – Postal code",
+          "profile_key": "POSTAL_CODE"
+        },
+        {
+          "name": "txtfPersonOrt",
+          "type": "input",
+          "title": "8 – Place of residence",
+          "profile_key": "CITY"
+        },
+        {
+          "name": "section_header_B_wba",
+          "type": "section_header",
+          "title": "B. Information about the housing situation"
+        },
+        {
+          "name": "rbtnWohnsituation",
+          "type": "yesno",
+          "title": "9 – Do you live alone?",
+          "hints": [
+            8,
+            16,
+            17
+          ],
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_wohnen_person1",
+          "type": "section_header",
+          "title": "10 – Person 1",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVornameZ2",
+          "type": "input",
+          "title": "First name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenNameZ2",
+          "type": "input",
+          "title": "Last name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "dateWohnenGebZ2",
+          "type": "date",
+          "title": "Date of birth",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVerwandtZ2",
+          "type": "input",
+          "title": "Relationship",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "section_wohnen_person2",
+          "type": "section_header",
+          "title": "10 – Person 2",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVornameZ3",
+          "type": "input",
+          "title": "First name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenNameZ3",
+          "type": "input",
+          "title": "Last name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "dateWohnenGebZ3",
+          "type": "date",
+          "title": "Date of birth",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVerwandtZ3",
+          "type": "input",
+          "title": "Relationship",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "section_wohnen_person3",
+          "type": "section_header",
+          "title": "10 – Person 3",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVornameZ4",
+          "type": "input",
+          "title": "First name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenNameZ4",
+          "type": "input",
+          "title": "Last name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "dateWohnenGebZ4",
+          "type": "date",
+          "title": "Date of birth",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVerwandtZ4",
+          "type": "input",
+          "title": "Relationship",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "section_wohnen_person4",
+          "type": "section_header",
+          "title": "10 – Person 4",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVornameZ5",
+          "type": "input",
+          "title": "First name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenNameZ5",
+          "type": "input",
+          "title": "Last name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "dateWohnenGebZ5",
+          "type": "date",
+          "title": "Date of birth",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVerwandtZ5",
+          "type": "input",
+          "title": "Relationship",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "section_wohnen_person5",
+          "type": "section_header",
+          "title": "10 – Person 5",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVornameZ6",
+          "type": "input",
+          "title": "First name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenNameZ6",
+          "type": "input",
+          "title": "Last name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "dateWohnenGebZ6",
+          "type": "date",
+          "title": "Date of birth",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVerwandtZ6",
+          "type": "input",
+          "title": "Relationship",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "section_wohnen_person6",
+          "type": "section_header",
+          "title": "10 – Person 6",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVornameZ7",
+          "type": "input",
+          "title": "First name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenNameZ7",
+          "type": "input",
+          "title": "Last name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "dateWohnenGebZ7",
+          "type": "date",
+          "title": "Date of birth",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVerwandtZ7",
+          "type": "input",
+          "title": "Relationship",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "section_wohnen_person7",
+          "type": "section_header",
+          "title": "10 – Person 7",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVornameZ8",
+          "type": "input",
+          "title": "First name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenNameZ8",
+          "type": "input",
+          "title": "Last name",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "dateWohnenGebZ8",
+          "type": "date",
+          "title": "Date of birth",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "txtfWohnenVerwandtZ8",
+          "type": "input",
+          "title": "Relationship",
+          "show_when": {
+            "field": "rbtnWohnsituation",
+            "value": "no"
+          }
+        },
+        {
+          "name": "rbtnBedarfUnterkunft",
+          "type": "yesno",
+          "title": "11 – Do you have needs for accommodation and heating?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "radio_wohnform",
+          "type": "radio",
+          "title": "12 – Please tick below what applies to your housing situation.",
+          "show_when": {
+            "field": "rbtnBedarfUnterkunft",
+            "value": "yes"
+          },
+          "children": [
+            {
+              "name": "chbxWohnenMiete",
+              "type": "option",
+              "title": "Living in rented accommodation or another housing arrangement"
+            },
+            {
+              "name": "chbxWohnenEigentum",
+              "type": "option",
+              "title": "Living in owned property (continue with section D)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "C. Rent needs & D. Property needs",
+      "fields": [
+        {
+          "name": "section_miete",
+          "type": "section_header",
+          "title": "C. Living in rented accommodation"
+        },
+        {
+          "name": "numfBedarfGrundmiete",
+          "type": "input",
+          "title": "13 – Base rent monthly in euros"
+        },
+        {
+          "name": "numfBedarfNebenkosten",
+          "type": "input",
+          "title": "13 – Additional costs monthly in euros"
+        },
+        {
+          "name": "numfBedarfHeizkosten",
+          "type": "input",
+          "title": "13 – Heating costs monthly in euros"
+        },
+        {
+          "name": "numfBedarfSonstiges",
+          "type": "input",
+          "title": "13 – Other housing costs monthly in euros",
+          "hints": [
+            26
+          ]
+        },
+        {
+          "name": "numfBedarfPauschalmiete",
+          "type": "input",
+          "title": "13 – All-inclusive rent monthly in euros"
+        },
+        {
+          "name": "section_eigentum",
+          "type": "section_header",
+          "title": "D. Living in owned property"
+        },
+        {
+          "name": "numfEigentumWohnflaeche",
+          "type": "input",
+          "title": "14 – Living space used in square metres (m²)"
+        },
+        {
+          "name": "multi_eigentum_kosten",
+          "type": "multiselect",
+          "title": "15 – Please specify the applicable costs for the property.",
+          "children": [
+            {
+              "name": "chbxEigentumZinsen",
+              "type": "option",
+              "title": "Debt interest excluding repayment instalments",
+              "hints": [
+                27
+              ]
+            },
+            {
+              "name": "chbxEigentumNebenkosten",
+              "type": "option",
+              "title": "Additional costs (excluding heating)"
+            },
+            {
+              "name": "chbxEigentumHeizkosten",
+              "type": "option",
+              "title": "Heating costs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "E. Income situation of the benefit community",
+      "fields": [
+        {
+          "name": "section_header_E_wba",
+          "type": "section_header",
+          "title": "E. Income situation of the benefit community"
+        },
+        {
+          "name": "rbtnBGEinkommen",
+          "type": "yesno",
+          "title": "16 – Do you or a person in the benefit community earn income from employment?",
+          "hints": [
+            23
+          ],
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "section_einkommen_Z2",
+          "type": "section_header",
+          "title": "16 – Income 1",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEinkNameZ2",
+          "type": "input",
+          "title": "Name of the person",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEinkAGZ2",
+          "type": "input",
+          "title": "Name of the employer",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfEinkEuroZ2",
+          "type": "input",
+          "title": "Monthly amount in euros",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_einkommen_Z3",
+          "type": "section_header",
+          "title": "16 – Income 2",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEinkNameZ3",
+          "type": "input",
+          "title": "Name of the person",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEinkAGZ3",
+          "type": "input",
+          "title": "Name of the employer",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfEinkEuroZ3",
+          "type": "input",
+          "title": "Monthly amount in euros",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_einkommen_Z4",
+          "type": "section_header",
+          "title": "16 – Income 3",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEinkNameZ4",
+          "type": "input",
+          "title": "Name of the person",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEinkAGZ4",
+          "type": "input",
+          "title": "Name of the employer",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfEinkEuroZ4",
+          "type": "input",
+          "title": "Monthly amount in euros",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_einkommen_Z5",
+          "type": "section_header",
+          "title": "16 – Income 4",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEinkNameZ5",
+          "type": "input",
+          "title": "Name of the person",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEinkAGZ5",
+          "type": "input",
+          "title": "Name of the employer",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfEinkEuroZ5",
+          "type": "input",
+          "title": "Monthly amount in euros",
+          "show_when": {
+            "field": "rbtnBGEinkommen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnAusgaben",
+          "type": "yesno",
+          "title": "17 – Have the work-related expenses/deductions changed, for example travel costs between home and workplace?",
+          "hints": [
+            25
+          ],
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfAusgabenNameZ2",
+          "type": "input",
+          "title": "17 – Deduction 1: Name of the person",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAusgabenArtZ2",
+          "type": "input",
+          "title": "17 – Deduction 1: Type of deduction",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfAusgabenEuroZ2",
+          "type": "input",
+          "title": "17 – Deduction 1: Monthly amount of expenses in euros",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateAusgabenAenderungZ2",
+          "type": "date",
+          "title": "17 – Deduction 1: Date of change",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAusgabenNameZ3",
+          "type": "input",
+          "title": "17 – Deduction 2: Name of the person",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAusgabenArtZ3",
+          "type": "input",
+          "title": "17 – Deduction 2: Type of deduction",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfAusgabenEuroZ3",
+          "type": "input",
+          "title": "17 – Deduction 2: Monthly amount of expenses in euros",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateAusgabenAenderungZ3",
+          "type": "date",
+          "title": "17 – Deduction 2: Date of change",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAusgabenNameZ4",
+          "type": "input",
+          "title": "17 – Deduction 3: Name of the person",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAusgabenArtZ4",
+          "type": "input",
+          "title": "17 – Deduction 3: Type of deduction",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfAusgabenEuroZ4",
+          "type": "input",
+          "title": "17 – Deduction 3: Monthly amount of expenses in euros",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateAusgabenAenderungZ4",
+          "type": "date",
+          "title": "17 – Deduction 3: Date of change",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAusgabenNameZ5",
+          "type": "input",
+          "title": "17 – Deduction 4: Name of the person",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAusgabenArtZ5",
+          "type": "input",
+          "title": "17 – Deduction 4: Type of deduction",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfAusgabenEuroZ5",
+          "type": "input",
+          "title": "17 – Deduction 4: Monthly amount of expenses in euros",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateAusgabenAenderungZ5",
+          "type": "date",
+          "title": "17 – Deduction 4: Date of change",
+          "show_when": {
+            "field": "rbtnAusgaben",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnBGEinkommenFreiberuf",
+          "type": "yesno",
+          "title": "18 – Do you or a person in the benefit community carry out a self-employed or freelance activity, including in agriculture and forestry?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "rbtnBGEinkommenEhrenamt",
+          "type": "yesno",
+          "title": "19 – Do you or a person in the benefit community receive (tax-free) expense allowances or flat-rate expense payments from a charitable or voluntary activity?",
+          "hints": [
+            24
+          ],
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfAufwandNameZ2",
+          "type": "input",
+          "title": "19 – Expense allowance 1: Name of the person",
+          "show_when": {
+            "field": "rbtnBGEinkommenEhrenamt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAufwandArtZ2",
+          "type": "input",
+          "title": "19 – Expense allowance 1: Type of activity",
+          "show_when": {
+            "field": "rbtnBGEinkommenEhrenamt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateAufwandZahlungZ2",
+          "type": "date",
+          "title": "19 – Expense allowance 1: Payment received on",
+          "show_when": {
+            "field": "rbtnBGEinkommenEhrenamt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAufwandNameZ3",
+          "type": "input",
+          "title": "19 – Expense allowance 2: Name of the person",
+          "show_when": {
+            "field": "rbtnBGEinkommenEhrenamt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAufwandArtZ3",
+          "type": "input",
+          "title": "19 – Expense allowance 2: Type of activity",
+          "show_when": {
+            "field": "rbtnBGEinkommenEhrenamt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateAufwandZahlungZ3",
+          "type": "date",
+          "title": "19 – Expense allowance 2: Payment received on",
+          "show_when": {
+            "field": "rbtnBGEinkommenEhrenamt",
+            "value": "yes"
+          }
+        }
+      ]
+    },
+    {
+      "pageNumber": 4,
+      "title": "E. Income (cont.) & F. Further changes",
+      "fields": [
+        {
+          "name": "rbtnBGEinkommenSozial",
+          "type": "yesno",
+          "title": "20 – Do you or a person in the benefit community receive income from social benefit providers?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfEKSozialNameZ2",
+          "type": "input",
+          "title": "20 – Social benefit 1: Name of the person",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialArtZ2",
+          "type": "input",
+          "title": "20 – Social benefit 1: Type of benefit/income",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialStelleZ2",
+          "type": "input",
+          "title": "20 – Social benefit 1: Paying office",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfEKSozialEuroZ2",
+          "type": "input",
+          "title": "20 – Social benefit 1: Monthly amount in euros",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialNameZ3",
+          "type": "input",
+          "title": "20 – Social benefit 2: Name of the person",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialArtZ3",
+          "type": "input",
+          "title": "20 – Social benefit 2: Type of benefit/income",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialStelleZ3",
+          "type": "input",
+          "title": "20 – Social benefit 2: Paying office",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfEKSozialEuroZ3",
+          "type": "input",
+          "title": "20 – Social benefit 2: Monthly amount in euros",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialNameZ4",
+          "type": "input",
+          "title": "20 – Social benefit 3: Name of the person",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialArtZ4",
+          "type": "input",
+          "title": "20 – Social benefit 3: Type of benefit/income",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialStelleZ4",
+          "type": "input",
+          "title": "20 – Social benefit 3: Paying office",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfEKSozialEuroZ4",
+          "type": "input",
+          "title": "20 – Social benefit 3: Monthly amount in euros",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialNameZ5",
+          "type": "input",
+          "title": "20 – Social benefit 4: Name of the person",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialArtZ5",
+          "type": "input",
+          "title": "20 – Social benefit 4: Type of benefit/income",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfEKSozialStelleZ5",
+          "type": "input",
+          "title": "20 – Social benefit 4: Paying office",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "numfEKSozialEuroZ5",
+          "type": "input",
+          "title": "20 – Social benefit 4: Monthly amount in euros",
+          "show_when": {
+            "field": "rbtnBGEinkommenSozial",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "rbtnBGEinkommenAndere",
+          "type": "yesno",
+          "title": "21 – Do you or a person in the benefit community receive other (unlisted) income, for example from digital platforms or from renting or leasing?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfBGEinkommenAndere",
+          "type": "input",
+          "title": "22 – Please specify the type of income.",
+          "show_when": {
+            "field": "rbtnBGEinkommenAndere",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "section_header_F_wba",
+          "type": "section_header",
+          "title": "F. Further changes"
+        },
+        {
+          "name": "multi_aenderungen",
+          "type": "multiselect",
+          "title": "23 – Are changes to your life situation already foreseeable now? Please tick what applies.",
+          "children": [
+            {
+              "name": "chbxAenderungFamilie",
+              "type": "option",
+              "title": "My marital status or that of a person in the benefit community will change."
+            },
+            {
+              "name": "chbxAenderungUmzug",
+              "type": "option",
+              "title": "A move of the entire benefit community is planned within the next 6 months."
+            },
+            {
+              "name": "chbxAenderungAuzug",
+              "type": "option",
+              "title": "One or more persons of the benefit community will move in or out."
+            },
+            {
+              "name": "chbxAenderungKV",
+              "type": "option",
+              "title": "There will be changes to health or long-term care insurance."
+            },
+            {
+              "name": "chbxAenderungErwerb",
+              "type": "option",
+              "title": "There will be changes regarding the ability to work or the state of health."
+            },
+            {
+              "name": "chbxAenderungSonstiges",
+              "type": "option",
+              "title": "Other changes, for example starting a training course or study programme."
+            }
+          ]
+        },
+        {
+          "name": "txtfAenderungSonstiges",
+          "type": "input",
+          "title": "23 – Other changes (description)",
+          "show_when": {
+            "field": "chbxAenderungSonstiges",
+            "value": "true"
+          }
+        },
+        {
+          "name": "rbtnBGAenderungAnspruch",
+          "type": "yesno",
+          "title": "24 – Do you have a claim against third parties, for example compensation, inheritance?",
+          "hints": [
+            10
+          ],
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "rbtnBGAenderungUnfall",
+          "type": "yesno",
+          "title": "25 – Did you suffer an accident or health damage caused by a third party?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        }
+      ]
+    },
+    {
+      "pageNumber": 5,
+      "title": "F. Further changes (cont.)",
+      "fields": [
+        {
+          "name": "rbtnAenderungVergangen",
+          "type": "yesno",
+          "title": "26 – Were there further changes to your information for the last approval period that you have not yet reported to the Jobcenter?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfAenderungNameZ2",
+          "type": "input",
+          "title": "26 – Change 1: Name of the person",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAenderungArtZ2",
+          "type": "input",
+          "title": "26 – Change 1: Type of change",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateAenderungTagZ2",
+          "type": "date",
+          "title": "26 – Change 1: Date of change",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAenderungNameZ3",
+          "type": "input",
+          "title": "26 – Change 2: Name of the person",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAenderungArtZ3",
+          "type": "input",
+          "title": "26 – Change 2: Type of change",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateAenderungTagZ3",
+          "type": "date",
+          "title": "26 – Change 2: Date of change",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAenderungNameZ4",
+          "type": "input",
+          "title": "26 – Change 3: Name of the person",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAenderungArtZ4",
+          "type": "input",
+          "title": "26 – Change 3: Type of change",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateAenderungTagZ4",
+          "type": "date",
+          "title": "26 – Change 3: Date of change",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAenderungNameZ5",
+          "type": "input",
+          "title": "26 – Change 4: Name of the person",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfAenderungArtZ5",
+          "type": "input",
+          "title": "26 – Change 4: Type of change",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "dateAenderungTagZ5",
+          "type": "date",
+          "title": "26 – Change 4: Date of change",
+          "show_when": {
+            "field": "rbtnAenderungVergangen",
+            "value": "yes"
+          }
+        }
+      ]
+    }
+  ]
+}

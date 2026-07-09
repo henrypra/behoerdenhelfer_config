@@ -1,0 +1,559 @@
+{
+  "date": "04/2026",
+  "pdfAssetPath": "anlage_kdu.pdf",
+  "pages": [
+    {
+      "pageNumber": 1,
+      "title": "A. Personal details & B. General information about the accommodation",
+      "fields": [
+        {
+          "name": "section_header_A_kdu",
+          "type": "section_header",
+          "title": "A. Personal details"
+        },
+        {
+          "name": "txtfPersonVorname",
+          "type": "input",
+          "title": "1 – First name",
+          "profile_key": "FIRST_NAME"
+        },
+        {
+          "name": "txtfPersonNachname",
+          "type": "input",
+          "title": "2 – Last name",
+          "profile_key": "LAST_NAME"
+        },
+        {
+          "name": "datePersonGebDatum",
+          "type": "date",
+          "title": "3 – Date of birth",
+          "profile_key": "BIRTH_DATE"
+        },
+        {
+          "name": "txtfBGNr",
+          "type": "input",
+          "title": "4 – Benefit community number (if available)"
+        },
+        {
+          "name": "txtfPersonStr",
+          "type": "input",
+          "title": "5 – Street",
+          "profile_key": "STREET"
+        },
+        {
+          "name": "txtfPersonHausNr",
+          "type": "input",
+          "title": "6 – House number",
+          "profile_key": "HOUSE_NUMBER"
+        },
+        {
+          "name": "txtfPersonPlz",
+          "type": "input",
+          "title": "7 – Postal code",
+          "profile_key": "POSTAL_CODE"
+        },
+        {
+          "name": "txtfPersonOrt",
+          "type": "input",
+          "title": "8 – City",
+          "profile_key": "CITY"
+        },
+        {
+          "name": "section_header_B_kdu",
+          "type": "section_header",
+          "title": "B. General information about the accommodation"
+        },
+        {
+          "name": "numfUnterkunftAnzahlPersonen",
+          "type": "input",
+          "title": "9 – How many people live in the accommodation? (including yourself)"
+        },
+        {
+          "name": "txtfUnterkunftBaujahr",
+          "type": "input",
+          "title": "10 – Year the accommodation was built (if known)"
+        },
+        {
+          "name": "numfUnterkunftAnzahlRaum",
+          "type": "input",
+          "title": "11 – Number of rooms"
+        },
+        {
+          "name": "numfUnterkunftAnzahlKueche",
+          "type": "input",
+          "title": "12 – Number of kitchens"
+        },
+        {
+          "name": "numfUnterkunftAnzahlBad",
+          "type": "input",
+          "title": "13 – Number of bathrooms"
+        },
+        {
+          "name": "numfUnterkunftGesamt",
+          "type": "input",
+          "title": "14 – Total area of the accommodation in m²"
+        },
+        {
+          "name": "numfUnterkunftSelbst",
+          "type": "input",
+          "title": "15 – Self-occupied share in m²"
+        },
+        {
+          "name": "numfUnterkunftVermietet",
+          "type": "input",
+          "title": "16 – Rented/leased share in m²"
+        }
+      ]
+    },
+    {
+      "pageNumber": 2,
+      "title": "B. (cont.) & C. Rent & D. Property & E. Energy sources",
+      "fields": [
+        {
+          "name": "numfUnterkunftLeer",
+          "type": "input",
+          "title": "17 – Vacant share in m²"
+        },
+        {
+          "name": "numfUnterkunftGewerbe",
+          "type": "input",
+          "title": "18 – Commercial premises/commercial use in m²"
+        },
+        {
+          "name": "radio_wohnsituation",
+          "type": "radio",
+          "title": "19 – Housing situation",
+          "children": [
+            {
+              "name": "chbxWohnenMiete",
+              "type": "option",
+              "title": "Living in rented accommodation or another housing arrangement"
+            },
+            {
+              "name": "chbxWohnenEigentum",
+              "type": "option",
+              "title": "Living in owned property (continue with section D)"
+            }
+          ]
+        },
+        {
+          "name": "section_header_C_kdu",
+          "type": "section_header",
+          "title": "C. Rent"
+        },
+        {
+          "name": "section_bedarf_kdu",
+          "type": "section_header",
+          "title": "20 – Which needs for accommodation and heating arise?"
+        },
+        {
+          "name": "chbxBedarfGrundmiete",
+          "type": "checkbox",
+          "title": "Base rent (excluding additional and heating costs)",
+          "children": [
+            {
+              "name": "numfBedarfGrundmiete",
+              "type": "input",
+              "title": "Monthly in euros"
+            }
+          ]
+        },
+        {
+          "name": "chbxBedarfNebenkosten",
+          "type": "checkbox",
+          "title": "Additional costs (excluding heating)",
+          "children": [
+            {
+              "name": "numfBedarfNebenkosten",
+              "type": "input",
+              "title": "Monthly in euros"
+            }
+          ]
+        },
+        {
+          "name": "chbxBedarfHeizkosten",
+          "type": "checkbox",
+          "title": "Heating costs",
+          "children": [
+            {
+              "name": "numfBedarfHeizkosten",
+              "type": "input",
+              "title": "Monthly in euros"
+            }
+          ]
+        },
+        {
+          "name": "chbxBedarfSonstiges",
+          "type": "checkbox",
+          "title": "Other housing costs",
+          "hints": [
+            26
+          ],
+          "children": [
+            {
+              "name": "numfBedarfSonstiges",
+              "type": "input",
+              "title": "Monthly in euros"
+            }
+          ]
+        },
+        {
+          "name": "chbxBedarfPauschalmiete",
+          "type": "checkbox",
+          "title": "Or all-inclusive rent (including all costs)",
+          "children": [
+            {
+              "name": "numfBedarfPauschalmiete",
+              "type": "input",
+              "title": "Monthly in euros"
+            }
+          ]
+        },
+        {
+          "name": "section_header_D_kdu",
+          "type": "section_header",
+          "title": "D. Property"
+        },
+        {
+          "name": "rbtnWohneinheit",
+          "type": "yesno",
+          "title": "21 – Does the home have more than one residential unit?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "numfWohneinheitAnzahl",
+          "type": "input",
+          "title": "22 – Number of residential units",
+          "show_when": {
+            "field": "rbtnWohneinheit",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "multi_eigentum_nebenkosten",
+          "type": "multiselect",
+          "title": "23 – Which costs do you incur? (property)",
+          "children": [
+            {
+              "name": "chbxEigentumSchuldzinsen",
+              "type": "option",
+              "title": "Debt interest excluding repayment instalments",
+              "hints": [
+                27
+              ]
+            },
+            {
+              "name": "chbxEigentumHeizkosten",
+              "type": "option",
+              "title": "Heating costs"
+            },
+            {
+              "name": "chbxEigentumWartung",
+              "type": "option",
+              "title": "Heating maintenance"
+            },
+            {
+              "name": "chbxEigentumGrundsteuern",
+              "type": "option",
+              "title": "Property taxes"
+            },
+            {
+              "name": "chbxEigentumVersicherung",
+              "type": "option",
+              "title": "Building insurance"
+            },
+            {
+              "name": "chbxEigentumWasser",
+              "type": "option",
+              "title": "Water"
+            },
+            {
+              "name": "chbxEigentumAbwasser",
+              "type": "option",
+              "title": "Wastewater"
+            },
+            {
+              "name": "chbxEigentumMuell",
+              "type": "option",
+              "title": "Waste collection fees"
+            },
+            {
+              "name": "chbxEigentumSchornstein",
+              "type": "option",
+              "title": "Chimney sweep fees"
+            },
+            {
+              "name": "chbxEigentumStrassenreinigung",
+              "type": "option",
+              "title": "Street cleaning"
+            },
+            {
+              "name": "chbxEigentumSonstiges",
+              "type": "option",
+              "title": "Other additional costs"
+            }
+          ]
+        },
+        {
+          "name": "txtfEigentumSonstige",
+          "type": "input",
+          "title": "23 – Other additional costs (description)",
+          "show_when": {
+            "field": "chbxEigentumSonstiges",
+            "value": "true"
+          }
+        },
+        {
+          "name": "section_header_E_kdu",
+          "type": "section_header",
+          "title": "E. Energy sources"
+        },
+        {
+          "name": "multi_energiequellen",
+          "type": "multiselect",
+          "title": "24 – Which fuels/energy sources are used?",
+          "children": [
+            {
+              "name": "chbxEnergiequellenStrom",
+              "type": "option",
+              "title": "Electricity"
+            },
+            {
+              "name": "chbxEnergiequellenGas",
+              "type": "option",
+              "title": "Gas"
+            },
+            {
+              "name": "chbxEnergiequellenOel",
+              "type": "option",
+              "title": "Heating oil"
+            },
+            {
+              "name": "chbxEnergiequellenFernwaerme",
+              "type": "option",
+              "title": "District heating"
+            },
+            {
+              "name": "chbxEnergiequellenHolz",
+              "type": "option",
+              "title": "Wood"
+            },
+            {
+              "name": "chbxEnergiequellenSonstiges",
+              "type": "option",
+              "title": "Other"
+            }
+          ]
+        },
+        {
+          "name": "txtfEnergiequellenSonstiges",
+          "type": "input",
+          "title": "24 – Other fuel (description)",
+          "show_when": {
+            "field": "chbxEnergiequellenSonstiges",
+            "value": "true"
+          }
+        },
+        {
+          "name": "rbtnBrenstoff",
+          "type": "yesno",
+          "title": "25 – Do you procure the fuels yourself?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        }
+      ]
+    },
+    {
+      "pageNumber": 3,
+      "title": "E. (cont.) & F. Transfer to landlord & G. Signature",
+      "fields": [
+        {
+          "name": "multi_heizungsart",
+          "type": "multiselect",
+          "title": "26 – Type of heating",
+          "children": [
+            {
+              "name": "chbxHeizungZentralheizung",
+              "type": "option",
+              "title": "Central heating"
+            },
+            {
+              "name": "chbxHeizungsartEinzelofen",
+              "type": "option",
+              "title": "Single stove"
+            },
+            {
+              "name": "chbxHeizungsartNachtspeicherofen",
+              "type": "option",
+              "title": "Night storage heater"
+            }
+          ]
+        },
+        {
+          "name": "multi_kochen",
+          "type": "multiselect",
+          "title": "27 – Cooking with",
+          "children": [
+            {
+              "name": "chbxKochenStrom",
+              "type": "option",
+              "title": "Electricity"
+            },
+            {
+              "name": "chbxKochenGas",
+              "type": "option",
+              "title": "Gas"
+            },
+            {
+              "name": "chbxKochenSonstiges",
+              "type": "option",
+              "title": "Other"
+            }
+          ]
+        },
+        {
+          "name": "txtfKochenSonstiges",
+          "type": "input",
+          "title": "27 – Other cooking (description)",
+          "show_when": {
+            "field": "chbxKochenSonstiges",
+            "value": "true"
+          }
+        },
+        {
+          "name": "radio_warmwasser",
+          "type": "radio",
+          "title": "28 – How do you generate your hot water?",
+          "hints": [
+            28
+          ],
+          "children": [
+            {
+              "name": "chbxWasserZentral",
+              "type": "option",
+              "title": "Centrally (e.g. central heating system)"
+            },
+            {
+              "name": "chbxWasserDezentral",
+              "type": "option",
+              "title": "Decentrally (e.g. boiler, instantaneous water heater)"
+            }
+          ]
+        },
+        {
+          "name": "multi_warmwasser_dezentral",
+          "type": "multiselect",
+          "title": "29 – Decentralised hot water fuel",
+          "children": [
+            {
+              "name": "chbxWarmwasserStrom",
+              "type": "option",
+              "title": "Electricity"
+            },
+            {
+              "name": "chbxWarmwasserGas",
+              "type": "option",
+              "title": "Gas"
+            },
+            {
+              "name": "chbxWarmwasserHeizoel",
+              "type": "option",
+              "title": "Heating oil"
+            },
+            {
+              "name": "chbxWarmwasserHolz",
+              "type": "option",
+              "title": "Wood"
+            },
+            {
+              "name": "chbxWarmwasserKohle",
+              "type": "option",
+              "title": "Coal"
+            },
+            {
+              "name": "chbxWarmwasserSonstiges",
+              "type": "option",
+              "title": "Other"
+            }
+          ]
+        },
+        {
+          "name": "txtfWarmwasserSonstiges",
+          "type": "input",
+          "title": "29 – Other decentralised fuel (description)",
+          "show_when": {
+            "field": "chbxWarmwasserSonstiges",
+            "value": "true"
+          }
+        },
+        {
+          "name": "section_header_F_kdu",
+          "type": "section_header",
+          "title": "F. Transfer to landlord"
+        },
+        {
+          "name": "rbtnMieteDirekt",
+          "type": "yesno",
+          "title": "30 – Should the rent be transferred directly to the landlord?",
+          "yes_option_id": "0",
+          "no_option_id": "1"
+        },
+        {
+          "name": "txtfVermieterName",
+          "type": "input",
+          "title": "31 – Name of the landlord",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermieterStr",
+          "type": "input",
+          "title": "32 – Street (landlord)",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermieterHausNr",
+          "type": "input",
+          "title": "33 – House number (landlord)",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermieterPlz",
+          "type": "input",
+          "title": "34 – Postal code (landlord)",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermieterOrt",
+          "type": "input",
+          "title": "35 – City (landlord)",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        },
+        {
+          "name": "txtfVermieterIBAN",
+          "type": "input",
+          "title": "36 – IBAN (22 digits)",
+          "show_when": {
+            "field": "rbtnMieteDirekt",
+            "value": "yes"
+          }
+        }
+      ]
+    }
+  ]
+}
