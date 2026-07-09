@@ -64,6 +64,24 @@ object TestContent {
             .replace("App-interner Helfer", "App-internal helper")
             .replace("\"title\": \"Auswahl\"", "\"title\": \"Selection\"")
 
+    /**
+     * Wraps the txtName input in an `input_row` group (schema level 2): synthetic
+     * group name absent from the PDF, the child keeps the real PDF field name and
+     * carries an `input_type` keyboard hint. Works on the de and en fixture alike.
+     */
+    fun withInputRow(formJson: String): String =
+        formJson.replace(
+            """{ "name": "txtName", "type": "input", "title": "Name", "profile_key": "LAST_NAME" }""",
+            """
+            {
+              "name": "group_name", "type": "input_row", "title": "Name",
+              "children": [
+                { "name": "txtName", "type": "input", "title": "Teil 1", "input_type": "number" }
+              ]
+            }
+            """.trimIndent(),
+        )
+
     // language=json
     val HINTS_DE = """{ "hints": [ { "number": 1, "title": "Konto", "text": "Hinweistext" } ] }"""
 

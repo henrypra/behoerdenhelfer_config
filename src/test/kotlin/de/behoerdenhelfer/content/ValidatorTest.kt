@@ -113,6 +113,46 @@ class ValidatorTest {
     }
 
     @Test
+    fun `validate - when an input_row group name is absent from the PDF then accepts it`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given: the group name is synthetic, only the child targets the PDF
+        val layout = TestContent.writeValid(contentDir)
+        listOf("form_testform.json", "form_testform-en.json").forEach { name ->
+            edit(contentDir.resolve("forms/testform/$name"), TestContent::withInputRow)
+        }
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(emptyList(), violations)
+    }
+
+    @Test
+    fun `validate - when an input_row child is not an input then reports it`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given
+        val layout = TestContent.writeValid(contentDir)
+        listOf("form_testform.json", "form_testform-en.json").forEach { name ->
+            edit(contentDir.resolve("forms/testform/$name")) {
+                TestContent.withInputRow(it).replace(
+                    "\"type\": \"input\", \"title\": \"Teil 1\"",
+                    "\"type\": \"date\", \"title\": \"Teil 1\"",
+                )
+            }
+        }
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(1, violations.size)
+        assertContains(violations.single().message, "non-input child 'txtName'")
+    }
+
+    @Test
     fun `validate - when pdfAssetPath names a missing file then reports it`(
         @TempDir contentDir: Path,
     ) {

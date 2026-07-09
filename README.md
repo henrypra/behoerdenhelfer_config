@@ -51,6 +51,24 @@ Every number is derived — there is nothing to bump by hand:
 - **PDFs are published byte-identical.** Never re-save, flatten or "repair" one —
   some are intentionally encrypted or XFA hybrids.
 
+Form JSON authoring rules (the app relies on these):
+
+- **No format suffixes on date field titles** — never "(TT.MM.JJJJ)" / "(DD.MM.YYYY)";
+  the app shows a date picker and always writes `TT.MM.JJJJ` into the PDF.
+- **Keep field-number prefixes** like `"8 – Familienname"` (`<number> – <title>`,
+  en-dash or hyphen) — the app renders the number as a badge. Numbered *section
+  headers* (`"1. Antragstellende Person"`) keep their dot notation verbatim.
+- **`input_row`** groups several short `input` children side by side under one title
+  (e.g. a Steuer-ID split across PDF blocks). The group name is a synthetic UI id
+  (prefix `group_`, never a PDF field); each child carries the exact PDF field name
+  and a short label ("Teil 1"). Keep it to at most 4–5 children.
+- **`input_type`** (`"number"` | `"phone"`) is an optional keyboard hint on `input`
+  fields. Use `number` only for digit-only values — not for mixed alphanumeric ones
+  like IBAN or Kindergeld-Nr.
+- **Repeating blocks** keep their `"<Unit> <n>"` section titles (e.g. `"Kind 1"`) —
+  the app derives the "add" button label from the unit word.
+- **No placeholder/test text** in any title.
+
 `validate` blocks anything broken: strict JSON schema, de/en structural parity,
 every referenced field must exist in the PDF's AcroForm tree, hint references must
 resolve, published paths stay immutable.

@@ -143,6 +143,21 @@ class Validator(
                 }
             }
         }
+
+        walkFields(de) { field ->
+            if (field.type == FieldType.INPUT_ROW) {
+                if (field.children.isEmpty()) {
+                    violations += Violation(bundle.formId, "input_row '${field.name}' has no children")
+                }
+                field.children.filter { it.type != FieldType.INPUT }.forEach { child ->
+                    violations +=
+                        Violation(
+                            bundle.formId,
+                            "input_row '${field.name}' has non-input child '${child.name}' (${child.type})",
+                        )
+                }
+            }
+        }
     }
 
     private fun parseForm(
@@ -164,8 +179,8 @@ class Validator(
 
     /**
      * Names that must exist as AcroForm fields: `ui_`-prefixed names are app-only
-     * helpers, `radio`/`multiselect` parents are synthetic, `section_header`s are
-     * presentational — everything else targets the PDF.
+     * helpers, `radio`/`multiselect`/`input_row` parents are synthetic,
+     * `section_header`s are presentational — everything else targets the PDF.
      */
     private fun pdfTargetingNames(form: FormDto): List<String> {
         val names = mutableListOf<String>()
@@ -223,6 +238,7 @@ class Validator(
     }
 
     private companion object {
-        val SYNTHETIC_TYPES = setOf(FieldType.SECTION_HEADER, FieldType.RADIO, FieldType.MULTISELECT)
+        val SYNTHETIC_TYPES =
+            setOf(FieldType.SECTION_HEADER, FieldType.RADIO, FieldType.MULTISELECT, FieldType.INPUT_ROW)
     }
 }

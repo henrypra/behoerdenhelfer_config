@@ -23,6 +23,18 @@ class ContentSchemaTest {
     }
 
     @Test
+    fun `requiredFor - when a form uses an input_row then requires schema 2`() {
+        // Given
+        val form = Json.decodeFromString<FormDto>(TestContent.withInputRow(TestContent.FORM_DE))
+
+        // When
+        val required = sut.requiredFor(form)
+
+        // Then
+        assertEquals(2, required)
+    }
+
+    @Test
     fun `CURRENT - always covers every declared field type level`() {
         // Given
         val highestFieldTypeLevel = FieldType.entries.maxOf { it.sinceContentSchema }

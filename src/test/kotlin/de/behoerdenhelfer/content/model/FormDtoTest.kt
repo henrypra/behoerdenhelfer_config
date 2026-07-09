@@ -31,6 +31,32 @@ class FormDtoTest {
     }
 
     @Test
+    fun `decode - when parsing an input_row group then maps type and input_type`() {
+        // Given
+        val raw = TestContent.withInputRow(TestContent.FORM_DE)
+
+        // When
+        val form = sut.decodeFromString<FormDto>(raw)
+
+        // Then
+        val group = form.pages.single().fields[1]
+        assertEquals(FieldType.INPUT_ROW, group.type)
+        assertEquals(InputType.NUMBER, group.children.single().inputType)
+    }
+
+    @Test
+    fun `decode - when input_type is not in the allowed set then parsing fails`() {
+        // Given
+        val raw =
+            TestContent
+                .withInputRow(TestContent.FORM_DE)
+                .replace("\"input_type\": \"number\"", "\"input_type\": \"color\"")
+
+        // When / Then
+        assertFailsWith<SerializationException> { sut.decodeFromString<FormDto>(raw) }
+    }
+
+    @Test
     fun `decode - when a field has an unknown type then parsing fails`() {
         // Given
         val raw = TestContent.FORM_DE.replace("\"type\": \"input\"", "\"type\": \"textarea\"")
