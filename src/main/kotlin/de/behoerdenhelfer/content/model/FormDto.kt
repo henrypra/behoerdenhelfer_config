@@ -24,6 +24,7 @@ data class FieldDto(
     val title: String,
     val children: List<FieldDto> = emptyList(),
     @SerialName("input_type") val inputType: InputType? = null,
+    @SerialName("segment_lengths") val segmentLengths: List<Int>? = null,
     @SerialName("yes_option_id") val yesOptionId: String? = null,
     @SerialName("no_option_id") val noOptionId: String? = null,
     @SerialName("yes_no_option_hint") val yesNoOptionHint: String? = null,
@@ -51,6 +52,12 @@ enum class FieldType(
      * Segmented input group: several short `input` children rendered side by side
      * under one shared title. The group name is a synthetic UI id (never a PDF
      * field); the children carry the real PDF field names.
+     *
+     * With `segment_lengths` (one character count per child) the group is one
+     * value split across PDF blocks, e.g. an 11-digit Steuer-ID as `[2, 3, 3, 3]`:
+     * clients that know the key render a single input and distribute the value
+     * over the children in order; older clients ignore it and keep the segmented
+     * row, so it stays a level-2 feature.
      */
     @SerialName("input_row")
     INPUT_ROW(2),

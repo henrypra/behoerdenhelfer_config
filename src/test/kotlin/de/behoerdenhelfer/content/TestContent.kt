@@ -82,6 +82,25 @@ object TestContent {
             """.trimIndent(),
         )
 
+    /**
+     * Like [withInputRow], but the group is one value split over two PDF blocks
+     * (`segment_lengths`), the way a Steuer-ID is spread across comb fields.
+     */
+    fun withSegmentedInputRow(formJson: String): String =
+        formJson.replace(
+            """{ "name": "txtName", "type": "input", "title": "Name", "profile_key": "LAST_NAME" }""",
+            """
+            {
+              "name": "group_name", "type": "input_row", "title": "Name",
+              "input_type": "number", "segment_lengths": [2, 3],
+              "children": [
+                { "name": "txtName", "type": "input", "title": "Teil 1", "input_type": "number" },
+                { "name": "rbtnJaNein", "type": "input", "title": "Teil 2", "input_type": "number" }
+              ]
+            }
+            """.trimIndent(),
+        )
+
     // language=json
     val HINTS_DE = """{ "hints": [ { "number": 1, "title": "Konto", "text": "Hinweistext" } ] }"""
 

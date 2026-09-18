@@ -45,6 +45,27 @@ class FormDtoTest {
     }
 
     @Test
+    fun `decode - when parsing a segmented input_row then maps segment_lengths`() {
+        // Given
+        val raw = TestContent.withSegmentedInputRow(TestContent.FORM_DE)
+
+        // When
+        val form = sut.decodeFromString<FormDto>(raw)
+
+        // Then
+        val group = form.pages.single().fields[1]
+        assertEquals(listOf(2, 3), group.segmentLengths)
+        assertEquals(InputType.NUMBER, group.inputType)
+        assertEquals(
+            null,
+            form.pages
+                .single()
+                .fields[0]
+                .segmentLengths,
+        )
+    }
+
+    @Test
     fun `decode - when input_type is not in the allowed set then parsing fails`() {
         // Given
         val raw =

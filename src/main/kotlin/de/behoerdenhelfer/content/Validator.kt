@@ -156,6 +156,23 @@ class Validator(
                             "input_row '${field.name}' has non-input child '${child.name}' (${child.type})",
                         )
                 }
+                field.segmentLengths?.let { lengths ->
+                    if (lengths.size != field.children.size) {
+                        violations +=
+                            Violation(
+                                bundle.formId,
+                                "input_row '${field.name}' has ${lengths.size} segment_lengths " +
+                                    "but ${field.children.size} children",
+                            )
+                    }
+                    if (lengths.any { it < 1 }) {
+                        violations +=
+                            Violation(bundle.formId, "input_row '${field.name}' has a segment length below 1")
+                    }
+                }
+            } else if (field.segmentLengths != null) {
+                violations +=
+                    Violation(bundle.formId, "field '${field.name}' has segment_lengths but is not an input_row")
             }
         }
     }

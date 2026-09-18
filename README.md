@@ -55,13 +55,21 @@ Form JSON authoring rules (the app relies on these):
 
 - **No format suffixes on date field titles** — never "(TT.MM.JJJJ)" / "(DD.MM.YYYY)";
   the app shows a date picker and always writes `TT.MM.JJJJ` into the PDF.
-- **Keep field-number prefixes** like `"8 – Familienname"` (`<number> – <title>`,
-  en-dash or hyphen) — the app renders the number as a badge. Numbered *section
-  headers* (`"1. Antragstellende Person"`) keep their dot notation verbatim.
-- **`input_row`** groups several short `input` children side by side under one title
-  (e.g. a Steuer-ID split across PDF blocks). The group name is a synthetic UI id
-  (prefix `group_`, never a PDF field); each child carries the exact PDF field name
-  and a short label ("Teil 1"). Keep it to at most 4–5 children.
+- **Field-number prefixes only where the PDF prints them.** `"8 – Familienname"`
+  (`<number> – <title>`, en-dash or hyphen) is rendered by the app as a badge — use it
+  for forms whose fields are numbered on paper (the Bürgergeld Anlagen). Never invent
+  numbers: the KG1 has none, only boxed section numbers. Numbered *section headers*
+  (`"1. Angaben zur antragstellenden Person"`) keep their dot notation verbatim.
+- **`input_row`** groups several short `input` children side by side under one title.
+  The group name is a synthetic UI id (prefix `group_`, never a PDF field); each child
+  carries the exact PDF field name and a short label ("Teil 1"). Keep it to at most
+  4–5 children.
+- **`segment_lengths`** (optional, on `input_row`) marks the group as *one* value that
+  the PDF merely splits into blocks — e.g. the 11-digit Steuer-ID as `[2, 3, 3, 3]`,
+  one entry per child. Clients that know the key render a single input of
+  `sum(segment_lengths)` characters and distribute the value over the children in
+  order; older clients ignore it and show the segmented row, so it does not raise
+  `minContentSchema`. Put the keyboard `input_type` on the group as well as the children.
 - **`input_type`** (`"number"` | `"phone"`) is an optional keyboard hint on `input`
   fields. Use `number` only for digit-only values — not for mixed alphanumeric ones
   like IBAN or Kindergeld-Nr.

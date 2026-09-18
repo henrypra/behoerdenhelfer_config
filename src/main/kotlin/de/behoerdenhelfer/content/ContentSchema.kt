@@ -8,7 +8,9 @@ import de.behoerdenhelfer.content.model.FormDto
  * (`FormResponseDto`). Level 1 = the original field types and keys. Level 2 =
  * the `input_row` segmented input group (the `input_type` keyboard hint shipped
  * with the same app update, but old clients ignore unknown keys, so it stays
- * consumable at level 1). Anything the app must be updated for (a new field type,
+ * consumable at level 1; likewise `segment_lengths` on an `input_row` only
+ * upgrades the rendering, older clients keep the segmented row). Anything the
+ * app must be updated for (a new field type,
  * a new behavioral key) bumps [CURRENT] — and content *using* the new feature
  * automatically gets a higher `minContentSchema` in the manifest, so older app
  * versions skip it and keep their last understood copy.

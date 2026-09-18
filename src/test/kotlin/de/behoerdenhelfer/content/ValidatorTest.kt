@@ -153,6 +153,86 @@ class ValidatorTest {
     }
 
     @Test
+    fun `validate - when an input_row has one segment length per child then accepts it`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given
+        val layout = TestContent.writeValid(contentDir)
+        listOf("form_testform.json", "form_testform-en.json").forEach { name ->
+            edit(contentDir.resolve("forms/testform/$name"), TestContent::withSegmentedInputRow)
+        }
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(emptyList(), violations)
+    }
+
+    @Test
+    fun `validate - when segment_lengths does not match the child count then reports it`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given
+        val layout = TestContent.writeValid(contentDir)
+        listOf("form_testform.json", "form_testform-en.json").forEach { name ->
+            edit(contentDir.resolve("forms/testform/$name")) {
+                TestContent.withSegmentedInputRow(it).replace("\"segment_lengths\": [2, 3]", "\"segment_lengths\": [2, 3, 3]")
+            }
+        }
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(1, violations.size)
+        assertContains(violations.single().message, "3 segment_lengths but 2 children")
+    }
+
+    @Test
+    fun `validate - when a segment length is below 1 then reports it`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given
+        val layout = TestContent.writeValid(contentDir)
+        listOf("form_testform.json", "form_testform-en.json").forEach { name ->
+            edit(contentDir.resolve("forms/testform/$name")) {
+                TestContent.withSegmentedInputRow(it).replace("\"segment_lengths\": [2, 3]", "\"segment_lengths\": [0, 5]")
+            }
+        }
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(1, violations.size)
+        assertContains(violations.single().message, "segment length below 1")
+    }
+
+    @Test
+    fun `validate - when segment_lengths is set on a plain input then reports it`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given
+        val layout = TestContent.writeValid(contentDir)
+        listOf("form_testform.json", "form_testform-en.json").forEach { name ->
+            edit(contentDir.resolve("forms/testform/$name")) {
+                it.replace(
+                    "\"type\": \"input\", \"title\": \"Name\"",
+                    "\"type\": \"input\", \"segment_lengths\": [4], \"title\": \"Name\"",
+                )
+            }
+        }
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(1, violations.size)
+        assertContains(violations.single().message, "'txtName' has segment_lengths but is not an input_row")
+    }
+
+    @Test
     fun `validate - when pdfAssetPath names a missing file then reports it`(
         @TempDir contentDir: Path,
     ) {
