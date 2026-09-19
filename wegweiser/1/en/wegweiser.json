@@ -1,0 +1,791 @@
+{
+  "schema": 1,
+  "benefits": [
+    {
+      "id": "kindergeld",
+      "name": "Kindergeld (child benefit)",
+      "what": "For every child, regardless of income, until at least 18.",
+      "authorityId": "familienkasse",
+      "apply": "app",
+      "formId": "KINDERGELD",
+      "deadline": "Only 6 months retroactively – apply soon.",
+      "documents": [
+        "TAX_ID",
+        "BIRTH_CERTIFICATE",
+        "BANK_DETAILS"
+      ]
+    },
+    {
+      "id": "elterngeld",
+      "name": "Elterngeld (parental benefit)",
+      "what": "Replaces part of your income if you work less or not at all after the birth.",
+      "authorityId": "elterngeldstelle",
+      "apply": "online",
+      "portalUrl": "https://www.elterngeld-digital.de",
+      "deadline": "Only 3 months retroactively.",
+      "documents": [
+        "BIRTH_CERTIFICATE",
+        "INCOME_PROOF",
+        "MATERNITY_CERTIFICATE",
+        "BANK_DETAILS"
+      ]
+    },
+    {
+      "id": "kiz",
+      "name": "Kinderzuschlag (child supplement)",
+      "what": "For families with their own income that just isn't enough. Often missed.",
+      "authorityId": "familienkasse",
+      "apply": "online",
+      "portalUrl": "https://www.arbeitsagentur.de/familie-und-kinder",
+      "documents": [
+        "INCOME_PROOF",
+        "RENTAL_CONTRACT",
+        "BANK_DETAILS"
+      ]
+    },
+    {
+      "id": "bg_ha",
+      "name": "Bürgergeld – first application",
+      "what": "Covers living costs and rent when income and assets are not enough.",
+      "authorityId": "jobcenter",
+      "apply": "app",
+      "formId": "BUERGERGELD_HA",
+      "deadline": "Starts in the month the Jobcenter receives it – submit now, hand in documents later.",
+      "documents": [
+        "ID_CARD",
+        "REGISTRATION_CERTIFICATE",
+        "RENTAL_CONTRACT",
+        "BANK_STATEMENTS",
+        "INCOME_PROOF"
+      ]
+    },
+    {
+      "id": "bg_wba",
+      "name": "Bürgergeld – renewal",
+      "what": "So payments don't stop when the approval period ends.",
+      "authorityId": "jobcenter",
+      "apply": "app",
+      "formId": "BUERGERGELD_WBA",
+      "deadline": "A few weeks before the approval period ends.",
+      "documents": [
+        "BANK_STATEMENTS",
+        "INCOME_PROOF"
+      ]
+    },
+    {
+      "id": "bg_ek",
+      "name": "Report a change (income / housing)",
+      "what": "Mandatory while receiving benefits. Form EK for income, KDU for housing.",
+      "authorityId": "jobcenter",
+      "apply": "app",
+      "formId": "BUERGERGELD_EK",
+      "deadline": "Immediately when something changes.",
+      "documents": [
+        "INCOME_PROOF"
+      ]
+    },
+    {
+      "id": "kdu",
+      "name": "Housing costs at the Jobcenter (form KDU)",
+      "what": "Report new rent. Before moving, get the Jobcenter's written assurance.",
+      "authorityId": "jobcenter",
+      "apply": "app",
+      "formId": "BUERGERGELD_KDU",
+      "deadline": "Before moving.",
+      "documents": [
+        "RENTAL_CONTRACT"
+      ]
+    },
+    {
+      "id": "wohngeld",
+      "name": "Wohngeld (housing benefit)",
+      "what": "Rent subsidy if you are not on Bürgergeld and rent eats too much of your income.",
+      "authorityId": "wohngeldstelle",
+      "apply": "paper",
+      "deadline": "Starts in the month of application.",
+      "documents": [
+        "ID_CARD",
+        "REGISTRATION_CERTIFICATE",
+        "RENTAL_CONTRACT",
+        "INCOME_PROOF"
+      ]
+    },
+    {
+      "id": "alg1",
+      "name": "Unemployment benefit I",
+      "what": "If you worked with insurance for at least 12 of the last 30 months.",
+      "authorityId": "agentur_fuer_arbeit",
+      "apply": "online",
+      "portalUrl": "https://www.arbeitsagentur.de",
+      "deadline": "Register as unemployed by the first day without work; register as job-seeking 3 months before the contract ends.",
+      "documents": [
+        "ID_CARD",
+        "EMPLOYMENT_TERMINATION",
+        "BANK_DETAILS"
+      ]
+    },
+    {
+      "id": "krankengeld",
+      "name": "Sickness benefit",
+      "what": "From the 7th week of illness the health insurer pays instead of the employer.",
+      "authorityId": "krankenkasse",
+      "apply": "paper",
+      "deadline": "Submit sick notes without gaps."
+    },
+    {
+      "id": "pflegegrad",
+      "name": "Care level (Pflegegrad)",
+      "what": "When someone permanently needs help in daily life. An informal request to the care fund is enough.",
+      "authorityId": "pflegekasse",
+      "apply": "paper",
+      "deadline": "Benefits from the month of application – call first, then wait for the assessment.",
+      "documents": [
+        "MEDICAL_REPORTS"
+      ]
+    },
+    {
+      "id": "sba",
+      "name": "Disability card",
+      "what": "Compensations for a permanent impairment: job protection, extra leave, tax.",
+      "authorityId": "versorgungsamt",
+      "apply": "paper",
+      "documents": [
+        "MEDICAL_REPORTS",
+        "ID_CARD"
+      ]
+    },
+    {
+      "id": "uvg",
+      "name": "Advance maintenance payment",
+      "what": "When the other parent pays no or too little maintenance. For single parents.",
+      "authorityId": "jugendamt",
+      "apply": "paper",
+      "deadline": "Only 1 month retroactively.",
+      "documents": [
+        "BIRTH_CERTIFICATE",
+        "ID_CARD",
+        "REGISTRATION_CERTIFICATE"
+      ]
+    },
+    {
+      "id": "grusi",
+      "name": "Basic income support in old age",
+      "what": "When the pension is not enough to live on. Children usually don't have to pay anything back.",
+      "authorityId": "sozialamt",
+      "apply": "paper",
+      "deadline": "Starts in the month of application.",
+      "documents": [
+        "ID_CARD",
+        "RENTAL_CONTRACT",
+        "BANK_STATEMENTS",
+        "INCOME_PROOF"
+      ]
+    },
+    {
+      "id": "rente",
+      "name": "Old-age pension",
+      "what": "From the statutory retirement age, earlier with deductions. It does not come automatically – you must apply.",
+      "authorityId": "rentenversicherung",
+      "apply": "online",
+      "portalUrl": "https://www.deutsche-rentenversicherung.de",
+      "deadline": "3 months before the pension starts.",
+      "documents": [
+        "ID_CARD",
+        "BANK_DETAILS"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "kind_beides",
+      "benefits": [
+        "kindergeld",
+        "elterngeld"
+      ],
+      "steps": [
+        "Fill in Kindergeld in the app and send it to the Familienkasse",
+        "Apply for Elterngeld online with your state – within 3 months",
+        "Wait for the child's tax ID, it arrives automatically by post"
+      ]
+    },
+    {
+      "id": "kind_nur",
+      "benefits": [
+        "kindergeld",
+        "kiz"
+      ],
+      "steps": [
+        "Fill in Kindergeld in the app and send it to the Familienkasse",
+        "Check Kinderzuschlag if your income is tight"
+      ]
+    },
+    {
+      "id": "bg_neu",
+      "benefits": [
+        "bg_ha",
+        "wohngeld"
+      ],
+      "steps": [
+        "Submit the main application today – hand in missing documents later",
+        "Ask for a receipt",
+        "If Bürgergeld is refused: check Wohngeld and Kinderzuschlag"
+      ]
+    },
+    {
+      "id": "bg_wba",
+      "benefits": [
+        "bg_wba"
+      ],
+      "steps": [
+        "Fill in the renewal in the app",
+        "Submit at the Jobcenter, ask for a receipt"
+      ]
+    },
+    {
+      "id": "bg_aend",
+      "benefits": [
+        "bg_ek",
+        "kdu"
+      ],
+      "steps": [
+        "Report the change immediately – otherwise repayments may follow",
+        "Attach proof"
+      ]
+    },
+    {
+      "id": "wohnen_kdu",
+      "benefits": [
+        "kdu"
+      ],
+      "steps": [
+        "Before moving: get the Jobcenter's assurance",
+        "Submit form KDU with the new rental contract"
+      ]
+    },
+    {
+      "id": "wohnen_wg",
+      "benefits": [
+        "wohngeld"
+      ],
+      "steps": [
+        "Get the form at the Wohngeldstelle or download it",
+        "Attach rental contract and proof of income"
+      ]
+    },
+    {
+      "id": "arbeit_alg",
+      "benefits": [
+        "alg1"
+      ],
+      "steps": [
+        "Register as job-seeking immediately – online or by phone",
+        "Register as unemployed in person on the first day without work"
+      ]
+    },
+    {
+      "id": "arbeit_bg",
+      "benefits": [
+        "bg_ha"
+      ],
+      "steps": [
+        "Submit the main application at the Jobcenter",
+        "Attach the termination letter"
+      ]
+    },
+    {
+      "id": "arbeit_unklar",
+      "benefits": [
+        "alg1",
+        "bg_ha"
+      ],
+      "steps": [
+        "Register at the Agentur für Arbeit – they check whether benefit I is possible",
+        "If it is not enough, the Jobcenter tops up with Bürgergeld"
+      ]
+    },
+    {
+      "id": "krank_kg",
+      "benefits": [
+        "krankengeld"
+      ],
+      "steps": [
+        "Send sick notes to the insurer without gaps",
+        "The insurer contacts you with a form"
+      ]
+    },
+    {
+      "id": "krank_pflege",
+      "benefits": [
+        "pflegegrad"
+      ],
+      "steps": [
+        "Call the care fund and request a care level",
+        "Prepare the medical service's visit: keep a care diary"
+      ]
+    },
+    {
+      "id": "krank_sb",
+      "benefits": [
+        "sba"
+      ],
+      "steps": [
+        "Apply at the Versorgungsamt",
+        "Attach medical reports"
+      ]
+    },
+    {
+      "id": "familie_uvg",
+      "benefits": [
+        "uvg"
+      ],
+      "steps": [
+        "Apply at the Jugendamt – book an appointment",
+        "Report the Kindergeld change to the Familienkasse"
+      ]
+    },
+    {
+      "id": "familie_beratung",
+      "benefits": [],
+      "steps": [
+        "The Jugendamt gives free advice on contact, maintenance and custody",
+        "Legal aid at the local court: a lawyer's consultation for €15"
+      ],
+      "extraAuthorityId": "jugendamt"
+    },
+    {
+      "id": "alter_grusi",
+      "benefits": [
+        "grusi",
+        "wohngeld"
+      ],
+      "steps": [
+        "Apply for basic income support at the Sozialamt",
+        "Attach pension notice and bank statements"
+      ]
+    },
+    {
+      "id": "alter_rente",
+      "benefits": [
+        "rente"
+      ],
+      "steps": [
+        "Request a pension statement",
+        "Apply 3 months before the pension starts"
+      ]
+    },
+    {
+      "id": "krank_unklar",
+      "benefits": [],
+      "steps": [
+        "Call your health insurer – they tell you which benefit fits and who is responsible",
+        "For a permanent disability the Versorgungsamt is the right contact"
+      ],
+      "extraAuthorityId": "krankenkasse"
+    }
+  ],
+  "situations": [
+    {
+      "id": "kind",
+      "title": "I'm having a child or have a child",
+      "icon": "child",
+      "root": {
+        "question": "Do you want to work less or not at all after the birth?",
+        "answers": [
+          {
+            "text": "Yes",
+            "next": {
+              "result": "kind_beides"
+            }
+          },
+          {
+            "text": "No",
+            "next": {
+              "result": "kind_nur"
+            }
+          },
+          {
+            "text": "I don't know",
+            "next": {
+              "result": "kind_beides"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "geld",
+      "title": "I have no or too little money",
+      "icon": "wallet",
+      "root": {
+        "question": "Are you already receiving Bürgergeld?",
+        "answers": [
+          {
+            "text": "Yes",
+            "next": {
+              "question": "Does your approval period end in the next few weeks?",
+              "answers": [
+                {
+                  "text": "Yes",
+                  "next": {
+                    "result": "bg_wba"
+                  }
+                },
+                {
+                  "text": "No, something has changed",
+                  "next": {
+                    "result": "bg_aend"
+                  }
+                },
+                {
+                  "text": "I don't know",
+                  "next": {
+                    "result": "bg_wba"
+                  },
+                  "fallback": true
+                }
+              ]
+            }
+          },
+          {
+            "text": "No",
+            "next": {
+              "result": "bg_neu"
+            }
+          },
+          {
+            "text": "I don't know",
+            "next": {
+              "result": "bg_neu"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "wohnen",
+      "title": "Housing and rent",
+      "icon": "home",
+      "root": {
+        "question": "Are you receiving Bürgergeld?",
+        "answers": [
+          {
+            "text": "Yes",
+            "next": {
+              "result": "wohnen_kdu"
+            }
+          },
+          {
+            "text": "No",
+            "next": {
+              "result": "wohnen_wg"
+            }
+          },
+          {
+            "text": "I don't know",
+            "next": {
+              "result": "wohnen_wg"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "neu",
+      "title": "I'm new in Germany",
+      "icon": "globe",
+      "root": {
+        "checklist": [
+          {
+            "text": "Register your address (within 14 days)",
+            "authorityId": "buergeramt"
+          },
+          {
+            "text": "Wait for your tax ID – the Federal Central Tax Office sends it by post automatically; the Finanzamt answers tax questions",
+            "authorityId": "finanzamt"
+          },
+          {
+            "text": "Choose and register with a health insurer",
+            "authorityId": "krankenkasse"
+          },
+          {
+            "text": "Open a bank account (everyone is entitled to a basic account)"
+          },
+          {
+            "text": "Sort out residence permit or work permit",
+            "authorityId": "auslaenderbehoerde"
+          },
+          {
+            "text": "Apply for Kindergeld if you have children",
+            "benefitId": "kindergeld"
+          },
+          {
+            "text": "Language course: apply for an integration course at BAMF"
+          }
+        ]
+      }
+    },
+    {
+      "id": "arbeit",
+      "title": "I lost my job",
+      "icon": "work",
+      "root": {
+        "question": "Did you work with social insurance for at least 12 months in the last 2½ years?",
+        "answers": [
+          {
+            "text": "Yes",
+            "next": {
+              "result": "arbeit_alg"
+            }
+          },
+          {
+            "text": "No",
+            "next": {
+              "result": "arbeit_bg"
+            }
+          },
+          {
+            "text": "I don't know",
+            "next": {
+              "result": "arbeit_unklar"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "krank",
+      "title": "Illness and care",
+      "icon": "hospital",
+      "root": {
+        "question": "What is it about?",
+        "answers": [
+          {
+            "text": "I've been ill for more than 6 weeks",
+            "next": {
+              "result": "krank_kg"
+            }
+          },
+          {
+            "text": "Someone needs permanent help in daily life",
+            "next": {
+              "result": "krank_pflege"
+            }
+          },
+          {
+            "text": "Permanent disability",
+            "next": {
+              "result": "krank_sb"
+            }
+          },
+          {
+            "text": "I don't know",
+            "next": {
+              "result": "krank_unklar"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "familie",
+      "title": "Family and separation",
+      "icon": "people",
+      "root": {
+        "question": "Does a child live with you and the other parent pays no or too little maintenance?",
+        "answers": [
+          {
+            "text": "Yes",
+            "next": {
+              "result": "familie_uvg"
+            }
+          },
+          {
+            "text": "No",
+            "next": {
+              "result": "familie_beratung"
+            }
+          },
+          {
+            "text": "I don't know",
+            "next": {
+              "result": "familie_beratung"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "alter",
+      "title": "Old age and pension",
+      "icon": "clock",
+      "root": {
+        "question": "Are you already receiving a pension?",
+        "answers": [
+          {
+            "text": "Yes, but it's not enough",
+            "next": {
+              "result": "alter_grusi"
+            }
+          },
+          {
+            "text": "No, I want to apply",
+            "next": {
+              "result": "alter_rente"
+            }
+          },
+          {
+            "text": "I don't know",
+            "next": {
+              "result": "alter_rente"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    }
+  ],
+  "synonyms": [
+    {
+      "terms": [
+        "housing benefit",
+        "rent",
+        "rent subsidy"
+      ],
+      "target": {
+        "benefit": "wohngeld"
+      }
+    },
+    {
+      "terms": [
+        "child benefit"
+      ],
+      "target": {
+        "benefit": "kindergeld"
+      }
+    },
+    {
+      "terms": [
+        "parental allowance",
+        "parental leave"
+      ],
+      "target": {
+        "benefit": "elterngeld"
+      }
+    },
+    {
+      "terms": [
+        "citizen's allowance",
+        "basic income",
+        "jobcenter"
+      ],
+      "target": {
+        "authority": "jobcenter"
+      }
+    },
+    {
+      "terms": [
+        "daycare",
+        "child support",
+        "custody"
+      ],
+      "target": {
+        "authority": "jugendamt"
+      }
+    },
+    {
+      "terms": [
+        "passport",
+        "id card",
+        "registration",
+        "register address"
+      ],
+      "target": {
+        "authority": "buergeramt"
+      }
+    },
+    {
+      "terms": [
+        "residence permit",
+        "visa",
+        "work permit"
+      ],
+      "target": {
+        "authority": "auslaenderbehoerde"
+      }
+    },
+    {
+      "terms": [
+        "pension",
+        "retirement"
+      ],
+      "target": {
+        "benefit": "rente"
+      }
+    },
+    {
+      "terms": [
+        "care",
+        "care level",
+        "nursing"
+      ],
+      "target": {
+        "benefit": "pflegegrad"
+      }
+    },
+    {
+      "terms": [
+        "sick",
+        "sick pay",
+        "sick leave"
+      ],
+      "target": {
+        "benefit": "krankengeld"
+      }
+    },
+    {
+      "terms": [
+        "unemployed",
+        "lost my job",
+        "dismissal"
+      ],
+      "target": {
+        "situation": "arbeit"
+      }
+    },
+    {
+      "terms": [
+        "tax",
+        "tax id",
+        "elster"
+      ],
+      "target": {
+        "authority": "finanzamt"
+      }
+    },
+    {
+      "terms": [
+        "disability",
+        "severely disabled"
+      ],
+      "target": {
+        "benefit": "sba"
+      }
+    },
+    {
+      "terms": [
+        "new in germany",
+        "refugee",
+        "just arrived"
+      ],
+      "target": {
+        "situation": "neu"
+      }
+    }
+  ]
+}

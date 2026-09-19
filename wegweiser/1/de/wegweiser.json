@@ -1,0 +1,793 @@
+{
+  "schema": 1,
+  "benefits": [
+    {
+      "id": "kindergeld",
+      "name": "Kindergeld",
+      "what": "Für jedes Kind, unabhängig vom Einkommen, bis mindestens 18.",
+      "authorityId": "familienkasse",
+      "apply": "app",
+      "formId": "KINDERGELD",
+      "deadline": "Rückwirkend nur 6 Monate – bald beantragen.",
+      "documents": [
+        "TAX_ID",
+        "BIRTH_CERTIFICATE",
+        "BANK_DETAILS"
+      ]
+    },
+    {
+      "id": "elterngeld",
+      "name": "Elterngeld",
+      "what": "Ersetzt einen Teil des Einkommens, wenn Sie nach der Geburt weniger oder nicht arbeiten.",
+      "authorityId": "elterngeldstelle",
+      "apply": "online",
+      "portalUrl": "https://www.elterngeld-digital.de",
+      "deadline": "Rückwirkend nur 3 Monate.",
+      "documents": [
+        "BIRTH_CERTIFICATE",
+        "INCOME_PROOF",
+        "MATERNITY_CERTIFICATE",
+        "BANK_DETAILS"
+      ]
+    },
+    {
+      "id": "kiz",
+      "name": "Kinderzuschlag",
+      "what": "Für Familien mit eigenem Einkommen, das knapp nicht reicht. Oft übersehen.",
+      "authorityId": "familienkasse",
+      "apply": "online",
+      "portalUrl": "https://www.arbeitsagentur.de/familie-und-kinder",
+      "documents": [
+        "INCOME_PROOF",
+        "RENTAL_CONTRACT",
+        "BANK_DETAILS"
+      ]
+    },
+    {
+      "id": "bg_ha",
+      "name": "Bürgergeld – Erstantrag",
+      "what": "Sichert den Lebensunterhalt und die Miete, wenn Einkommen und Vermögen nicht reichen.",
+      "authorityId": "jobcenter",
+      "apply": "app",
+      "formId": "BUERGERGELD_HA",
+      "deadline": "Gilt ab dem Monat, in dem der Antrag beim Jobcenter ankommt – sofort abgeben, Unterlagen nachreichen.",
+      "documents": [
+        "ID_CARD",
+        "REGISTRATION_CERTIFICATE",
+        "RENTAL_CONTRACT",
+        "BANK_STATEMENTS",
+        "INCOME_PROOF"
+      ]
+    },
+    {
+      "id": "bg_wba",
+      "name": "Bürgergeld – Weiterbewilligung",
+      "what": "Damit die Zahlung nicht stoppt, wenn der Bewilligungszeitraum endet.",
+      "authorityId": "jobcenter",
+      "apply": "app",
+      "formId": "BUERGERGELD_WBA",
+      "deadline": "Einige Wochen vor Ende des Bewilligungszeitraums.",
+      "documents": [
+        "BANK_STATEMENTS",
+        "INCOME_PROOF"
+      ]
+    },
+    {
+      "id": "bg_ek",
+      "name": "Änderung mitteilen (Einkommen / Wohnung)",
+      "what": "Pflicht während des Bezugs. Anlage EK für Einkommen, Anlage KDU für die Wohnung.",
+      "authorityId": "jobcenter",
+      "apply": "app",
+      "formId": "BUERGERGELD_EK",
+      "deadline": "Sofort, wenn sich etwas ändert.",
+      "documents": [
+        "INCOME_PROOF"
+      ]
+    },
+    {
+      "id": "kdu",
+      "name": "Wohnkosten beim Jobcenter (Anlage KDU)",
+      "what": "Neue Miete melden. Vor einem Umzug die Zusicherung des Jobcenters einholen.",
+      "authorityId": "jobcenter",
+      "apply": "app",
+      "formId": "BUERGERGELD_KDU",
+      "deadline": "Vor dem Umzug.",
+      "documents": [
+        "RENTAL_CONTRACT"
+      ]
+    },
+    {
+      "id": "wohngeld",
+      "name": "Wohngeld",
+      "what": "Zuschuss zur Miete, wenn Sie kein Bürgergeld bekommen und die Miete zu viel vom Einkommen frisst.",
+      "authorityId": "wohngeldstelle",
+      "apply": "paper",
+      "deadline": "Gilt ab dem Antragsmonat.",
+      "documents": [
+        "ID_CARD",
+        "REGISTRATION_CERTIFICATE",
+        "RENTAL_CONTRACT",
+        "INCOME_PROOF"
+      ]
+    },
+    {
+      "id": "alg1",
+      "name": "Arbeitslosengeld I",
+      "what": "Wenn Sie in den letzten 30 Monaten mindestens 12 Monate versichert gearbeitet haben.",
+      "authorityId": "agentur_fuer_arbeit",
+      "apply": "online",
+      "portalUrl": "https://www.arbeitsagentur.de",
+      "deadline": "Arbeitslos melden spätestens am 1. Tag ohne Arbeit; arbeitsuchend melden 3 Monate vor Ende des Vertrags.",
+      "documents": [
+        "ID_CARD",
+        "EMPLOYMENT_TERMINATION",
+        "BANK_DETAILS"
+      ]
+    },
+    {
+      "id": "krankengeld",
+      "name": "Krankengeld",
+      "what": "Ab der 7. Woche Krankheit zahlt die Krankenkasse statt des Arbeitgebers.",
+      "authorityId": "krankenkasse",
+      "apply": "paper",
+      "deadline": "Krankschreibung lückenlos einreichen."
+    },
+    {
+      "id": "pflegegrad",
+      "name": "Pflegegrad",
+      "what": "Wenn jemand dauerhaft Hilfe im Alltag braucht. Formloser Antrag bei der Pflegekasse genügt.",
+      "authorityId": "pflegekasse",
+      "apply": "paper",
+      "deadline": "Leistungen ab dem Antragsmonat – erst anrufen, dann Gutachten abwarten.",
+      "documents": [
+        "MEDICAL_REPORTS"
+      ]
+    },
+    {
+      "id": "sba",
+      "name": "Schwerbehindertenausweis",
+      "what": "Nachteilsausgleiche bei dauerhafter Beeinträchtigung: Kündigungsschutz, Zusatzurlaub, Steuern.",
+      "authorityId": "versorgungsamt",
+      "apply": "paper",
+      "documents": [
+        "MEDICAL_REPORTS",
+        "ID_CARD"
+      ]
+    },
+    {
+      "id": "uvg",
+      "name": "Unterhaltsvorschuss",
+      "what": "Wenn der andere Elternteil keinen oder zu wenig Unterhalt zahlt. Für Alleinerziehende.",
+      "authorityId": "jugendamt",
+      "apply": "paper",
+      "deadline": "Rückwirkend nur 1 Monat.",
+      "documents": [
+        "BIRTH_CERTIFICATE",
+        "ID_CARD",
+        "REGISTRATION_CERTIFICATE"
+      ]
+    },
+    {
+      "id": "grusi",
+      "name": "Grundsicherung im Alter",
+      "what": "Wenn die Rente nicht zum Leben reicht. Kinder müssen in der Regel nichts zurückzahlen.",
+      "authorityId": "sozialamt",
+      "apply": "paper",
+      "deadline": "Gilt ab dem Antragsmonat.",
+      "documents": [
+        "ID_CARD",
+        "RENTAL_CONTRACT",
+        "BANK_STATEMENTS",
+        "INCOME_PROOF"
+      ]
+    },
+    {
+      "id": "rente",
+      "name": "Altersrente",
+      "what": "Ab dem gesetzlichen Rentenalter, früher mit Abschlägen. Kommt nicht automatisch – sie muss beantragt werden.",
+      "authorityId": "rentenversicherung",
+      "apply": "online",
+      "portalUrl": "https://www.deutsche-rentenversicherung.de",
+      "deadline": "3 Monate vor Rentenbeginn.",
+      "documents": [
+        "ID_CARD",
+        "BANK_DETAILS"
+      ]
+    }
+  ],
+  "results": [
+    {
+      "id": "kind_beides",
+      "benefits": [
+        "kindergeld",
+        "elterngeld"
+      ],
+      "steps": [
+        "Kindergeld in der App ausfüllen und an die Familienkasse schicken",
+        "Elterngeld online beim Land beantragen – innerhalb von 3 Monaten",
+        "Steuer-ID des Kindes abwarten, sie kommt automatisch per Post"
+      ]
+    },
+    {
+      "id": "kind_nur",
+      "benefits": [
+        "kindergeld",
+        "kiz"
+      ],
+      "steps": [
+        "Kindergeld in der App ausfüllen und an die Familienkasse schicken",
+        "Kinderzuschlag prüfen, wenn das Einkommen knapp ist"
+      ]
+    },
+    {
+      "id": "bg_neu",
+      "benefits": [
+        "bg_ha",
+        "wohngeld"
+      ],
+      "steps": [
+        "Hauptantrag heute abgeben – fehlende Unterlagen nachreichen",
+        "Eingangsbestätigung verlangen",
+        "Wenn Sie kein Bürgergeld bekommen: Wohngeld und Kinderzuschlag prüfen"
+      ]
+    },
+    {
+      "id": "bg_wba",
+      "benefits": [
+        "bg_wba"
+      ],
+      "steps": [
+        "Weiterbewilligungsantrag in der App ausfüllen",
+        "Beim Jobcenter abgeben, Eingangsbestätigung verlangen"
+      ]
+    },
+    {
+      "id": "bg_aend",
+      "benefits": [
+        "bg_ek",
+        "kdu"
+      ],
+      "steps": [
+        "Änderung sofort melden – sonst drohen Rückforderungen",
+        "Nachweise beilegen"
+      ]
+    },
+    {
+      "id": "wohnen_kdu",
+      "benefits": [
+        "kdu"
+      ],
+      "steps": [
+        "Vor dem Umzug: Zusicherung des Jobcenters einholen",
+        "Anlage KDU mit dem neuen Mietvertrag abgeben"
+      ]
+    },
+    {
+      "id": "wohnen_wg",
+      "benefits": [
+        "wohngeld"
+      ],
+      "steps": [
+        "Formular bei der Wohngeldstelle holen oder online herunterladen",
+        "Mietvertrag und Einkommensnachweise beilegen"
+      ]
+    },
+    {
+      "id": "arbeit_alg",
+      "benefits": [
+        "alg1"
+      ],
+      "steps": [
+        "Sofort arbeitsuchend melden – online oder telefonisch",
+        "Am 1. Tag ohne Arbeit persönlich arbeitslos melden"
+      ]
+    },
+    {
+      "id": "arbeit_bg",
+      "benefits": [
+        "bg_ha"
+      ],
+      "steps": [
+        "Hauptantrag beim Jobcenter abgeben",
+        "Kündigung beilegen"
+      ]
+    },
+    {
+      "id": "arbeit_unklar",
+      "benefits": [
+        "alg1",
+        "bg_ha"
+      ],
+      "steps": [
+        "Bei der Agentur für Arbeit melden – sie prüft, ob Arbeitslosengeld I möglich ist",
+        "Reicht es nicht, ergänzt das Jobcenter mit Bürgergeld"
+      ]
+    },
+    {
+      "id": "krank_kg",
+      "benefits": [
+        "krankengeld"
+      ],
+      "steps": [
+        "Krankschreibung lückenlos an die Krankenkasse",
+        "Die Kasse meldet sich mit einem Formular"
+      ]
+    },
+    {
+      "id": "krank_pflege",
+      "benefits": [
+        "pflegegrad"
+      ],
+      "steps": [
+        "Pflegekasse anrufen und Pflegegrad beantragen",
+        "Termin des Medizinischen Dienstes vorbereiten: Pflegetagebuch führen"
+      ]
+    },
+    {
+      "id": "krank_sb",
+      "benefits": [
+        "sba"
+      ],
+      "steps": [
+        "Antrag beim Versorgungsamt",
+        "Ärztliche Befunde beilegen"
+      ]
+    },
+    {
+      "id": "familie_uvg",
+      "benefits": [
+        "uvg"
+      ],
+      "steps": [
+        "Beim Jugendamt beantragen – Termin vereinbaren",
+        "Kindergeld-Änderung an die Familienkasse melden"
+      ]
+    },
+    {
+      "id": "familie_beratung",
+      "benefits": [],
+      "steps": [
+        "Das Jugendamt berät kostenlos zu Umgang, Unterhalt und Sorgerecht",
+        "Beratungshilfe beim Amtsgericht: ein Anwaltsgespräch für 15 €"
+      ],
+      "extraAuthorityId": "jugendamt"
+    },
+    {
+      "id": "alter_grusi",
+      "benefits": [
+        "grusi",
+        "wohngeld"
+      ],
+      "steps": [
+        "Beim Sozialamt Grundsicherung beantragen",
+        "Rentenbescheid und Kontoauszüge beilegen"
+      ]
+    },
+    {
+      "id": "alter_rente",
+      "benefits": [
+        "rente"
+      ],
+      "steps": [
+        "Rentenauskunft anfordern",
+        "3 Monate vor Rentenbeginn beantragen"
+      ]
+    },
+    {
+      "id": "krank_unklar",
+      "benefits": [],
+      "steps": [
+        "Rufen Sie Ihre Krankenkasse an – sie sagt Ihnen, welche Leistung passt und wer zuständig ist",
+        "Bei dauerhafter Behinderung ist das Versorgungsamt der richtige Ansprechpartner"
+      ],
+      "extraAuthorityId": "krankenkasse"
+    }
+  ],
+  "situations": [
+    {
+      "id": "kind",
+      "title": "Ich bekomme ein Kind oder habe ein Kind",
+      "icon": "child",
+      "root": {
+        "question": "Möchten Sie nach der Geburt weniger oder gar nicht arbeiten?",
+        "answers": [
+          {
+            "text": "Ja",
+            "next": {
+              "result": "kind_beides"
+            }
+          },
+          {
+            "text": "Nein",
+            "next": {
+              "result": "kind_nur"
+            }
+          },
+          {
+            "text": "Weiß ich nicht",
+            "next": {
+              "result": "kind_beides"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "geld",
+      "title": "Ich habe kein oder zu wenig Geld",
+      "icon": "wallet",
+      "root": {
+        "question": "Bekommen Sie schon Bürgergeld?",
+        "answers": [
+          {
+            "text": "Ja",
+            "next": {
+              "question": "Endet Ihr Bewilligungszeitraum in den nächsten Wochen?",
+              "answers": [
+                {
+                  "text": "Ja",
+                  "next": {
+                    "result": "bg_wba"
+                  }
+                },
+                {
+                  "text": "Nein, etwas hat sich geändert",
+                  "next": {
+                    "result": "bg_aend"
+                  }
+                },
+                {
+                  "text": "Weiß ich nicht",
+                  "next": {
+                    "result": "bg_wba"
+                  },
+                  "fallback": true
+                }
+              ]
+            }
+          },
+          {
+            "text": "Nein",
+            "next": {
+              "result": "bg_neu"
+            }
+          },
+          {
+            "text": "Weiß ich nicht",
+            "next": {
+              "result": "bg_neu"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "wohnen",
+      "title": "Wohnen und Miete",
+      "icon": "home",
+      "root": {
+        "question": "Bekommen Sie Bürgergeld?",
+        "answers": [
+          {
+            "text": "Ja",
+            "next": {
+              "result": "wohnen_kdu"
+            }
+          },
+          {
+            "text": "Nein",
+            "next": {
+              "result": "wohnen_wg"
+            }
+          },
+          {
+            "text": "Weiß ich nicht",
+            "next": {
+              "result": "wohnen_wg"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "neu",
+      "title": "Ich bin neu in Deutschland",
+      "icon": "globe",
+      "root": {
+        "checklist": [
+          {
+            "text": "Wohnung anmelden (innerhalb von 14 Tagen)",
+            "authorityId": "buergeramt"
+          },
+          {
+            "text": "Steuer-ID abwarten – das Bundeszentralamt für Steuern schickt sie automatisch per Post; Fragen zur Steuer beantwortet das Finanzamt",
+            "authorityId": "finanzamt"
+          },
+          {
+            "text": "Krankenversicherung wählen und anmelden",
+            "authorityId": "krankenkasse"
+          },
+          {
+            "text": "Bankkonto eröffnen (Basiskonto steht jedem zu)"
+          },
+          {
+            "text": "Aufenthaltstitel oder Arbeitserlaubnis klären",
+            "authorityId": "auslaenderbehoerde"
+          },
+          {
+            "text": "Kindergeld beantragen, wenn Sie Kinder haben",
+            "benefitId": "kindergeld"
+          },
+          {
+            "text": "Sprachkurs: Integrationskurs beim BAMF beantragen"
+          }
+        ]
+      }
+    },
+    {
+      "id": "arbeit",
+      "title": "Ich habe meine Arbeit verloren",
+      "icon": "work",
+      "root": {
+        "question": "Haben Sie in den letzten 2½ Jahren mindestens 12 Monate mit Sozialversicherung gearbeitet?",
+        "answers": [
+          {
+            "text": "Ja",
+            "next": {
+              "result": "arbeit_alg"
+            }
+          },
+          {
+            "text": "Nein",
+            "next": {
+              "result": "arbeit_bg"
+            }
+          },
+          {
+            "text": "Weiß ich nicht",
+            "next": {
+              "result": "arbeit_unklar"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "krank",
+      "title": "Krankheit und Pflege",
+      "icon": "hospital",
+      "root": {
+        "question": "Worum geht es?",
+        "answers": [
+          {
+            "text": "Ich bin länger als 6 Wochen krank",
+            "next": {
+              "result": "krank_kg"
+            }
+          },
+          {
+            "text": "Jemand braucht dauerhaft Hilfe im Alltag",
+            "next": {
+              "result": "krank_pflege"
+            }
+          },
+          {
+            "text": "Dauerhafte Behinderung",
+            "next": {
+              "result": "krank_sb"
+            }
+          },
+          {
+            "text": "Weiß ich nicht",
+            "next": {
+              "result": "krank_unklar"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "familie",
+      "title": "Familie und Trennung",
+      "icon": "people",
+      "root": {
+        "question": "Lebt ein Kind bei Ihnen und der andere Elternteil zahlt keinen oder zu wenig Unterhalt?",
+        "answers": [
+          {
+            "text": "Ja",
+            "next": {
+              "result": "familie_uvg"
+            }
+          },
+          {
+            "text": "Nein",
+            "next": {
+              "result": "familie_beratung"
+            }
+          },
+          {
+            "text": "Weiß ich nicht",
+            "next": {
+              "result": "familie_beratung"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "alter",
+      "title": "Alter und Rente",
+      "icon": "clock",
+      "root": {
+        "question": "Bekommen Sie schon Rente?",
+        "answers": [
+          {
+            "text": "Ja, aber sie reicht nicht",
+            "next": {
+              "result": "alter_grusi"
+            }
+          },
+          {
+            "text": "Nein, ich möchte sie beantragen",
+            "next": {
+              "result": "alter_rente"
+            }
+          },
+          {
+            "text": "Weiß ich nicht",
+            "next": {
+              "result": "alter_rente"
+            },
+            "fallback": true
+          }
+        ]
+      }
+    }
+  ],
+  "synonyms": [
+    {
+      "terms": [
+        "wohngeld",
+        "miete",
+        "mietzuschuss"
+      ],
+      "target": {
+        "benefit": "wohngeld"
+      }
+    },
+    {
+      "terms": [
+        "kindergeld"
+      ],
+      "target": {
+        "benefit": "kindergeld"
+      }
+    },
+    {
+      "terms": [
+        "elterngeld",
+        "elternzeit"
+      ],
+      "target": {
+        "benefit": "elterngeld"
+      }
+    },
+    {
+      "terms": [
+        "bürgergeld",
+        "buergergeld",
+        "hartz"
+      ],
+      "target": {
+        "authority": "jobcenter"
+      }
+    },
+    {
+      "terms": [
+        "kita",
+        "unterhalt",
+        "sorgerecht"
+      ],
+      "target": {
+        "authority": "jugendamt"
+      }
+    },
+    {
+      "terms": [
+        "pass",
+        "ausweis",
+        "anmeldung",
+        "meldebescheinigung",
+        "ummelden"
+      ],
+      "target": {
+        "authority": "buergeramt"
+      }
+    },
+    {
+      "terms": [
+        "aufenthalt",
+        "aufenthaltstitel",
+        "visum",
+        "arbeitserlaubnis"
+      ],
+      "target": {
+        "authority": "auslaenderbehoerde"
+      }
+    },
+    {
+      "terms": [
+        "rente",
+        "altersrente"
+      ],
+      "target": {
+        "benefit": "rente"
+      }
+    },
+    {
+      "terms": [
+        "pflege",
+        "pflegegrad"
+      ],
+      "target": {
+        "benefit": "pflegegrad"
+      }
+    },
+    {
+      "terms": [
+        "krank",
+        "krankengeld",
+        "krankschreibung"
+      ],
+      "target": {
+        "benefit": "krankengeld"
+      }
+    },
+    {
+      "terms": [
+        "arbeitslos",
+        "kündigung",
+        "job verloren"
+      ],
+      "target": {
+        "situation": "arbeit"
+      }
+    },
+    {
+      "terms": [
+        "steuer",
+        "steuer-id",
+        "elster"
+      ],
+      "target": {
+        "authority": "finanzamt"
+      }
+    },
+    {
+      "terms": [
+        "behinderung",
+        "schwerbehindert"
+      ],
+      "target": {
+        "benefit": "sba"
+      }
+    },
+    {
+      "terms": [
+        "neu in deutschland",
+        "geflüchtet",
+        "flüchtling",
+        "zugezogen"
+      ],
+      "target": {
+        "situation": "neu"
+      }
+    }
+  ]
+}
