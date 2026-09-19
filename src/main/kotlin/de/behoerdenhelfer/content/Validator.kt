@@ -39,6 +39,7 @@ class Validator(
         }
         val formIds = forms.map { it.formId }.toSet()
         val authorityIds = authoritiesValidator.validate(layout, formIds, violations)
+        forms.forEach { bundle -> validateGuide(bundle, authorityIds, violations) }
         wegweiserValidator.validate(layout, formIds, authorityIds, violations)
         validateNoOrphanFiles(layout, violations)
         return violations
@@ -179,6 +180,44 @@ class Validator(
             } else if (field.segmentLengths != null) {
                 violations +=
                     Violation(bundle.formId, "field '${field.name}' has segment_lengths but is not an input_row")
+            }
+        }
+    }
+
+    /**
+     * The optional `guide` block of both language files: office id from the authorities
+     * bundle, document ids from the closed set, sane processing time, plain text.
+     * Structural de/en parity is part of [StructureComparator].
+     */
+    private fun validateGuide(
+        bundle: FormBundle,
+        authorityIds: Set<String>,
+        violations: MutableList<Violation>,
+    ) {
+        listOf(bundle.jsonDe, bundle.jsonEn).forEach { file ->
+            val guide = parseForm(file, bundle.formId, mutableListOf())?.guide ?: return@forEach
+
+            fun violation(message: String) {
+                violations += Violation(bundle.formId, "${file.name}: guide $message")
+            }
+            if (guide.authorityId !in authorityIds) violation("references unknown authority '${guide.authorityId}'")
+            guide.processingWeeks?.let { weeks ->
+                if (weeks.min < 0 || weeks.max < weeks.min) violation("processingWeeks ${weeks.min}–${weeks.max} is not a valid range")
+            }
+            guide.documents
+                .groupBy { it.id }
+                .filterValues { it.size > 1 }
+                .keys
+                .forEach { violation("lists document '$it' twice") }
+            val texts =
+                guide.documents.flatMap { doc ->
+                    if (doc.id !in WegweiserValidator.DOCUMENTS) violation("uses unknown document '${doc.id}' (closed set)")
+                    listOf("document '${doc.id}' label" to doc.label, "document '${doc.id}' whereToGet" to doc.whereToGet)
+                } + guide.steps.map { "step" to it } + guide.tips.map { "tip" to it }
+            texts.forEach { (where, text) ->
+                if (text.isBlank()) violation("$where is blank")
+                if (WegweiserValidator.HTML_PATTERN.containsMatchIn(text)) violation("$where contains HTML")
+                if (WegweiserValidator.MARKDOWN_PATTERN.containsMatchIn(text)) violation("$where contains Markdown")
             }
         }
     }

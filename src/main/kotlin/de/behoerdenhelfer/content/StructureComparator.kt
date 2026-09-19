@@ -2,6 +2,7 @@ package de.behoerdenhelfer.content
 
 import de.behoerdenhelfer.content.model.FieldDto
 import de.behoerdenhelfer.content.model.FormDto
+import de.behoerdenhelfer.content.model.GuideDto
 
 /**
  * Checks that the de and en JSON of one form have identical structure — same field
@@ -16,6 +17,9 @@ object StructureComparator {
     ): String? {
         if (de.pdfAssetPath != en.pdfAssetPath) {
             return "pdfAssetPath differs: '${de.pdfAssetPath}' (de) vs '${en.pdfAssetPath}' (en)"
+        }
+        if (de.guide?.withoutText() != en.guide?.withoutText()) {
+            return "guide differs structurally (authorityId, processingWeeks or document ids)"
         }
         if (de.pages.size != en.pages.size) {
             return "page count differs: ${de.pages.size} (de) vs ${en.pages.size} (en)"
@@ -47,4 +51,12 @@ object StructureComparator {
     }
 
     private fun withoutText(field: FieldDto): FieldDto = field.copy(title = "", children = emptyList())
+
+    /** Only `label`, `whereToGet`, `steps` and `tips` are translatable. */
+    private fun GuideDto.withoutText(): GuideDto =
+        copy(
+            documents = documents.map { it.copy(label = "", whereToGet = "") },
+            steps = emptyList(),
+            tips = emptyList(),
+        )
 }

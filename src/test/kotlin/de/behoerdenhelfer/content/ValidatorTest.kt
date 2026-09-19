@@ -352,4 +352,103 @@ class ValidatorTest {
         assertEquals(1, violations.size)
         assertContains(violations.single().message, "cannot parse")
     }
+
+    private fun withGuideBoth(
+        contentDir: Path,
+        transform: (String) -> String = { it },
+    ) {
+        edit(contentDir.resolve("forms/testform/form_testform.json")) { transform(TestContent.withGuide(it, "de")) }
+        edit(contentDir.resolve("forms/testform/form_testform-en.json")) { transform(TestContent.withGuide(it, "en")) }
+    }
+
+    @Test
+    fun `validate - when both language files carry a matching guide block then accepts it`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given
+        val layout = TestContent.writeValid(contentDir)
+        withGuideBoth(contentDir)
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(emptyList(), violations)
+    }
+
+    @Test
+    fun `validate - when a guide references an unknown authority then reports both files`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given
+        val layout = TestContent.writeValid(contentDir)
+        withGuideBoth(contentDir) { it.replace("\"authorityId\": \"testamt\"", "\"authorityId\": \"rathaus\"") }
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(2, violations.size, violations.toString())
+        violations.forEach { assertContains(it.message, "unknown authority 'rathaus'") }
+    }
+
+    @Test
+    fun `validate - when a guide document is outside the closed set then rejects it`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given
+        val layout = TestContent.writeValid(contentDir)
+        withGuideBoth(contentDir) { it.replace("\"id\": \"TAX_ID\"", "\"id\": \"PASSPORT\"") }
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(2, violations.size, violations.toString())
+        violations.forEach { assertContains(it.message, "unknown document 'PASSPORT'") }
+    }
+
+    @Test
+    fun `validate - when processingWeeks max is below min then rejects it`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given
+        val layout = TestContent.writeValid(contentDir)
+        withGuideBoth(contentDir) { it.replace("\"min\": 4, \"max\": 8", "\"min\": 9, \"max\": 8") }
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(2, violations.size, violations.toString())
+        violations.forEach { assertContains(it.message, "not a valid range") }
+    }
+
+    @Test
+    fun `validate - when only the en guide lists a different document id then reports structural drift`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given: labels may differ, document ids may not
+        val layout = TestContent.writeValid(contentDir)
+        withGuideBoth(contentDir)
+        edit(contentDir.resolve("forms/testform/form_testform-en.json")) { it.replace("\"id\": \"TAX_ID\"", "\"id\": \"ID_CARD\"") }
+
+        // When
+        val violations = sut.validate(layout)
+
+        // Then
+        assertEquals(1, violations.size, violations.toString())
+        assertContains(violations.single().message, "guide differs structurally")
+    }
+
+    @Test
+    fun `validate - when a form has no guide block then nothing changes`(
+        @TempDir contentDir: Path,
+    ) {
+        // Given: the block is optional — the fixture form has none
+        val layout = TestContent.writeValid(contentDir)
+
+        // When / Then
+        assertEquals(emptyList(), sut.validate(layout))
+    }
 }

@@ -82,6 +82,36 @@ object TestContent {
             """.trimIndent(),
         )
 
+    /** Adds a complete `guide` block (office, processing time, one document, steps, tips) to a form JSON. */
+    fun withGuide(
+        formJson: String,
+        lang: String = "de",
+    ): String {
+        val guide =
+            if (lang == "de") {
+                """
+                "guide": {
+                    "authorityId": "testamt",
+                    "processingWeeks": { "min": 4, "max": 8 },
+                    "documents": [ { "id": "TAX_ID", "label": "Steuer-ID", "whereToGet": "Kommt per Post." } ],
+                    "steps": ["Alle Angaben prüfen", "Ausdrucken und unterschreiben"],
+                    "tips": ["Kopien behalten"]
+                  },
+                """.trimIndent()
+            } else {
+                """
+                "guide": {
+                    "authorityId": "testamt",
+                    "processingWeeks": { "min": 4, "max": 8 },
+                    "documents": [ { "id": "TAX_ID", "label": "Tax ID", "whereToGet": "Arrives by post." } ],
+                    "steps": ["Check all entries", "Print and sign"],
+                    "tips": ["Keep copies"]
+                  },
+                """.trimIndent()
+            }
+        return formJson.replace("\"pdfAssetPath\": \"test.pdf\"", "$guide\n  \"pdfAssetPath\": \"test.pdf\"")
+    }
+
     /**
      * Like [withInputRow], but the group is one value split over two PDF blocks
      * (`segment_lengths`), the way a Steuer-ID is spread across comb fields.

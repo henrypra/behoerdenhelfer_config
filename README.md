@@ -87,6 +87,11 @@ Form JSON authoring rules (the app relies on these):
 - **Repeating blocks** keep their `"<Unit> <n>"` section titles (e.g. `"Kind 1"`) —
   the app derives the "add" button label from the unit word.
 - **No placeholder/test text** in any title.
+- **`guide`** (optional, top level) moves the form guide out of the app: `authorityId`
+  (an authorities-bundle id), `processingWeeks {min, max}`, `documents [{id, label,
+  whereToGet}]` with `id` from the closed document set, `steps[]`, `tips[]`. Only
+  `label`, `whereToGet`, `steps` and `tips` may differ between de and en. Older clients
+  ignore the block, so it does not raise `minContentSchema`.
 
 Authorities JSON authoring rules (`docs/android-content-contract.md` §1):
 

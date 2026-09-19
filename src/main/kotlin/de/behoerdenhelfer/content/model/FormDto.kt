@@ -8,6 +8,36 @@ data class FormDto(
     val pages: List<PageDto>,
     val pdfAssetPath: String,
     val date: String? = null,
+    /**
+     * The form guide (documents, steps, tips, processing time, office), moved out of the
+     * app per `docs/backend-reply-2026-09-20.md` step 3. Optional and ignored by older
+     * clients, so it does not raise `minContentSchema`.
+     */
+    val guide: GuideDto? = null,
+)
+
+@Serializable
+data class GuideDto(
+    /** An id of the authorities bundle. */
+    val authorityId: String,
+    val processingWeeks: ProcessingWeeksDto? = null,
+    val documents: List<GuideDocumentDto> = emptyList(),
+    val steps: List<String> = emptyList(),
+    val tips: List<String> = emptyList(),
+)
+
+@Serializable
+data class ProcessingWeeksDto(
+    val min: Int,
+    val max: Int,
+)
+
+@Serializable
+data class GuideDocumentDto(
+    /** A name from the closed document set shared with the Wegweiser ([WegweiserValidator.DOCUMENTS]). */
+    val id: String,
+    val label: String,
+    val whereToGet: String,
 )
 
 @Serializable
