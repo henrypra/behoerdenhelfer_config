@@ -4,6 +4,7 @@ import de.behoerdenhelfer.content.model.FileEntry
 import de.behoerdenhelfer.content.model.FormDto
 import de.behoerdenhelfer.content.model.LatestPointer
 import de.behoerdenhelfer.content.model.Manifest
+import de.behoerdenhelfer.content.model.ManifestAuthoritiesEntry
 import de.behoerdenhelfer.content.model.ManifestFormEntry
 import de.behoerdenhelfer.content.model.ManifestHintsEntry
 import kotlinx.serialization.json.Json
@@ -45,6 +46,9 @@ class Generator(
             prettyPrint = true
             // schemaVersion has a default and would otherwise be dropped from the manifest.
             encodeDefaults = true
+            // Optional entries (authorities) are omitted rather than written as null, so a
+            // manifest without them is byte-compatible with clients that predate the key.
+            explicitNulls = false
         }
 
     /**
@@ -66,11 +70,16 @@ class Generator(
         val plans = buildFilePlans(layout, published)
         val forms = plans.forms.map { it.entry }
         val hints = plans.hints.map { it.entry }
+        val authorities = plans.authorities?.entry
 
-        violations += manifestViolations(forms, hints, published)
+        violations += manifestViolations(forms, hints, authorities, published)
         if (violations.isNotEmpty()) return GenerateResult.Failure(violations)
 
-        val unchanged = published != null && published.forms == forms && published.hints == hints
+        val unchanged =
+            published != null &&
+                published.forms == forms &&
+                published.hints == hints &&
+                published.authorities == authorities
         val manifest: Manifest
         val manifestBytes: String
         if (unchanged) {
@@ -86,6 +95,7 @@ class Generator(
                     generatedAt = clock().truncatedTo(ChronoUnit.SECONDS).toString(),
                     forms = forms,
                     hints = hints,
+                    authorities = authorities,
                 )
             manifestBytes = json.encodeToString(manifest) + "\n"
         }
@@ -102,9 +112,10 @@ class Generator(
     private class DistPlans(
         val forms: List<PlannedForm>,
         val hints: List<PlannedHints>,
+        val authorities: PlannedAuthorities?,
     ) {
         val allFiles: List<FilePlan>
-            get() = forms.flatMap { it.files } + hints.flatMap { it.files }
+            get() = forms.flatMap { it.files } + hints.flatMap { it.files } + (authorities?.files ?: emptyList())
     }
 
     private class PlannedForm(
@@ -114,6 +125,11 @@ class Generator(
 
     private class PlannedHints(
         val entry: ManifestHintsEntry,
+        val files: List<FilePlan>,
+    )
+
+    private class PlannedAuthorities(
+        val entry: ManifestAuthoritiesEntry,
         val files: List<FilePlan>,
     )
 
@@ -153,7 +169,14 @@ class Generator(
                 val deSha = Sha256.of(bundle.jsonDe)
                 val enSha = Sha256.of(bundle.jsonEn)
                 val publishedEntry = published?.hints?.find { it.hintsId == bundle.hintsId }
-                val version = derivedHintsVersion(publishedEntry, deSha, enSha)
+                val version =
+                    derivedJsonPairVersion(
+                        publishedEntry?.version,
+                        publishedEntry?.jsonDe?.sha256,
+                        publishedEntry?.jsonEn?.sha256,
+                        deSha,
+                        enSha,
+                    )
                 val base = "hints/${bundle.folder}/$version"
                 val jsonDe = filePlan(bundle.jsonDe, "$base/de/hints.json", deSha)
                 val jsonEn = filePlan(bundle.jsonEn, "$base/en/hints.json", enSha)
@@ -169,7 +192,36 @@ class Generator(
                     files = listOf(jsonDe, jsonEn),
                 )
             }
-        return DistPlans(forms, hints)
+        val authorities =
+            layout.discoverAuthorities()?.let { bundle ->
+                val deSha = Sha256.of(bundle.jsonDe)
+                val enSha = Sha256.of(bundle.jsonEn)
+                val publishedEntry = published?.authorities
+                val version =
+                    derivedJsonPairVersion(
+                        publishedEntry?.version,
+                        publishedEntry?.jsonDe?.sha256,
+                        publishedEntry?.jsonEn?.sha256,
+                        deSha,
+                        enSha,
+                    )
+                // Versioned like every other bundle: published bytes are immutable, the
+                // manifest path is the only interface the app builds URLs from.
+                val base = "authorities/$version"
+                val jsonDe = filePlan(bundle.jsonDe, "$base/de/authorities.json", deSha)
+                val jsonEn = filePlan(bundle.jsonEn, "$base/en/authorities.json", enSha)
+                PlannedAuthorities(
+                    entry =
+                        ManifestAuthoritiesEntry(
+                            version = version,
+                            minContentSchema = ContentSchema.AUTHORITIES,
+                            jsonDe = jsonDe.entry,
+                            jsonEn = jsonEn.entry,
+                        ),
+                    files = listOf(jsonDe, jsonEn),
+                )
+            }
+        return DistPlans(forms, hints, authorities)
     }
 
     /**
@@ -194,14 +246,20 @@ class Generator(
         return if (unchanged) published.version else published.version + 1
     }
 
-    private fun derivedHintsVersion(
-        published: ManifestHintsEntry?,
+    /**
+     * Two-file (de + en JSON) bundles share one derivation: same bytes as the published
+     * entry → same version; anything changed → published version + 1; new → 1.
+     */
+    private fun derivedJsonPairVersion(
+        publishedVersion: Int?,
+        publishedDeSha: String?,
+        publishedEnSha: String?,
         deSha: String,
         enSha: String,
     ): Int {
-        published ?: return 1
-        val unchanged = deSha == published.jsonDe.sha256 && enSha == published.jsonEn.sha256
-        return if (unchanged) published.version else published.version + 1
+        publishedVersion ?: return 1
+        val unchanged = deSha == publishedDeSha && enSha == publishedEnSha
+        return if (unchanged) publishedVersion else publishedVersion + 1
     }
 
     private fun filePlan(
@@ -214,13 +272,12 @@ class Generator(
     private fun manifestViolations(
         forms: List<ManifestFormEntry>,
         hints: List<ManifestHintsEntry>,
+        authorities: ManifestAuthoritiesEntry?,
         published: Manifest?,
     ): List<Violation> {
         val violations = mutableListOf<Violation>()
 
-        val entries =
-            forms.flatMap { listOf(it.jsonDe, it.jsonEn, it.pdf) } +
-                hints.flatMap { listOf(it.jsonDe, it.jsonEn) }
+        val entries = Manifest(config = 0, generatedAt = "", forms = forms, hints = hints, authorities = authorities).fileEntries()
         entries.groupBy { it.path }.filterValues { it.size > 1 }.keys.forEach { path ->
             violations += Violation("manifest", "path '$path' is referenced by more than one entry")
         }
@@ -238,11 +295,7 @@ class Generator(
         current: List<FileEntry>,
         published: Manifest,
     ): List<Violation> {
-        val publishedByPath =
-            (
-                published.forms.flatMap { listOf(it.jsonDe, it.jsonEn, it.pdf) } +
-                    published.hints.flatMap { listOf(it.jsonDe, it.jsonEn) }
-            ).associateBy { it.path }
+        val publishedByPath = published.fileEntries().associateBy { it.path }
         return current.mapNotNull { entry ->
             val old = publishedByPath[entry.path]
             if (old != null && old.sha256 != entry.sha256) {

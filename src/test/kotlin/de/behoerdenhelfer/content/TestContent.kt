@@ -107,6 +107,43 @@ object TestContent {
     // language=json
     val HINTS_EN = """{ "hints": [ { "number": 1, "title": "Account", "text": "Hint text" } ] }"""
 
+    /** Two office types: one fully populated (handles the fixture form), one with only the required fields. */
+    val AUTHORITIES_DE =
+        """
+        {
+          "schema": 1,
+          "authorities": [
+            {
+              "id": "testamt",
+              "name": "Testamt",
+              "does": "Bearbeitet das Testformular.",
+              "doesNot": "Kein Kindergeld – das ist die Familienkasse.",
+              "handles": ["TESTFORM"],
+              "hotline": "0800 4 5555 30",
+              "portalUrl": "https://example.org/portal",
+              "portalLabel": "example.org",
+              "appointmentNeeded": true,
+              "bring": ["Ausweis"],
+              "rights": ["Eine Begleitperson mitbringen"],
+              "howToFindLocal": "Suchen Sie nach „Testamt“ und Ihrer Stadt.",
+              "locatorUrl": "https://example.org/suche"
+            },
+            { "id": "buergeramt", "name": "Bürgeramt", "does": "Meldet Wohnungen an." }
+          ]
+        }
+        """.trimIndent()
+
+    val AUTHORITIES_EN =
+        AUTHORITIES_DE
+            .replace("Testamt\"", "Test Office\"")
+            .replace("Bearbeitet das Testformular.", "Handles the test form.")
+            .replace("Kein Kindergeld – das ist die Familienkasse.", "No child benefit – that is the Familienkasse.")
+            .replace("\"Ausweis\"", "\"ID card\"")
+            .replace("Eine Begleitperson mitbringen", "Bring a companion")
+            .replace("Suchen Sie nach „Testamt“ und Ihrer Stadt.", "Search for “Testamt” and your city.")
+            .replace("\"Bürgeramt\"", "\"Citizens' Office\"")
+            .replace("Meldet Wohnungen an.", "Registers addresses.")
+
     /** Writes a complete valid content tree under [contentDir] and returns its layout. */
     fun writeValid(contentDir: Path): ContentLayout {
         val formDir = contentDir.resolve("forms/testform")
@@ -118,6 +155,10 @@ object TestContent {
         Files.createDirectories(hintsDir)
         Files.writeString(hintsDir.resolve("hints_testhints.json"), HINTS_DE)
         Files.writeString(hintsDir.resolve("hints_testhints-en.json"), HINTS_EN)
+        val authoritiesDir = contentDir.resolve("authorities")
+        Files.createDirectories(authoritiesDir)
+        Files.writeString(authoritiesDir.resolve("authorities.json"), AUTHORITIES_DE)
+        Files.writeString(authoritiesDir.resolve("authorities-en.json"), AUTHORITIES_EN)
         return ContentLayout(contentDir)
     }
 

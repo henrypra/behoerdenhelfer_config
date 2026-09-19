@@ -1,15 +1,17 @@
 # Behördenhelfer config backend
 
 Form content for the [Behördenhelfer Android app](https://github.com/henrypra/behoerdenhelfer_android):
-form definitions (JSON, de + en), fillable PDFs and hints catalogs, published as a
-versioned static file tree. No server — the app syncs from plain static hosting.
+form definitions (JSON, de + en), fillable PDFs, hints catalogs and the office-type
+pages ("Ämter A–Z"), published as a versioned static file tree. No server — the app syncs from plain static hosting.
 
 ## Layout
 
 ```
 content/            # source of truth — edit this
 ├── forms/<form>/   #   form_<form>.json, form_<form>-en.json, <pdf>
-└── hints/          #   hints_<id>.json, hints_<id>-en.json
+├── hints/          #   hints_<id>.json, hints_<id>-en.json
+└── authorities/    #   authorities.json, authorities-en.json (one optional bundle)
+docs/               # contracts with the Android app
 src/                # Kotlin CLI: validator + generator (JDK 17)
 dist/               # generated, deployed by CI (gitignored)
 ```
@@ -32,6 +34,7 @@ latest.json               { "config": 151, "configPath": "config/151.json" }
 config/151.json           the manifest: every bundle with version, sha256, minContentSchema
 forms/kindergeld/3/       de/form.json · en/form.json · kg1_antrag_kindergeld.pdf
 hints/buergergeld/2/      de/hints.json · en/hints.json
+authorities/1/            de/authorities.json · en/authorities.json
 ```
 
 Every number is derived — there is nothing to bump by hand:
@@ -50,6 +53,9 @@ Every number is derived — there is nothing to bump by hand:
 - **Add a form:** create `content/forms/<id>/` with both JSONs and the fillable PDF.
 - **PDFs are published byte-identical.** Never re-save, flatten or "repair" one —
   some are intentionally encrypted or XFA hybrids.
+- **Change an office page:** edit `content/authorities/authorities.json` and the `-en`
+  twin. The bundle is optional and singular — delete the folder and the manifest
+  simply omits the `authorities` key again.
 
 Form JSON authoring rules (the app relies on these):
 
@@ -77,9 +83,24 @@ Form JSON authoring rules (the app relies on these):
   the app derives the "add" button label from the unit word.
 - **No placeholder/test text** in any title.
 
+Authorities JSON authoring rules (`docs/android-content-contract.md` §1):
+
+- One entry per office *type* (`familienkasse`, `jobcenter`, …), never a concrete local
+  branch. Ids are lowercase `^[a-z][a-z0-9_]*$` and identical in de and en; the app links
+  to `familienkasse`, `jobcenter` and `elterngeldstelle` from its form guides, so those
+  must stay.
+- `handles` lists manifest form ids (`KINDERGELD`, `BUERGERGELD_HA`, …) for cross-links.
+- `hotline` only for nationwide numbers (the app dials it as typed); `locatorUrl` only
+  official locators (BA, DRV, BZSt, BAMF), never a third-party map; `howToFindLocal`
+  tells the user in plain text how to find their own branch.
+- Only text fields (`name`, `does`, `doesNot`, `portalLabel`, `bring`, `rights`,
+  `howToFindLocal`) may differ between de and en; everything else must be identical.
+- Plain text only — no HTML, no Markdown.
+
 `validate` blocks anything broken: strict JSON schema, de/en structural parity,
 every referenced field must exist in the PDF's AcroForm tree, hint references must
-resolve, published paths stay immutable.
+resolve, authorities rules above (schema 1, unique ids, known form ids, hotline/URL
+formats, de/en id parity, no HTML), published paths stay immutable.
 
 ## CI
 

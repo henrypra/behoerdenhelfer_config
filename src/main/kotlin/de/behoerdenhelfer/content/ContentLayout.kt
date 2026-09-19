@@ -9,13 +9,15 @@ import kotlin.io.path.name
  * Discovers the bundles of the `content/` tree from the directory layout itself —
  * there is no registry file; every folder under `content/forms/` is a form bundle
  * and every `hints_<id>.json` under `content/hints/` is a hints catalog. Ids are
- * SCREAMING_SNAKE_CASE, folders/files lowercase.
+ * SCREAMING_SNAKE_CASE, folders/files lowercase. `content/authorities/` holds the
+ * single, optional office-type bundle (`authorities.json` + `authorities-en.json`).
  */
 class ContentLayout(
     val contentDir: Path,
 ) {
     val formsDir: Path = contentDir.resolve("forms")
     val hintsDir: Path = contentDir.resolve("hints")
+    val authoritiesDir: Path = contentDir.resolve("authorities")
 
     fun discoverForms(): List<FormBundle> =
         if (Files.isDirectory(formsDir)) {
@@ -45,6 +47,16 @@ class ContentLayout(
         } else {
             emptyList()
         }
+
+    /** The authorities bundle, or null when the repo does not ship one (the manifest then omits the key). */
+    fun discoverAuthorities(): AuthoritiesBundle? =
+        authoritiesBundle().takeIf { Files.isRegularFile(it.jsonDe) || Files.isRegularFile(it.jsonEn) }
+
+    fun authoritiesBundle(): AuthoritiesBundle =
+        AuthoritiesBundle(
+            jsonDe = authoritiesDir.resolve("authorities.json"),
+            jsonEn = authoritiesDir.resolve("authorities-en.json"),
+        )
 
     fun formBundle(formId: String): FormBundle {
         val folder = formId.lowercase()
@@ -84,6 +96,11 @@ data class FormBundle(
 data class HintsBundle(
     val hintsId: String,
     val folder: String,
+    val jsonDe: Path,
+    val jsonEn: Path,
+)
+
+data class AuthoritiesBundle(
     val jsonDe: Path,
     val jsonEn: Path,
 )

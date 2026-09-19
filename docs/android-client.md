@@ -52,9 +52,21 @@ Two kinds of files:
       "jsonDe": { "path": "hints/buergergeld/2/de/hints.json", "sha256": "…", "bytes": 21583 },
       "jsonEn": { "path": "hints/buergergeld/2/en/hints.json", "sha256": "…", "bytes": 19552 }
     }
-  ]
+  ],
+  "authorities": {
+    "version": 1,
+    "minContentSchema": 2,
+    "jsonDe": { "path": "authorities/1/de/authorities.json", "sha256": "…", "bytes": 20916 },
+    "jsonEn": { "path": "authorities/1/en/authorities.json", "sha256": "…", "bytes": 20629 }
+  }
 }
 ```
+
+`authorities` is a single optional object (since config 6), not a list: the office-type
+pages of `docs/android-content-contract.md` §1. When the repo ships no such bundle the
+key is absent — not `null` — so older manifests and older clients are unaffected. It is
+synced exactly like a hints entry (version compare, both languages, sha256 + bytes,
+atomic install), with `minContentSchema` gating it the same way.
 
 All `path` values are relative to the base URL. **Always build URLs from
 manifest paths — never hardcode or construct content paths yourself.** The

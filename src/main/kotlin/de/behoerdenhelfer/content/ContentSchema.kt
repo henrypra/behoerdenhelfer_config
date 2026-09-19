@@ -23,6 +23,13 @@ object ContentSchema {
     const val HINTS = 1
 
     /**
+     * The authorities bundle shipped with the level-2 app generation; older clients
+     * never look at the manifest key, so the gate only matters for future changes
+     * to the file format (`docs/android-content-contract.md` §1.1).
+     */
+    const val AUTHORITIES = 2
+
+    /**
      * The minimum schema level a client needs to render [form] — the maximum level
      * of any feature the form actually uses. A form that sticks to old field types
      * stays consumable by old clients even after the repo learns new ones.

@@ -1,0 +1,375 @@
+{
+  "schema": 1,
+  "authorities": [
+    {
+      "id": "agentur_fuer_arbeit",
+      "name": "Agentur für Arbeit",
+      "does": "Zahlt Arbeitslosengeld I und hilft bei der Jobsuche, Berufsberatung und Weiterbildung. Hier melden Sie sich arbeitsuchend und arbeitslos.",
+      "doesNot": "Kein Bürgergeld – das ist das Jobcenter. Kein Kindergeld – das ist die Familienkasse.",
+      "handles": [],
+      "hotline": "0800 4 5555 00",
+      "portalUrl": "https://www.arbeitsagentur.de",
+      "portalLabel": "arbeitsagentur.de",
+      "appointmentNeeded": true,
+      "bring": [
+        "Ausweis oder Pass, ggf. Aufenthaltstitel",
+        "Sozialversicherungsausweis oder Rentenversicherungsnummer",
+        "Kündigung oder Arbeitsvertrag mit Befristung",
+        "Arbeitsbescheinigung des Arbeitgebers (kann nachgereicht werden)",
+        "Lebenslauf und Zeugnisse",
+        "IBAN Ihres Kontos"
+      ],
+      "rights": [
+        "Eine Begleitperson oder einen Dolmetscher mitbringen",
+        "Sich schon 3 Monate vor dem Ende der Arbeit arbeitsuchend melden",
+        "Unterlagen nachreichen – die Meldung trotzdem sofort abgeben",
+        "Einen schriftlichen Bescheid verlangen und innerhalb eines Monats Widerspruch einlegen"
+      ],
+      "howToFindLocal": "Zuständig ist die Agentur für Arbeit an Ihrem Wohnort. Die Bundesagentur für Arbeit hat eine offizielle Dienststellensuche mit Postleitzahl. Arbeitslos melden können Sie sich auch online auf arbeitsagentur.de.",
+      "locatorUrl": "https://web.arbeitsagentur.de/portal/dienststellensuche/"
+    },
+    {
+      "id": "auslaenderbehoerde",
+      "name": "Ausländerbehörde",
+      "does": "Erteilt und verlängert Aufenthaltstitel, Arbeitserlaubnisse und Fiktionsbescheinigungen. Zuständig für alle Fragen zum Aufenthalt in Deutschland.",
+      "doesNot": "Keine Wohnungsanmeldung – das ist das Bürgeramt. Kein Asylverfahren – das ist das Bundesamt für Migration und Flüchtlinge (BAMF).",
+      "handles": [],
+      "appointmentNeeded": true,
+      "bring": [
+        "Pass und aktueller Aufenthaltstitel oder Visum",
+        "Biometrisches Passfoto",
+        "Meldebescheinigung oder Mietvertrag",
+        "Nachweis über Einkommen oder Arbeitsvertrag",
+        "Nachweis der Krankenversicherung",
+        "Alle Briefe der Behörde zu Ihrem Fall"
+      ],
+      "rights": [
+        "Eine Begleitperson oder einen Dolmetscher mitbringen",
+        "Vor Ablauf des Aufenthaltstitels einen Verlängerungsantrag stellen – dann gilt er weiter, bis entschieden ist",
+        "Eine Bescheinigung über den gestellten Antrag verlangen (Fiktionsbescheinigung)",
+        "Einen schriftlichen Bescheid mit Begründung verlangen"
+      ],
+      "howToFindLocal": "Zuständig ist die Ausländerbehörde Ihrer Stadt oder Ihres Landkreises. Suchen Sie nach „Ausländerbehörde“ und dem Namen Ihrer Stadt. Das BAMF hat eine offizielle Suche nach Behörden und Beratungsstellen.",
+      "locatorUrl": "https://bamf-navi.bamf.de"
+    },
+    {
+      "id": "bafoeg_amt",
+      "name": "BAföG-Amt",
+      "does": "Zahlt BAföG für Studium und Schule. Heißt offiziell Amt für Ausbildungsförderung.",
+      "doesNot": "Kein Aufstiegs-BAföG für Meister oder Techniker – das beantragen Sie bei der Förderstelle Ihres Bundeslandes. Kein Wohngeld – das ist die Wohngeldstelle.",
+      "handles": [],
+      "hotline": "0800 223 63 41",
+      "portalUrl": "https://www.bafoeg-digital.de",
+      "portalLabel": "BAföG Digital",
+      "appointmentNeeded": false,
+      "bring": [
+        "Ausweis oder Pass, ggf. Aufenthaltstitel",
+        "Immatrikulationsbescheinigung oder Schulbescheinigung",
+        "Einkommensnachweise der Eltern (Steuerbescheid des vorletzten Jahres)",
+        "Mietvertrag oder Meldebescheinigung",
+        "IBAN Ihres Kontos"
+      ],
+      "rights": [
+        "Den Antrag sofort stellen und Unterlagen nachreichen – BAföG gibt es erst ab dem Antragsmonat",
+        "Einen Vorschuss verlangen, wenn die Bearbeitung länger dauert",
+        "Kostenlose Beratung durch das Amt",
+        "Einen schriftlichen Bescheid verlangen und innerhalb eines Monats Widerspruch einlegen"
+      ],
+      "howToFindLocal": "Für Studierende ist das BAföG-Amt beim Studierendenwerk Ihrer Hochschule. Für Schülerinnen und Schüler ist es das Amt für Ausbildungsförderung Ihrer Stadt oder Ihres Landkreises. Suchen Sie nach „BAföG“ und dem Namen Ihrer Hochschule oder Stadt."
+    },
+    {
+      "id": "buergeramt",
+      "name": "Bürgeramt",
+      "does": "Meldet Ihre Wohnung an und stellt Ausweis, Pass, Meldebescheinigung und Führungszeugnis aus. Heißt je nach Ort auch Bürgerbüro oder Einwohnermeldeamt.",
+      "doesNot": "Kein Aufenthaltstitel – das ist die Ausländerbehörde. Kein Wohngeld – das ist die Wohngeldstelle.",
+      "handles": [],
+      "appointmentNeeded": true,
+      "bring": [
+        "Ausweis oder Pass",
+        "Wohnungsgeberbestätigung vom Vermieter (für die Anmeldung)",
+        "Geburts- oder Heiratsurkunde, wenn Sie neu in Deutschland sind",
+        "Biometrisches Passfoto (für Ausweis oder Pass)"
+      ],
+      "rights": [
+        "Eine Begleitperson oder einen Dolmetscher mitbringen",
+        "Die Wohnung innerhalb von 14 Tagen nach dem Einzug anmelden – ohne Termin, wenn keiner frei ist",
+        "Eine Meldebescheinigung sofort mitnehmen",
+        "Bei dringenden Fällen einen kurzfristigen Termin verlangen"
+      ],
+      "howToFindLocal": "Zuständig ist das Bürgeramt Ihrer Stadt oder Gemeinde. Suchen Sie nach „Bürgeramt“ oder „Bürgerbüro“ und dem Namen Ihrer Stadt. Termine gibt es meist online. Die Behördennummer 115 hilft in vielen Regionen weiter."
+    },
+    {
+      "id": "elterngeldstelle",
+      "name": "Elterngeldstelle",
+      "does": "Zahlt Elterngeld, ElterngeldPlus und den Partnerschaftsbonus nach der Geburt. Gehört je nach Bundesland zur Stadt, zum Landkreis oder zu einem Landesamt.",
+      "doesNot": "Kein Kindergeld – das ist die Familienkasse. Kein Mutterschaftsgeld – das ist die Krankenkasse.",
+      "handles": [],
+      "portalUrl": "https://www.elterngeld-digital.de",
+      "portalLabel": "ElterngeldDigital",
+      "appointmentNeeded": false,
+      "bring": [
+        "Geburtsurkunde des Kindes (Ausfertigung für Elterngeld)",
+        "Ausweis oder Pass beider Eltern, ggf. Aufenthaltstitel",
+        "Einkommensnachweise der letzten 12 Monate vor der Geburt",
+        "Bescheinigung der Krankenkasse über Mutterschaftsgeld",
+        "Bescheinigung des Arbeitgebers über die Elternzeit",
+        "IBAN Ihres Kontos"
+      ],
+      "rights": [
+        "Innerhalb von 3 Monaten nach der Geburt beantragen – rückwirkend gibt es nur 3 Monate",
+        "Den Antrag sofort abgeben und Unterlagen nachreichen",
+        "Eine Beratung vor der Antragstellung verlangen",
+        "Einen schriftlichen Bescheid verlangen und innerhalb eines Monats Widerspruch einlegen"
+      ],
+      "howToFindLocal": "Suchen Sie nach „Elterngeldstelle“ und dem Namen Ihrer Stadt oder Ihres Landkreises. In vielen Bundesländern können Sie den Antrag online über ElterngeldDigital stellen – dort wird Ihre zuständige Stelle angezeigt."
+    },
+    {
+      "id": "familienkasse",
+      "name": "Familienkasse",
+      "does": "Zahlt Kindergeld und Kinderzuschlag. Gehört zur Bundesagentur für Arbeit.",
+      "doesNot": "Kein Elterngeld – das ist die Elterngeldstelle. Kein Bürgergeld – das ist das Jobcenter.",
+      "handles": [
+        "KINDERGELD"
+      ],
+      "hotline": "0800 4 5555 30",
+      "portalUrl": "https://www.arbeitsagentur.de/familie-und-kinder",
+      "portalLabel": "familienkasse.de",
+      "appointmentNeeded": false,
+      "bring": [
+        "Ausweis oder Pass, ggf. Aufenthaltstitel",
+        "Steuer-Identifikationsnummer von Ihnen und dem Kind",
+        "Geburtsurkunde des Kindes",
+        "Meldebescheinigung",
+        "Den letzten Brief der Familienkasse",
+        "IBAN Ihres Kontos"
+      ],
+      "rights": [
+        "Eine Begleitperson oder einen Dolmetscher mitbringen",
+        "Unterlagen nachreichen – den Antrag trotzdem sofort abgeben",
+        "Eine Eingangsbestätigung verlangen",
+        "Rückwirkend für bis zu 6 Monate Kindergeld erhalten"
+      ],
+      "howToFindLocal": "Die Familienkasse ist nach Ihrem Wohnort zuständig. Die Bundesagentur für Arbeit hat eine offizielle Dienststellensuche mit Postleitzahl. Den Antrag können Sie auch online stellen.",
+      "locatorUrl": "https://web.arbeitsagentur.de/portal/dienststellensuche/"
+    },
+    {
+      "id": "finanzamt",
+      "name": "Finanzamt",
+      "does": "Bearbeitet Ihre Steuererklärung und Steuerbescheide, Steuerklasse und Freibeträge. Erteilt die Steuernummer für Selbstständige.",
+      "doesNot": "Kein Kindergeld – das ist die Familienkasse. Keine Steuer-Identifikationsnummer – die vergibt das Bundeszentralamt für Steuern.",
+      "handles": [],
+      "portalUrl": "https://www.elster.de",
+      "portalLabel": "ELSTER",
+      "appointmentNeeded": false,
+      "bring": [
+        "Ausweis oder Pass",
+        "Steuer-Identifikationsnummer",
+        "Lohnsteuerbescheinigung des Arbeitgebers",
+        "Belege für Ausgaben (Fahrtkosten, Versicherungen, Kinderbetreuung)",
+        "Den letzten Steuerbescheid"
+      ],
+      "rights": [
+        "Die Steuererklärung kostenlos online über ELSTER abgeben",
+        "Eine Fristverlängerung beantragen, wenn Sie mehr Zeit brauchen",
+        "Innerhalb eines Monats Einspruch gegen einen Steuerbescheid einlegen",
+        "Kostenlose Auskunft zu Ihrem Fall verlangen"
+      ],
+      "howToFindLocal": "Zuständig ist das Finanzamt Ihres Wohnorts. Das Bundeszentralamt für Steuern hat eine offizielle Finanzamtsuche mit Postleitzahl.",
+      "locatorUrl": "https://www.bzst.de/DE/Service/Behoerdenwegweiser/Finanzamtsuche/finanzamtsuche_node.html"
+    },
+    {
+      "id": "jobcenter",
+      "name": "Jobcenter",
+      "does": "Zahlt Bürgergeld und übernimmt Miete und Heizung, wenn Ihr Einkommen nicht reicht. Unterstützt bei Arbeitssuche und Weiterbildung.",
+      "doesNot": "Kein Arbeitslosengeld I – das ist die Agentur für Arbeit. Keine Grundsicherung im Alter – das ist das Sozialamt.",
+      "handles": [
+        "BUERGERGELD_HA",
+        "BUERGERGELD_KDU",
+        "BUERGERGELD_WBA",
+        "BUERGERGELD_EK",
+        "BUERGERGELD_VM"
+      ],
+      "hotline": "0800 4 5555 00",
+      "portalUrl": "https://www.jobcenter.digital",
+      "portalLabel": "jobcenter.digital",
+      "appointmentNeeded": false,
+      "bring": [
+        "Ausweis oder Pass, ggf. Aufenthaltstitel aller Personen im Haushalt",
+        "Mietvertrag und letzte Nebenkostenabrechnung",
+        "Kontoauszüge der letzten 3 Monate",
+        "Einkommensnachweise (Lohnabrechnungen, Bescheide)",
+        "Nachweise über Vermögen (Sparbuch, Versicherungen)",
+        "Krankenkassenkarte"
+      ],
+      "rights": [
+        "Eine Begleitperson oder einen Dolmetscher mitbringen",
+        "Den Antrag sofort abgeben – Bürgergeld gibt es rückwirkend ab dem Ersten des Antragsmonats, Unterlagen nachreichen",
+        "Eine Eingangsbestätigung verlangen",
+        "Innerhalb eines Monats Widerspruch gegen einen Bescheid einlegen",
+        "Einen Vorschuss verlangen, wenn Sie kein Geld mehr haben"
+      ],
+      "howToFindLocal": "Zuständig ist das Jobcenter Ihres Wohnorts. Die Bundesagentur für Arbeit hat eine offizielle Dienststellensuche mit Postleitzahl. Die Hotline gilt für Jobcenter, die gemeinsam mit der Agentur für Arbeit betrieben werden – kommunale Jobcenter haben eigene Nummern.",
+      "locatorUrl": "https://web.arbeitsagentur.de/portal/dienststellensuche/"
+    },
+    {
+      "id": "jugendamt",
+      "name": "Jugendamt",
+      "does": "Zahlt Unterhaltsvorschuss für Alleinerziehende und hilft bei Kita-Platz, Vaterschaft, Sorgerecht und Umgang. Berät Familien bei Trennung und Erziehungsfragen.",
+      "doesNot": "Kein Kindergeld – das ist die Familienkasse. Kein Elterngeld – das ist die Elterngeldstelle.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "Ausweis oder Pass, ggf. Aufenthaltstitel",
+        "Geburtsurkunde des Kindes",
+        "Nachweise zum Unterhalt (Titel, Zahlungen oder Schreiben des anderen Elternteils)",
+        "Meldebescheinigung",
+        "IBAN Ihres Kontos"
+      ],
+      "rights": [
+        "Kostenlose Beratung, auch ohne Antrag",
+        "Eine Begleitperson oder einen Dolmetscher mitbringen",
+        "Eine Beistandschaft verlangen, damit das Jugendamt den Unterhalt für Sie durchsetzt",
+        "Einen schriftlichen Bescheid verlangen und innerhalb eines Monats Widerspruch einlegen"
+      ],
+      "howToFindLocal": "Zuständig ist das Jugendamt Ihrer Stadt oder Ihres Landkreises. Suchen Sie nach „Jugendamt“ und dem Namen Ihrer Stadt."
+    },
+    {
+      "id": "krankenkasse",
+      "name": "Krankenkasse",
+      "does": "Zahlt Krankengeld, Mutterschaftsgeld und Kur oder Reha und versichert Familienmitglieder kostenlos mit. Befreit von Zuzahlungen bei geringem Einkommen.",
+      "doesNot": "Kein Pflegegeld – das ist die Pflegekasse bei Ihrer Krankenkasse. Keine Erwerbsminderungsrente – das ist die Rentenversicherung.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "Versichertenkarte",
+        "Arbeitsunfähigkeitsbescheinigung des Arztes",
+        "Einkommensnachweise (für Familienversicherung oder Zuzahlungsbefreiung)",
+        "Mutterpass (für Mutterschaftsgeld)",
+        "IBAN Ihres Kontos"
+      ],
+      "rights": [
+        "Die Krankenkasse frei wählen und wechseln",
+        "Innerhalb eines Monats Widerspruch gegen eine Ablehnung einlegen",
+        "Bei Ablehnung einer Leistung eine schriftliche Begründung verlangen",
+        "Ein Basiskonto bei einer Bank verlangen, wenn Sie kein Konto haben"
+      ],
+      "howToFindLocal": "Ihre Krankenkasse steht auf Ihrer Versichertenkarte – dort finden Sie auch die Telefonnummer. Jede Krankenkasse hat Geschäftsstellen in größeren Städten."
+    },
+    {
+      "id": "pflegekasse",
+      "name": "Pflegekasse",
+      "does": "Stellt den Pflegegrad fest und zahlt Pflegegeld, Pflegesachleistungen, Verhinderungspflege und Pflegehilfsmittel. Sitzt bei Ihrer Krankenkasse.",
+      "doesNot": "Kein Krankengeld – das ist die Krankenkasse. Reicht das Geld für die Pflege nicht, hilft das Sozialamt mit Hilfe zur Pflege.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "Versichertenkarte der pflegebedürftigen Person",
+        "Arztberichte und Medikamentenplan",
+        "Pflegetagebuch: was braucht die Person täglich an Hilfe",
+        "Vollmacht, wenn Sie für eine andere Person beantragen",
+        "IBAN des Kontos, auf das gezahlt werden soll"
+      ],
+      "rights": [
+        "Den Antrag formlos telefonisch stellen – ab diesem Tag wird gezahlt",
+        "Beim Begutachtungstermin eine Vertrauensperson dabeihaben",
+        "Kostenlose Pflegeberatung verlangen",
+        "Innerhalb eines Monats Widerspruch gegen den Pflegegrad einlegen"
+      ],
+      "howToFindLocal": "Die Pflegekasse ist bei der Krankenkasse der pflegebedürftigen Person – die Nummer steht auf der Versichertenkarte. Suchen Sie nach dem Namen der Krankenkasse und „Pflegekasse“."
+    },
+    {
+      "id": "rentenversicherung",
+      "name": "Rentenversicherung",
+      "does": "Zahlt Altersrente, Erwerbsminderungsrente und Hinterbliebenenrente und finanziert Reha. Gibt Rentenauskunft und klärt Ihr Versicherungskonto.",
+      "doesNot": "Keine Grundsicherung im Alter, wenn die Rente nicht reicht – das ist das Sozialamt. Kein Krankengeld – das ist die Krankenkasse.",
+      "handles": [],
+      "hotline": "0800 1000 4800",
+      "portalUrl": "https://www.deutsche-rentenversicherung.de",
+      "portalLabel": "deutsche-rentenversicherung.de",
+      "appointmentNeeded": true,
+      "bring": [
+        "Ausweis oder Pass",
+        "Rentenversicherungsnummer oder Sozialversicherungsausweis",
+        "Versicherungsverlauf oder letzte Renteninformation",
+        "Nachweise über Ausbildung, Kindererziehung und Arbeit im Ausland",
+        "Arztberichte (bei Erwerbsminderung oder Reha)",
+        "IBAN Ihres Kontos"
+      ],
+      "rights": [
+        "Kostenlose Beratung und Hilfe beim Ausfüllen des Antrags",
+        "Eine Begleitperson oder einen Dolmetscher mitbringen",
+        "Die Rente 3 Monate vor dem gewünschten Beginn beantragen",
+        "Innerhalb eines Monats Widerspruch gegen einen Bescheid einlegen"
+      ],
+      "howToFindLocal": "Die Deutsche Rentenversicherung hat Beratungsstellen in allen größeren Städten. Auf der offiziellen Seite können Sie eine Beratung in Ihrer Nähe suchen und buchen. Die kostenlose Hotline gilt bundesweit.",
+      "locatorUrl": "https://www.deutsche-rentenversicherung.de/DRV/DE/Beratung-und-Kontakt/Beratung-suchen-und-buchen"
+    },
+    {
+      "id": "sozialamt",
+      "name": "Sozialamt",
+      "does": "Zahlt Grundsicherung im Alter und bei Erwerbsminderung, Hilfe zum Lebensunterhalt und Hilfe zur Pflege. Übernimmt Bestattungskosten, wenn niemand sie zahlen kann.",
+      "doesNot": "Kein Bürgergeld für Menschen, die arbeiten können – das ist das Jobcenter. Kein Wohngeld – das ist die Wohngeldstelle.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "Ausweis oder Pass, ggf. Aufenthaltstitel",
+        "Rentenbescheid oder Bescheid über Erwerbsminderung",
+        "Mietvertrag und Nebenkostenabrechnung",
+        "Kontoauszüge der letzten 3 Monate",
+        "Nachweise über Vermögen und Versicherungen",
+        "Krankenkassenkarte"
+      ],
+      "rights": [
+        "Den Antrag sofort stellen – gezahlt wird ab dem Tag, an dem das Amt von Ihrer Notlage weiß",
+        "Eine Begleitperson oder einen Dolmetscher mitbringen",
+        "Eine Eingangsbestätigung verlangen",
+        "Innerhalb eines Monats Widerspruch gegen einen Bescheid einlegen"
+      ],
+      "howToFindLocal": "Zuständig ist das Sozialamt Ihrer Stadt oder Ihres Landkreises. Suchen Sie nach „Sozialamt“ und dem Namen Ihrer Stadt. Grundsicherung im Alter können Sie auch bei der Rentenversicherung beantragen – sie leitet den Antrag weiter."
+    },
+    {
+      "id": "versorgungsamt",
+      "name": "Versorgungsamt",
+      "does": "Stellt den Grad der Behinderung fest und stellt den Schwerbehindertenausweis mit Merkzeichen aus. Zuständig auch für Entschädigung nach Gewalttaten (Soziale Entschädigung).",
+      "doesNot": "Kein Pflegegrad – das ist die Pflegekasse. Keine Erwerbsminderungsrente – das ist die Rentenversicherung.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "Ausweis oder Pass",
+        "Arztberichte, Befunde und Entlassungsberichte aus dem Krankenhaus",
+        "Namen und Adressen Ihrer behandelnden Ärzte",
+        "Passfoto (für den Ausweis)",
+        "Bisheriger Bescheid, wenn Sie eine Verschlimmerung melden"
+      ],
+      "rights": [
+        "Den Antrag ohne Arztbesuch stellen – das Amt fragt die Ärzte selbst",
+        "Eine Begleitperson oder einen Dolmetscher mitbringen",
+        "Bei Ablehnung Akteneinsicht verlangen",
+        "Innerhalb eines Monats Widerspruch gegen den festgestellten Grad einlegen"
+      ],
+      "howToFindLocal": "Das Amt heißt je nach Bundesland anders: Versorgungsamt, Amt für Soziales, Landesamt oder Kreis. Suchen Sie nach „Schwerbehindertenausweis beantragen“ und dem Namen Ihres Bundeslandes oder Landkreises."
+    },
+    {
+      "id": "wohngeldstelle",
+      "name": "Wohngeldstelle",
+      "does": "Zahlt Wohngeld als Zuschuss zur Miete oder zu den Kosten des eigenen Hauses, wenn das Einkommen niedrig ist. Gehört zur Stadt oder zum Landkreis.",
+      "doesNot": "Kein Wohngeld, wenn Sie Bürgergeld oder Grundsicherung bekommen – dort ist die Miete schon enthalten. Kein Bürgergeld – das ist das Jobcenter.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "Ausweis oder Pass, ggf. Aufenthaltstitel aller Personen im Haushalt",
+        "Mietvertrag und Nachweis der Mietzahlung",
+        "Einkommensnachweise aller Personen im Haushalt",
+        "Meldebescheinigung",
+        "IBAN Ihres Kontos"
+      ],
+      "rights": [
+        "Den Antrag sofort stellen – Wohngeld gibt es ab dem Antragsmonat, Unterlagen nachreichen",
+        "Eine Eingangsbestätigung verlangen",
+        "Eine Begleitperson oder einen Dolmetscher mitbringen",
+        "Innerhalb eines Monats Widerspruch gegen einen Bescheid einlegen"
+      ],
+      "howToFindLocal": "Zuständig ist die Wohngeldstelle Ihrer Stadt oder Gemeinde, in kleineren Orten der Landkreis. Suchen Sie nach „Wohngeldstelle“ und dem Namen Ihrer Stadt. Viele Bundesländer bieten einen Online-Antrag an."
+    }
+  ]
+}

@@ -12,7 +12,10 @@ import java.nio.file.Path
 import java.time.Instant
 import kotlin.test.assertContains
 import kotlin.test.assertEquals
+import kotlin.test.assertFalse
 import kotlin.test.assertIs
+import kotlin.test.assertNotNull
+import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class GeneratorTest {
@@ -47,7 +50,13 @@ class GeneratorTest {
         val hints = manifest.hints.single()
         assertEquals("hints/testhints/1/de/hints.json", hints.jsonDe.path)
         assertEquals("hints/testhints/1/en/hints.json", hints.jsonEn.path)
-        listOf(form.jsonDe, form.jsonEn, form.pdf, hints.jsonDe, hints.jsonEn).forEach { entry ->
+        val authorities = assertNotNull(manifest.authorities)
+        assertEquals(1, authorities.version)
+        assertEquals(ContentSchema.AUTHORITIES, authorities.minContentSchema)
+        assertEquals("authorities/1/de/authorities.json", authorities.jsonDe.path)
+        assertEquals("authorities/1/en/authorities.json", authorities.jsonEn.path)
+        assertContains(manifestBytes, "\"authorities\": {")
+        listOf(form.jsonDe, form.jsonEn, form.pdf, hints.jsonDe, hints.jsonEn, authorities.jsonDe, authorities.jsonEn).forEach { entry ->
             val file = distDir.resolve(entry.path)
             assertTrue(Files.isRegularFile(file), "missing ${entry.path}")
             assertEquals(entry.sha256, Sha256.of(file), "sha256 mismatch for ${entry.path}")
@@ -191,6 +200,79 @@ class GeneratorTest {
         val manifest = assertIs<GenerateResult.Success>(result).manifest
         assertEquals(3, manifest.forms.single().version)
         assertEquals(3, manifest.config)
+    }
+
+    @Test
+    fun `generate - when there is no authorities bundle then the manifest omits the key entirely`(
+        @TempDir tempDir: Path,
+    ) {
+        // Given: clients that predate the key must see a manifest identical to before
+        val contentDir = tempDir.resolve("content").also(Files::createDirectories)
+        val layout = TestContent.writeValid(contentDir)
+        Files.walk(contentDir.resolve("authorities")).use { paths ->
+            paths.sorted(Comparator.reverseOrder()).forEach(Files::delete)
+        }
+        val distDir = tempDir.resolve("dist")
+
+        // When
+        val result = sut.generate(layout, distDir)
+
+        // Then
+        val manifest = assertIs<GenerateResult.Success>(result).manifest
+        assertNull(manifest.authorities)
+        assertFalse(Files.readString(distDir.resolve("config/1.json")).contains("authorities"))
+        assertTrue(Files.notExists(distDir.resolve("authorities")))
+    }
+
+    @Test
+    fun `generate - when only the authorities JSON changed then its version and the config move forward`(
+        @TempDir tempDir: Path,
+    ) {
+        // Given
+        val contentDir = tempDir.resolve("content").also(Files::createDirectories)
+        val layout = TestContent.writeValid(contentDir)
+        sut.generate(layout, tempDir.resolve("dist"))
+        val published = tempDir.resolve("published-config.json")
+        Files.copy(tempDir.resolve("dist/config/1.json"), published)
+        val deJson = contentDir.resolve("authorities/authorities.json")
+        Files.writeString(deJson, Files.readString(deJson).replace("Meldet Wohnungen an.", "Meldet Wohnungen an und um."))
+
+        // When
+        val result = sut.generate(layout, tempDir.resolve("dist"), published)
+
+        // Then: authorities bump to 2, forms and hints stay at 1
+        val manifest = assertIs<GenerateResult.Success>(result).manifest
+        assertEquals(2, manifest.config)
+        val authorities = assertNotNull(manifest.authorities)
+        assertEquals(2, authorities.version)
+        assertEquals("authorities/2/de/authorities.json", authorities.jsonDe.path)
+        assertEquals(1, manifest.forms.single().version)
+        assertEquals(1, manifest.hints.single().version)
+    }
+
+    @Test
+    fun `generate - when the authorities bundle is added to an already published repo then it starts at version 1`(
+        @TempDir tempDir: Path,
+    ) {
+        // Given: the published manifest has no authorities key (the live state before this bundle shipped)
+        val contentDir = tempDir.resolve("content").also(Files::createDirectories)
+        val layout = TestContent.writeValid(contentDir)
+        val authoritiesDir = contentDir.resolve("authorities")
+        val stash = tempDir.resolve("stash")
+        Files.move(authoritiesDir, stash)
+        sut.generate(layout, tempDir.resolve("dist"))
+        val published = tempDir.resolve("published-config.json")
+        Files.copy(tempDir.resolve("dist/config/1.json"), published)
+        Files.move(stash, authoritiesDir)
+
+        // When
+        val result = sut.generate(layout, tempDir.resolve("dist"), published)
+
+        // Then
+        val manifest = assertIs<GenerateResult.Success>(result).manifest
+        assertEquals(2, manifest.config)
+        assertEquals(1, assertNotNull(manifest.authorities).version)
+        assertEquals(1, manifest.forms.single().version)
     }
 
     @Test

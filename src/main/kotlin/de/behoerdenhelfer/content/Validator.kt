@@ -25,15 +25,18 @@ data class Violation(
  */
 class Validator(
     private val pdfFieldNames: (Path) -> Set<String> = PdfFieldReader::fieldNames,
+    private val authoritiesValidator: AuthoritiesValidator = AuthoritiesValidator(),
 ) {
     private val json = Json
 
     fun validate(layout: ContentLayout): List<Violation> {
         val violations = mutableListOf<Violation>()
         val hintNumbers = validateHints(layout, violations)
-        layout.discoverForms().forEach { bundle ->
+        val forms = layout.discoverForms()
+        forms.forEach { bundle ->
             validateForm(bundle, hintNumbers, violations)
         }
+        authoritiesValidator.validate(layout, forms.map { it.formId }.toSet(), violations)
         validateNoOrphanFiles(layout, violations)
         return violations
     }

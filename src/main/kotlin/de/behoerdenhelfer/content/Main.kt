@@ -23,9 +23,10 @@ fun main(args: Array<String>) {
             when (val result = Generator().generate(layout, root.resolve("dist"), publishedManifest)) {
                 is GenerateResult.Success -> {
                     val manifest = result.manifest
+                    val authorities = manifest.authorities?.let { "authorities v${it.version}" } ?: "no authorities bundle"
                     println(
                         "dist/ generated: config ${manifest.config}, ${manifest.forms.size} forms, " +
-                            "${manifest.hints.size} hints catalogs (generatedAt ${manifest.generatedAt}).",
+                            "${manifest.hints.size} hints catalogs, $authorities (generatedAt ${manifest.generatedAt}).",
                     )
                 }
 
