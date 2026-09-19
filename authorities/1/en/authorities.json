@@ -1,0 +1,375 @@
+{
+  "schema": 1,
+  "authorities": [
+    {
+      "id": "agentur_fuer_arbeit",
+      "name": "Employment Agency (Agentur für Arbeit)",
+      "does": "Pays unemployment benefit I (Arbeitslosengeld I) and helps with job search, career advice and training. This is where you register as job-seeking and unemployed.",
+      "doesNot": "No Bürgergeld – that is the Jobcenter. No child benefit – that is the Familienkasse.",
+      "handles": [],
+      "hotline": "0800 4 5555 00",
+      "portalUrl": "https://www.arbeitsagentur.de",
+      "portalLabel": "arbeitsagentur.de",
+      "appointmentNeeded": true,
+      "bring": [
+        "ID card or passport, plus residence permit if you have one",
+        "Social insurance card or pension insurance number",
+        "Notice of termination or fixed-term employment contract",
+        "Employer's work certificate (Arbeitsbescheinigung, can be handed in later)",
+        "CV and certificates",
+        "IBAN of your bank account"
+      ],
+      "rights": [
+        "Bring a companion or an interpreter",
+        "Register as job-seeking up to 3 months before your job ends",
+        "Hand in documents later – still register immediately",
+        "Ask for a written decision and object within one month"
+      ],
+      "howToFindLocal": "Your local employment agency is the one for your place of residence. The Federal Employment Agency has an official office finder by postcode. You can also register as unemployed online at arbeitsagentur.de.",
+      "locatorUrl": "https://web.arbeitsagentur.de/portal/dienststellensuche/"
+    },
+    {
+      "id": "auslaenderbehoerde",
+      "name": "Immigration Office (Ausländerbehörde)",
+      "does": "Issues and extends residence permits, work permits and provisional certificates (Fiktionsbescheinigung). Responsible for all questions about your stay in Germany.",
+      "doesNot": "No address registration – that is the Bürgeramt. No asylum procedure – that is the Federal Office for Migration and Refugees (BAMF).",
+      "handles": [],
+      "appointmentNeeded": true,
+      "bring": [
+        "Passport and current residence permit or visa",
+        "Biometric passport photo",
+        "Registration certificate or rental contract",
+        "Proof of income or employment contract",
+        "Proof of health insurance",
+        "All letters from the office about your case"
+      ],
+      "rights": [
+        "Bring a companion or an interpreter",
+        "Apply for an extension before your permit expires – it then stays valid until a decision is made",
+        "Ask for a certificate that your application was received (Fiktionsbescheinigung)",
+        "Ask for a written decision with reasons"
+      ],
+      "howToFindLocal": "Your immigration office is the one of your city or district. Search for “Ausländerbehörde” and the name of your city. The BAMF has an official finder for offices and counselling centres.",
+      "locatorUrl": "https://bamf-navi.bamf.de"
+    },
+    {
+      "id": "bafoeg_amt",
+      "name": "BAföG Office",
+      "does": "Pays BAföG student and pupil grants. Officially called Amt für Ausbildungsförderung.",
+      "doesNot": "No Aufstiegs-BAföG for master craftsman or technician training – apply at your federal state's funding office. No housing benefit – that is the Wohngeldstelle.",
+      "handles": [],
+      "hotline": "0800 223 63 41",
+      "portalUrl": "https://www.bafoeg-digital.de",
+      "portalLabel": "BAföG Digital",
+      "appointmentNeeded": false,
+      "bring": [
+        "ID card or passport, plus residence permit if you have one",
+        "Enrolment certificate or school certificate",
+        "Proof of your parents' income (tax assessment from two years ago)",
+        "Rental contract or registration certificate",
+        "IBAN of your bank account"
+      ],
+      "rights": [
+        "Apply immediately and hand in documents later – BAföG is only paid from the month of application",
+        "Ask for an advance payment if processing takes long",
+        "Free advice from the office",
+        "Ask for a written decision and object within one month"
+      ],
+      "howToFindLocal": "For university students the BAföG office is at the Studierendenwerk of your university. For pupils it is the Amt für Ausbildungsförderung of your city or district. Search for “BAföG” and the name of your university or city."
+    },
+    {
+      "id": "buergeramt",
+      "name": "Citizens' Office (Bürgeramt)",
+      "does": "Registers your address and issues ID cards, passports, registration certificates and certificates of conduct. Also called Bürgerbüro or Einwohnermeldeamt depending on the town.",
+      "doesNot": "No residence permit – that is the Ausländerbehörde. No housing benefit – that is the Wohngeldstelle.",
+      "handles": [],
+      "appointmentNeeded": true,
+      "bring": [
+        "ID card or passport",
+        "Landlord's confirmation of move-in (Wohnungsgeberbestätigung, for registration)",
+        "Birth or marriage certificate if you are new to Germany",
+        "Biometric passport photo (for ID card or passport)"
+      ],
+      "rights": [
+        "Bring a companion or an interpreter",
+        "Register your address within 14 days of moving in – without an appointment if none is available",
+        "Take a registration certificate with you straight away",
+        "Ask for a short-notice appointment in urgent cases"
+      ],
+      "howToFindLocal": "Your citizens' office is the one of your city or municipality. Search for “Bürgeramt” or “Bürgerbüro” and the name of your city. Appointments are usually booked online. The public services number 115 can help in many regions."
+    },
+    {
+      "id": "elterngeldstelle",
+      "name": "Parental Allowance Office (Elterngeldstelle)",
+      "does": "Pays parental allowance (Elterngeld, ElterngeldPlus) and the partnership bonus after a birth. Depending on the federal state it belongs to the city, the district or a state office.",
+      "doesNot": "No child benefit – that is the Familienkasse. No maternity pay – that is your health insurance fund.",
+      "handles": [],
+      "portalUrl": "https://www.elterngeld-digital.de",
+      "portalLabel": "ElterngeldDigital",
+      "appointmentNeeded": false,
+      "bring": [
+        "Child's birth certificate (copy for parental allowance)",
+        "ID card or passport of both parents, plus residence permit if you have one",
+        "Proof of income for the 12 months before the birth",
+        "Health insurance certificate about maternity pay",
+        "Employer's confirmation of parental leave",
+        "IBAN of your bank account"
+      ],
+      "rights": [
+        "Apply within 3 months of the birth – it is only paid back for 3 months",
+        "Hand in the application immediately and add documents later",
+        "Ask for advice before applying",
+        "Ask for a written decision and object within one month"
+      ],
+      "howToFindLocal": "Search for “Elterngeldstelle” and the name of your city or district. In many federal states you can apply online via ElterngeldDigital – it shows you the office responsible for you."
+    },
+    {
+      "id": "familienkasse",
+      "name": "Family Benefits Office (Familienkasse)",
+      "does": "Pays child benefit (Kindergeld) and the child supplement (Kinderzuschlag). Part of the Federal Employment Agency.",
+      "doesNot": "No parental allowance – that is the Elterngeldstelle. No Bürgergeld – that is the Jobcenter.",
+      "handles": [
+        "KINDERGELD"
+      ],
+      "hotline": "0800 4 5555 30",
+      "portalUrl": "https://www.arbeitsagentur.de/familie-und-kinder",
+      "portalLabel": "familienkasse.de",
+      "appointmentNeeded": false,
+      "bring": [
+        "ID card or passport, plus residence permit if you have one",
+        "Tax ID of you and the child",
+        "Child's birth certificate",
+        "Registration certificate",
+        "The last letter from the Familienkasse",
+        "IBAN of your bank account"
+      ],
+      "rights": [
+        "Bring a companion or an interpreter",
+        "Hand in documents later – still submit the application immediately",
+        "Ask for a confirmation of receipt",
+        "Receive child benefit for up to 6 months back"
+      ],
+      "howToFindLocal": "The Familienkasse responsible for you depends on where you live. The Federal Employment Agency has an official office finder by postcode. You can also apply online.",
+      "locatorUrl": "https://web.arbeitsagentur.de/portal/dienststellensuche/"
+    },
+    {
+      "id": "finanzamt",
+      "name": "Tax Office (Finanzamt)",
+      "does": "Processes your tax return and tax assessments, tax class and allowances. Issues the tax number for self-employed people.",
+      "doesNot": "No child benefit – that is the Familienkasse. No tax ID – that is issued by the Federal Central Tax Office.",
+      "handles": [],
+      "portalUrl": "https://www.elster.de",
+      "portalLabel": "ELSTER",
+      "appointmentNeeded": false,
+      "bring": [
+        "ID card or passport",
+        "Tax ID",
+        "Employer's wage tax certificate (Lohnsteuerbescheinigung)",
+        "Receipts for expenses (commuting, insurance, childcare)",
+        "The last tax assessment"
+      ],
+      "rights": [
+        "File your tax return online for free via ELSTER",
+        "Apply for an extension if you need more time",
+        "Object to a tax assessment within one month",
+        "Ask for free information about your case"
+      ],
+      "howToFindLocal": "Your tax office is the one for your place of residence. The Federal Central Tax Office has an official tax office finder by postcode.",
+      "locatorUrl": "https://www.bzst.de/DE/Service/Behoerdenwegweiser/Finanzamtsuche/finanzamtsuche_node.html"
+    },
+    {
+      "id": "jobcenter",
+      "name": "Jobcenter",
+      "does": "Pays Bürgergeld and covers rent and heating if your income is not enough. Supports you with job search and training.",
+      "doesNot": "No unemployment benefit I – that is the Agentur für Arbeit. No basic income support in old age – that is the Sozialamt.",
+      "handles": [
+        "BUERGERGELD_HA",
+        "BUERGERGELD_KDU",
+        "BUERGERGELD_WBA",
+        "BUERGERGELD_EK",
+        "BUERGERGELD_VM"
+      ],
+      "hotline": "0800 4 5555 00",
+      "portalUrl": "https://www.jobcenter.digital",
+      "portalLabel": "jobcenter.digital",
+      "appointmentNeeded": false,
+      "bring": [
+        "ID card or passport, plus residence permits, of everyone in your household",
+        "Rental contract and last utility bill",
+        "Bank statements of the last 3 months",
+        "Proof of income (pay slips, benefit decisions)",
+        "Proof of assets (savings, insurance policies)",
+        "Health insurance card"
+      ],
+      "rights": [
+        "Bring a companion or an interpreter",
+        "Submit the application immediately – Bürgergeld is paid from the first day of the application month, add documents later",
+        "Ask for a confirmation of receipt",
+        "Object to a decision within one month",
+        "Ask for an advance if you have run out of money"
+      ],
+      "howToFindLocal": "Your Jobcenter is the one for your place of residence. The Federal Employment Agency has an official office finder by postcode. The hotline covers Jobcenters run jointly with the employment agency – municipal Jobcenters have their own numbers.",
+      "locatorUrl": "https://web.arbeitsagentur.de/portal/dienststellensuche/"
+    },
+    {
+      "id": "jugendamt",
+      "name": "Youth Welfare Office (Jugendamt)",
+      "does": "Pays advance maintenance (Unterhaltsvorschuss) for single parents and helps with childcare places, paternity, custody and contact. Advises families on separation and parenting.",
+      "doesNot": "No child benefit – that is the Familienkasse. No parental allowance – that is the Elterngeldstelle.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "ID card or passport, plus residence permit if you have one",
+        "Child's birth certificate",
+        "Proof about maintenance (court order, payments or letters from the other parent)",
+        "Registration certificate",
+        "IBAN of your bank account"
+      ],
+      "rights": [
+        "Free advice, even without an application",
+        "Bring a companion or an interpreter",
+        "Ask for legal assistance (Beistandschaft) so the office enforces maintenance for you",
+        "Ask for a written decision and object within one month"
+      ],
+      "howToFindLocal": "Your youth welfare office is the one of your city or district. Search for “Jugendamt” and the name of your city."
+    },
+    {
+      "id": "krankenkasse",
+      "name": "Health Insurance Fund (Krankenkasse)",
+      "does": "Pays sick pay, maternity pay and cures or rehabilitation and co-insures family members for free. Exempts you from co-payments if your income is low.",
+      "doesNot": "No care allowance – that is the Pflegekasse at your health insurance fund. No reduced earning capacity pension – that is the pension insurance.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "Health insurance card",
+        "Doctor's sick note",
+        "Proof of income (for family insurance or co-payment exemption)",
+        "Maternity record book (for maternity pay)",
+        "IBAN of your bank account"
+      ],
+      "rights": [
+        "Choose your health insurance fund freely and switch",
+        "Object to a refusal within one month",
+        "Ask for written reasons if a benefit is refused",
+        "Ask a bank for a basic account if you do not have one"
+      ],
+      "howToFindLocal": "Your health insurance fund is printed on your insurance card – the phone number is there too. Every fund has branches in larger cities."
+    },
+    {
+      "id": "pflegekasse",
+      "name": "Long-term Care Insurance Fund (Pflegekasse)",
+      "does": "Determines the care level and pays care allowance, care services, respite care and care aids. It is located at your health insurance fund.",
+      "doesNot": "No sick pay – that is the Krankenkasse. If the money for care is not enough, the Sozialamt helps with Hilfe zur Pflege.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "Insurance card of the person needing care",
+        "Medical reports and medication plan",
+        "Care diary: what help the person needs every day",
+        "Power of attorney if you apply for someone else",
+        "IBAN of the account payments should go to"
+      ],
+      "rights": [
+        "Apply informally by phone – payments start from that day",
+        "Have a trusted person with you at the assessment",
+        "Ask for free care counselling",
+        "Object to the care level within one month"
+      ],
+      "howToFindLocal": "The Pflegekasse is at the health insurance fund of the person needing care – the number is on the insurance card. Search for the name of the health insurance fund and “Pflegekasse”."
+    },
+    {
+      "id": "rentenversicherung",
+      "name": "Pension Insurance (Rentenversicherung)",
+      "does": "Pays old-age pension, reduced earning capacity pension and survivors' pension and funds rehabilitation. Provides pension information and clarifies your insurance record.",
+      "doesNot": "No basic income support in old age if the pension is not enough – that is the Sozialamt. No sick pay – that is the Krankenkasse.",
+      "handles": [],
+      "hotline": "0800 1000 4800",
+      "portalUrl": "https://www.deutsche-rentenversicherung.de",
+      "portalLabel": "deutsche-rentenversicherung.de",
+      "appointmentNeeded": true,
+      "bring": [
+        "ID card or passport",
+        "Pension insurance number or social insurance card",
+        "Insurance record or last pension information letter",
+        "Proof of training, child-raising periods and work abroad",
+        "Medical reports (for reduced earning capacity or rehabilitation)",
+        "IBAN of your bank account"
+      ],
+      "rights": [
+        "Free advice and help filling in the application",
+        "Bring a companion or an interpreter",
+        "Apply for your pension 3 months before it should start",
+        "Object to a decision within one month"
+      ],
+      "howToFindLocal": "The German Pension Insurance has advice centres in all larger cities. On the official website you can find and book an appointment near you. The free hotline is nationwide.",
+      "locatorUrl": "https://www.deutsche-rentenversicherung.de/DRV/DE/Beratung-und-Kontakt/Beratung-suchen-und-buchen"
+    },
+    {
+      "id": "sozialamt",
+      "name": "Social Welfare Office (Sozialamt)",
+      "does": "Pays basic income support in old age and for reduced earning capacity, subsistence support and help with care costs. Covers funeral costs if nobody can pay them.",
+      "doesNot": "No Bürgergeld for people who are able to work – that is the Jobcenter. No housing benefit – that is the Wohngeldstelle.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "ID card or passport, plus residence permit if you have one",
+        "Pension decision or decision on reduced earning capacity",
+        "Rental contract and utility bill",
+        "Bank statements of the last 3 months",
+        "Proof of assets and insurance policies",
+        "Health insurance card"
+      ],
+      "rights": [
+        "Apply immediately – payments start from the day the office learns of your need",
+        "Bring a companion or an interpreter",
+        "Ask for a confirmation of receipt",
+        "Object to a decision within one month"
+      ],
+      "howToFindLocal": "Your social welfare office is the one of your city or district. Search for “Sozialamt” and the name of your city. You can also apply for basic income support in old age at the pension insurance – it forwards the application."
+    },
+    {
+      "id": "versorgungsamt",
+      "name": "Pension and Welfare Office (Versorgungsamt)",
+      "does": "Determines the degree of disability and issues the severely disabled person's pass with its markers. Also responsible for compensation after violent crimes (social compensation).",
+      "doesNot": "No care level – that is the Pflegekasse. No reduced earning capacity pension – that is the pension insurance.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "ID card or passport",
+        "Medical reports, findings and hospital discharge letters",
+        "Names and addresses of your doctors",
+        "Passport photo (for the pass)",
+        "Previous decision if you are reporting a deterioration"
+      ],
+      "rights": [
+        "Apply without seeing a doctor first – the office asks the doctors itself",
+        "Bring a companion or an interpreter",
+        "Ask to see your file if the application is refused",
+        "Object to the determined degree within one month"
+      ],
+      "howToFindLocal": "The office has different names depending on the federal state: Versorgungsamt, Amt für Soziales, Landesamt or the district. Search for “Schwerbehindertenausweis beantragen” and the name of your federal state or district."
+    },
+    {
+      "id": "wohngeldstelle",
+      "name": "Housing Benefit Office (Wohngeldstelle)",
+      "does": "Pays housing benefit (Wohngeld) as a subsidy towards rent or the costs of your own home if your income is low. Part of the city or district administration.",
+      "doesNot": "No housing benefit if you receive Bürgergeld or basic income support – rent is already included there. No Bürgergeld – that is the Jobcenter.",
+      "handles": [],
+      "appointmentNeeded": false,
+      "bring": [
+        "ID card or passport, plus residence permits, of everyone in your household",
+        "Rental contract and proof of rent payments",
+        "Proof of income of everyone in your household",
+        "Registration certificate",
+        "IBAN of your bank account"
+      ],
+      "rights": [
+        "Apply immediately – housing benefit is paid from the month of application, add documents later",
+        "Ask for a confirmation of receipt",
+        "Bring a companion or an interpreter",
+        "Object to a decision within one month"
+      ],
+      "howToFindLocal": "Your housing benefit office is the one of your city or municipality, in smaller places the district. Search for “Wohngeldstelle” and the name of your city. Many federal states offer an online application."
+    }
+  ]
+}
