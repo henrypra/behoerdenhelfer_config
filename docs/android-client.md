@@ -56,17 +56,27 @@ Two kinds of files:
   "authorities": {
     "version": 1,
     "minContentSchema": 2,
-    "jsonDe": { "path": "authorities/1/de/authorities.json", "sha256": "…", "bytes": 20916 },
-    "jsonEn": { "path": "authorities/1/en/authorities.json", "sha256": "…", "bytes": 20629 }
+    "jsonDe": { "path": "authorities/1/de/authorities.json", "sha256": "…", "bytes": 20938 },
+    "jsonEn": { "path": "authorities/1/en/authorities.json", "sha256": "…", "bytes": 20645 }
+  },
+  "wegweiser": {
+    "version": 1,
+    "minContentSchema": 2,
+    "jsonDe": { "path": "wegweiser/1/de/wegweiser.json", "sha256": "…", "bytes": 19518 },
+    "jsonEn": { "path": "wegweiser/1/en/wegweiser.json", "sha256": "…", "bytes": 19315 }
   }
 }
 ```
 
-`authorities` is a single optional object (since config 6), not a list: the office-type
-pages of `docs/android-content-contract.md` §1. When the repo ships no such bundle the
-key is absent — not `null` — so older manifests and older clients are unaffected. It is
-synced exactly like a hints entry (version compare, both languages, sha256 + bytes,
-atomic install), with `minContentSchema` gating it the same way.
+`authorities` (since config 6) and `wegweiser` (since config 7) are single optional
+objects, not lists: the office-type pages of `docs/android-content-contract.md` §1 and
+the situation → result content of §2. When the repo ships no such bundle the key is
+absent — not `null` — so older manifests and older clients are unaffected. Each is synced
+exactly like a hints entry (version compare, both languages, sha256 + bytes, atomic
+install), with `minContentSchema` gating it the same way. For `wegweiser`, the closed
+`documents`/`icon` sets belong to the file's `schema: 1`; an extension ships as
+`schema: 2` with `minContentSchema: 3`, so an app that has not learned the new values
+keeps its previous bundle.
 
 All `path` values are relative to the base URL. **Always build URLs from
 manifest paths — never hardcode or construct content paths yourself.** The

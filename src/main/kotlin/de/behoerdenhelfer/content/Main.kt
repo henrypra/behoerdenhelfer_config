@@ -24,9 +24,11 @@ fun main(args: Array<String>) {
                 is GenerateResult.Success -> {
                     val manifest = result.manifest
                     val authorities = manifest.authorities?.let { "authorities v${it.version}" } ?: "no authorities bundle"
+                    val wegweiser = manifest.wegweiser?.let { "wegweiser v${it.version}" } ?: "no wegweiser bundle"
                     println(
                         "dist/ generated: config ${manifest.config}, ${manifest.forms.size} forms, " +
-                            "${manifest.hints.size} hints catalogs, $authorities (generatedAt ${manifest.generatedAt}).",
+                            "${manifest.hints.size} hints catalogs, $authorities, $wegweiser " +
+                            "(generatedAt ${manifest.generatedAt}).",
                     )
                 }
 

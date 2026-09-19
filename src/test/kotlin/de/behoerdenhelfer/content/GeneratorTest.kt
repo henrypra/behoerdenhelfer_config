@@ -56,7 +56,22 @@ class GeneratorTest {
         assertEquals("authorities/1/de/authorities.json", authorities.jsonDe.path)
         assertEquals("authorities/1/en/authorities.json", authorities.jsonEn.path)
         assertContains(manifestBytes, "\"authorities\": {")
-        listOf(form.jsonDe, form.jsonEn, form.pdf, hints.jsonDe, hints.jsonEn, authorities.jsonDe, authorities.jsonEn).forEach { entry ->
+        val wegweiser = assertNotNull(manifest.wegweiser)
+        assertEquals(1, wegweiser.version)
+        assertEquals(ContentSchema.WEGWEISER, wegweiser.minContentSchema)
+        assertEquals("wegweiser/1/de/wegweiser.json", wegweiser.jsonDe.path)
+        assertEquals("wegweiser/1/en/wegweiser.json", wegweiser.jsonEn.path)
+        listOf(
+            form.jsonDe,
+            form.jsonEn,
+            form.pdf,
+            hints.jsonDe,
+            hints.jsonEn,
+            authorities.jsonDe,
+            authorities.jsonEn,
+            wegweiser.jsonDe,
+            wegweiser.jsonEn,
+        ).forEach { entry ->
             val file = distDir.resolve(entry.path)
             assertTrue(Files.isRegularFile(file), "missing ${entry.path}")
             assertEquals(entry.sha256, Sha256.of(file), "sha256 mismatch for ${entry.path}")
@@ -203,15 +218,14 @@ class GeneratorTest {
     }
 
     @Test
-    fun `generate - when there is no authorities bundle then the manifest omits the key entirely`(
+    fun `generate - when there are no optional bundles then the manifest omits their keys entirely`(
         @TempDir tempDir: Path,
     ) {
         // Given: clients that predate the key must see a manifest identical to before
         val contentDir = tempDir.resolve("content").also(Files::createDirectories)
         val layout = TestContent.writeValid(contentDir)
-        Files.walk(contentDir.resolve("authorities")).use { paths ->
-            paths.sorted(Comparator.reverseOrder()).forEach(Files::delete)
-        }
+        TestContent.deleteBundle(contentDir, "authorities")
+        TestContent.deleteBundle(contentDir, "wegweiser")
         val distDir = tempDir.resolve("dist")
 
         // When
@@ -220,8 +234,12 @@ class GeneratorTest {
         // Then
         val manifest = assertIs<GenerateResult.Success>(result).manifest
         assertNull(manifest.authorities)
-        assertFalse(Files.readString(distDir.resolve("config/1.json")).contains("authorities"))
+        assertNull(manifest.wegweiser)
+        val manifestBytes = Files.readString(distDir.resolve("config/1.json"))
+        assertFalse(manifestBytes.contains("authorities"))
+        assertFalse(manifestBytes.contains("wegweiser"))
         assertTrue(Files.notExists(distDir.resolve("authorities")))
+        assertTrue(Files.notExists(distDir.resolve("wegweiser")))
     }
 
     @Test
@@ -251,12 +269,40 @@ class GeneratorTest {
     }
 
     @Test
+    fun `generate - when the wegweiser bundle is added to a published repo then only it and the config move`(
+        @TempDir tempDir: Path,
+    ) {
+        // Given: config 6 shape — authorities published, no wegweiser key yet
+        val contentDir = tempDir.resolve("content").also(Files::createDirectories)
+        val layout = TestContent.writeValid(contentDir)
+        val stash = tempDir.resolve("stash")
+        Files.move(contentDir.resolve("wegweiser"), stash)
+        sut.generate(layout, tempDir.resolve("dist"))
+        val published = tempDir.resolve("published-config.json")
+        Files.copy(tempDir.resolve("dist/config/1.json"), published)
+        Files.move(stash, contentDir.resolve("wegweiser"))
+
+        // When
+        val result = sut.generate(layout, tempDir.resolve("dist"), published)
+
+        // Then
+        val manifest = assertIs<GenerateResult.Success>(result).manifest
+        assertEquals(2, manifest.config)
+        assertEquals(1, assertNotNull(manifest.wegweiser).version)
+        assertEquals(1, assertNotNull(manifest.authorities).version)
+        assertEquals(1, manifest.forms.single().version)
+        assertEquals(1, manifest.hints.single().version)
+    }
+
+    @Test
     fun `generate - when the authorities bundle is added to an already published repo then it starts at version 1`(
         @TempDir tempDir: Path,
     ) {
-        // Given: the published manifest has no authorities key (the live state before this bundle shipped)
+        // Given: the published manifest has no authorities key (the live state before this bundle shipped);
+        // wegweiser references authority ids, so it is left out of this scenario entirely
         val contentDir = tempDir.resolve("content").also(Files::createDirectories)
         val layout = TestContent.writeValid(contentDir)
+        TestContent.deleteBundle(contentDir, "wegweiser")
         val authoritiesDir = contentDir.resolve("authorities")
         val stash = tempDir.resolve("stash")
         Files.move(authoritiesDir, stash)

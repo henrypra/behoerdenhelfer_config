@@ -144,6 +144,95 @@ object TestContent {
             .replace("\"Bürgeramt\"", "\"Citizens' Office\"")
             .replace("Meldet Wohnungen an.", "Registers addresses.")
 
+    /**
+     * A minimal Wegweiser file exercising every node shape: a question tree (with one
+     * nested question), a result reference, a checklist with each item kind, an
+     * `apply: app` benefit on the fixture form, an `online` one, an advice-only result and
+     * a synonym per target space. Every result and benefit is referenced.
+     */
+    val WEGWEISER_DE =
+        """
+        {
+          "schema": 1,
+          "benefits": [
+            {
+              "id": "b_app", "name": "Testleistung", "what": "Wird in der App beantragt.",
+              "authorityId": "testamt", "apply": "app", "formId": "TESTFORM",
+              "deadline": "Bald.", "documents": ["ID_CARD", "TAX_ID"]
+            },
+            {
+              "id": "b_online", "name": "Onlineleistung", "what": "Wird online beantragt.",
+              "authorityId": "buergeramt", "apply": "online", "portalUrl": "https://example.org/portal"
+            }
+          ],
+          "results": [
+            { "id": "r_app", "benefits": ["b_app"], "steps": ["Antrag ausfüllen", "Abgeben"] },
+            { "id": "r_advice", "benefits": [], "steps": ["Beim Bürgeramt fragen"], "extraAuthorityId": "buergeramt" }
+          ],
+          "situations": [
+            {
+              "id": "s_frage", "title": "Eine Frage", "icon": "wallet",
+              "root": {
+                "question": "Brauchen Sie die Leistung?",
+                "answers": [
+                  { "text": "Ja", "next": { "result": "r_app" } },
+                  {
+                    "text": "Vielleicht",
+                    "next": {
+                      "question": "Sicher?",
+                      "answers": [
+                        { "text": "Ja", "next": { "result": "r_app" } },
+                        { "text": "Nein", "next": { "result": "r_advice" }, "fallback": true }
+                      ]
+                    }
+                  },
+                  { "text": "Weiß ich nicht", "next": { "result": "r_advice" }, "fallback": true }
+                ]
+              }
+            },
+            {
+              "id": "s_liste", "title": "Eine Liste", "icon": "globe",
+              "root": {
+                "checklist": [
+                  { "text": "Wohnung anmelden", "authorityId": "buergeramt" },
+                  { "text": "Onlineleistung beantragen", "benefitId": "b_online" },
+                  { "text": "Konto eröffnen" }
+                ]
+              }
+            }
+          ],
+          "synonyms": [
+            { "terms": ["leistung", "antrag"], "target": { "benefit": "b_app" } },
+            { "terms": ["amt"], "target": { "authority": "buergeramt" } },
+            { "terms": ["liste"], "target": { "situation": "s_liste" } }
+          ]
+        }
+        """.trimIndent()
+
+    val WEGWEISER_EN =
+        WEGWEISER_DE
+            .replace("Testleistung", "Test benefit")
+            .replace("Wird in der App beantragt.", "Applied for in the app.")
+            .replace("Onlineleistung\"", "Online benefit\"")
+            .replace("Wird online beantragt.", "Applied for online.")
+            .replace("\"Bald.\"", "\"Soon.\"")
+            .replace("\"Antrag ausfüllen\", \"Abgeben\"", "\"Fill in the form\", \"Hand it in\"")
+            .replace("Beim Bürgeramt fragen", "Ask the citizens' office")
+            .replace("Eine Frage", "A question")
+            .replace("Brauchen Sie die Leistung?", "Do you need the benefit?")
+            .replace("\"Ja\"", "\"Yes\"")
+            .replace("\"Vielleicht\"", "\"Maybe\"")
+            .replace("\"Sicher?\"", "\"Sure?\"")
+            .replace("\"Nein\"", "\"No\"")
+            .replace("Weiß ich nicht", "I don't know")
+            .replace("Eine Liste", "A list")
+            .replace("Wohnung anmelden", "Register your address")
+            .replace("Onlineleistung beantragen", "Apply for the online benefit")
+            .replace("Konto eröffnen", "Open a bank account")
+            .replace("[\"leistung\", \"antrag\"]", "[\"benefit\", \"application\"]")
+            .replace("[\"amt\"]", "[\"office\"]")
+            .replace("[\"liste\"]", "[\"list\"]")
+
     /** Writes a complete valid content tree under [contentDir] and returns its layout. */
     fun writeValid(contentDir: Path): ContentLayout {
         val formDir = contentDir.resolve("forms/testform")
@@ -159,7 +248,21 @@ object TestContent {
         Files.createDirectories(authoritiesDir)
         Files.writeString(authoritiesDir.resolve("authorities.json"), AUTHORITIES_DE)
         Files.writeString(authoritiesDir.resolve("authorities-en.json"), AUTHORITIES_EN)
+        val wegweiserDir = contentDir.resolve("wegweiser")
+        Files.createDirectories(wegweiserDir)
+        Files.writeString(wegweiserDir.resolve("wegweiser.json"), WEGWEISER_DE)
+        Files.writeString(wegweiserDir.resolve("wegweiser-en.json"), WEGWEISER_EN)
         return ContentLayout(contentDir)
+    }
+
+    /** Removes one optional bundle folder (`authorities` or `wegweiser`) from a written tree. */
+    fun deleteBundle(
+        contentDir: Path,
+        name: String,
+    ) {
+        Files.walk(contentDir.resolve(name)).use { paths ->
+            paths.sorted(Comparator.reverseOrder()).forEach(Files::delete)
+        }
     }
 
     /** Writes a PDF whose AcroForm contains the given flat field names; none = flattened print copy. */

@@ -9,8 +9,9 @@ import kotlin.io.path.name
  * Discovers the bundles of the `content/` tree from the directory layout itself —
  * there is no registry file; every folder under `content/forms/` is a form bundle
  * and every `hints_<id>.json` under `content/hints/` is a hints catalog. Ids are
- * SCREAMING_SNAKE_CASE, folders/files lowercase. `content/authorities/` holds the
- * single, optional office-type bundle (`authorities.json` + `authorities-en.json`).
+ * SCREAMING_SNAKE_CASE, folders/files lowercase. `content/authorities/` and
+ * `content/wegweiser/` each hold one optional, singular bundle (`<name>.json` +
+ * `<name>-en.json`).
  */
 class ContentLayout(
     val contentDir: Path,
@@ -18,6 +19,7 @@ class ContentLayout(
     val formsDir: Path = contentDir.resolve("forms")
     val hintsDir: Path = contentDir.resolve("hints")
     val authoritiesDir: Path = contentDir.resolve("authorities")
+    val wegweiserDir: Path = contentDir.resolve("wegweiser")
 
     fun discoverForms(): List<FormBundle> =
         if (Files.isDirectory(formsDir)) {
@@ -49,14 +51,14 @@ class ContentLayout(
         }
 
     /** The authorities bundle, or null when the repo does not ship one (the manifest then omits the key). */
-    fun discoverAuthorities(): AuthoritiesBundle? =
-        authoritiesBundle().takeIf { Files.isRegularFile(it.jsonDe) || Files.isRegularFile(it.jsonEn) }
+    fun discoverAuthorities(): JsonPairBundle? = authoritiesBundle().takeIf { it.exists() }
 
-    fun authoritiesBundle(): AuthoritiesBundle =
-        AuthoritiesBundle(
-            jsonDe = authoritiesDir.resolve("authorities.json"),
-            jsonEn = authoritiesDir.resolve("authorities-en.json"),
-        )
+    fun authoritiesBundle(): JsonPairBundle = JsonPairBundle(authoritiesDir, "authorities")
+
+    /** The Wegweiser bundle, or null when the repo does not ship one (the manifest then omits the key). */
+    fun discoverWegweiser(): JsonPairBundle? = wegweiserBundle().takeIf { it.exists() }
+
+    fun wegweiserBundle(): JsonPairBundle = JsonPairBundle(wegweiserDir, "wegweiser")
 
     fun formBundle(formId: String): FormBundle {
         val folder = formId.lowercase()
@@ -100,7 +102,14 @@ data class HintsBundle(
     val jsonEn: Path,
 )
 
-data class AuthoritiesBundle(
-    val jsonDe: Path,
-    val jsonEn: Path,
-)
+/** A singular de + en JSON bundle: `<dir>/<name>.json` and `<dir>/<name>-en.json`. */
+data class JsonPairBundle(
+    val dir: Path,
+    val name: String,
+) {
+    val jsonDe: Path = dir.resolve("$name.json")
+    val jsonEn: Path = dir.resolve("$name-en.json")
+
+    /** Present as soon as either file exists — a lone `-en` file is then reported, not ignored. */
+    fun exists(): Boolean = Files.isRegularFile(jsonDe) || Files.isRegularFile(jsonEn)
+}

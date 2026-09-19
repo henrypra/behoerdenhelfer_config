@@ -17,22 +17,24 @@ import kotlin.io.path.name
 class AuthoritiesValidator {
     private val json = Json
 
+    /** Returns the set of valid authority ids (empty without a bundle), for cross-bundle references. */
     fun validate(
         layout: ContentLayout,
         formIds: Set<String>,
         violations: MutableList<Violation>,
-    ) {
+    ): Set<String> {
         val bundle = layout.discoverAuthorities()
         validateNoOrphanFiles(layout, violations)
-        bundle ?: return
+        bundle ?: return emptySet()
 
         val de = parse(bundle.jsonDe, violations)
         val en = parse(bundle.jsonEn, violations)
-        if (de == null || en == null) return
+        if (de == null || en == null) return emptySet()
 
         validateFile(de, bundle.jsonDe.name, formIds, violations)
         validateFile(en, bundle.jsonEn.name, formIds, violations)
         validateParity(de, en, violations)
+        return de.authorities.map { it.id }.toSet()
     }
 
     private fun parse(

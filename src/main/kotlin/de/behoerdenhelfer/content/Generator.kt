@@ -4,7 +4,7 @@ import de.behoerdenhelfer.content.model.FileEntry
 import de.behoerdenhelfer.content.model.FormDto
 import de.behoerdenhelfer.content.model.LatestPointer
 import de.behoerdenhelfer.content.model.Manifest
-import de.behoerdenhelfer.content.model.ManifestAuthoritiesEntry
+import de.behoerdenhelfer.content.model.ManifestBundleEntry
 import de.behoerdenhelfer.content.model.ManifestFormEntry
 import de.behoerdenhelfer.content.model.ManifestHintsEntry
 import kotlinx.serialization.json.Json
@@ -71,15 +71,17 @@ class Generator(
         val forms = plans.forms.map { it.entry }
         val hints = plans.hints.map { it.entry }
         val authorities = plans.authorities?.entry
+        val wegweiser = plans.wegweiser?.entry
 
-        violations += manifestViolations(forms, hints, authorities, published)
+        violations += manifestViolations(forms, hints, authorities, wegweiser, published)
         if (violations.isNotEmpty()) return GenerateResult.Failure(violations)
 
         val unchanged =
             published != null &&
                 published.forms == forms &&
                 published.hints == hints &&
-                published.authorities == authorities
+                published.authorities == authorities &&
+                published.wegweiser == wegweiser
         val manifest: Manifest
         val manifestBytes: String
         if (unchanged) {
@@ -96,6 +98,7 @@ class Generator(
                     forms = forms,
                     hints = hints,
                     authorities = authorities,
+                    wegweiser = wegweiser,
                 )
             manifestBytes = json.encodeToString(manifest) + "\n"
         }
@@ -112,10 +115,14 @@ class Generator(
     private class DistPlans(
         val forms: List<PlannedForm>,
         val hints: List<PlannedHints>,
-        val authorities: PlannedAuthorities?,
+        val authorities: PlannedBundle?,
+        val wegweiser: PlannedBundle?,
     ) {
         val allFiles: List<FilePlan>
-            get() = forms.flatMap { it.files } + hints.flatMap { it.files } + (authorities?.files ?: emptyList())
+            get() =
+                forms.flatMap { it.files } +
+                    hints.flatMap { it.files } +
+                    listOfNotNull(authorities, wegweiser).flatMap { it.files }
     }
 
     private class PlannedForm(
@@ -128,8 +135,8 @@ class Generator(
         val files: List<FilePlan>,
     )
 
-    private class PlannedAuthorities(
-        val entry: ManifestAuthoritiesEntry,
+    private class PlannedBundle(
+        val entry: ManifestBundleEntry,
         val files: List<FilePlan>,
     )
 
@@ -193,35 +200,45 @@ class Generator(
                 )
             }
         val authorities =
-            layout.discoverAuthorities()?.let { bundle ->
-                val deSha = Sha256.of(bundle.jsonDe)
-                val enSha = Sha256.of(bundle.jsonEn)
-                val publishedEntry = published?.authorities
-                val version =
-                    derivedJsonPairVersion(
-                        publishedEntry?.version,
-                        publishedEntry?.jsonDe?.sha256,
-                        publishedEntry?.jsonEn?.sha256,
-                        deSha,
-                        enSha,
-                    )
-                // Versioned like every other bundle: published bytes are immutable, the
-                // manifest path is the only interface the app builds URLs from.
-                val base = "authorities/$version"
-                val jsonDe = filePlan(bundle.jsonDe, "$base/de/authorities.json", deSha)
-                val jsonEn = filePlan(bundle.jsonEn, "$base/en/authorities.json", enSha)
-                PlannedAuthorities(
-                    entry =
-                        ManifestAuthoritiesEntry(
-                            version = version,
-                            minContentSchema = ContentSchema.AUTHORITIES,
-                            jsonDe = jsonDe.entry,
-                            jsonEn = jsonEn.entry,
-                        ),
-                    files = listOf(jsonDe, jsonEn),
-                )
-            }
-        return DistPlans(forms, hints, authorities)
+            layout.discoverAuthorities()?.let { planJsonPair(it, published?.authorities, ContentSchema.AUTHORITIES) }
+        val wegweiser =
+            layout.discoverWegweiser()?.let { planJsonPair(it, published?.wegweiser, ContentSchema.WEGWEISER) }
+        return DistPlans(forms, hints, authorities, wegweiser)
+    }
+
+    /**
+     * A singular de + en bundle is versioned like every other one: published bytes are
+     * immutable under `<name>/<version>/{de,en}/<name>.json`, and the manifest path is
+     * the only interface the app builds URLs from.
+     */
+    private fun planJsonPair(
+        bundle: JsonPairBundle,
+        publishedEntry: ManifestBundleEntry?,
+        minContentSchema: Int,
+    ): PlannedBundle {
+        val deSha = Sha256.of(bundle.jsonDe)
+        val enSha = Sha256.of(bundle.jsonEn)
+        val version =
+            derivedJsonPairVersion(
+                publishedEntry?.version,
+                publishedEntry?.jsonDe?.sha256,
+                publishedEntry?.jsonEn?.sha256,
+                deSha,
+                enSha,
+            )
+        val base = "${bundle.name}/$version"
+        val jsonDe = filePlan(bundle.jsonDe, "$base/de/${bundle.name}.json", deSha)
+        val jsonEn = filePlan(bundle.jsonEn, "$base/en/${bundle.name}.json", enSha)
+        return PlannedBundle(
+            entry =
+                ManifestBundleEntry(
+                    version = version,
+                    minContentSchema = minContentSchema,
+                    jsonDe = jsonDe.entry,
+                    jsonEn = jsonEn.entry,
+                ),
+            files = listOf(jsonDe, jsonEn),
+        )
     }
 
     /**
@@ -272,12 +289,21 @@ class Generator(
     private fun manifestViolations(
         forms: List<ManifestFormEntry>,
         hints: List<ManifestHintsEntry>,
-        authorities: ManifestAuthoritiesEntry?,
+        authorities: ManifestBundleEntry?,
+        wegweiser: ManifestBundleEntry?,
         published: Manifest?,
     ): List<Violation> {
         val violations = mutableListOf<Violation>()
 
-        val entries = Manifest(config = 0, generatedAt = "", forms = forms, hints = hints, authorities = authorities).fileEntries()
+        val entries =
+            Manifest(
+                config = 0,
+                generatedAt = "",
+                forms = forms,
+                hints = hints,
+                authorities = authorities,
+                wegweiser = wegweiser,
+            ).fileEntries()
         entries.groupBy { it.path }.filterValues { it.size > 1 }.keys.forEach { path ->
             violations += Violation("manifest", "path '$path' is referenced by more than one entry")
         }

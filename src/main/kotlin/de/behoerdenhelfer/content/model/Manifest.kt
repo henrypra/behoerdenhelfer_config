@@ -25,13 +25,15 @@ data class Manifest(
      * the key is omitted entirely when the repo has no authorities content, so manifests
      * stay byte-compatible with clients that predate it.
      */
-    val authorities: ManifestAuthoritiesEntry? = null,
+    val authorities: ManifestBundleEntry? = null,
+    /** The situation → result content (contract §2), optional like [authorities]. */
+    val wegweiser: ManifestBundleEntry? = null,
 ) {
     /** Every published file the manifest references, for path uniqueness and immutability checks. */
     fun fileEntries(): List<FileEntry> =
         forms.flatMap { listOf(it.jsonDe, it.jsonEn, it.pdf) } +
             hints.flatMap { listOf(it.jsonDe, it.jsonEn) } +
-            listOfNotNull(authorities).flatMap { listOf(it.jsonDe, it.jsonEn) }
+            listOfNotNull(authorities, wegweiser).flatMap { listOf(it.jsonDe, it.jsonEn) }
 }
 
 @Serializable
@@ -53,8 +55,9 @@ data class ManifestHintsEntry(
     val jsonEn: FileEntry,
 )
 
+/** A singular de + en JSON bundle without an id of its own (`authorities`, `wegweiser`). */
 @Serializable
-data class ManifestAuthoritiesEntry(
+data class ManifestBundleEntry(
     val version: Int,
     val minContentSchema: Int,
     val jsonDe: FileEntry,

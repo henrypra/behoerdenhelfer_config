@@ -30,6 +30,14 @@ object ContentSchema {
     const val AUTHORITIES = 2
 
     /**
+     * The Wegweiser file at `schema: 1`. The closed `documents`/`icon` sets are part of
+     * that schema: adding a value means `schema: 2` in the file *and* raising this to 3,
+     * so older apps keep the previous bundle instead of a file they cannot render
+     * (`docs/backend-reply-2026-09-20.md`, item 3).
+     */
+    const val WEGWEISER = 2
+
+    /**
      * The minimum schema level a client needs to render [form] — the maximum level
      * of any feature the form actually uses. A form that sticks to old field types
      * stays consumable by old clients even after the repo learns new ones.

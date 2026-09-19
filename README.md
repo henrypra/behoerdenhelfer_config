@@ -1,8 +1,9 @@
 # Behördenhelfer config backend
 
 Form content for the [Behördenhelfer Android app](https://github.com/henrypra/behoerdenhelfer_android):
-form definitions (JSON, de + en), fillable PDFs, hints catalogs and the office-type
-pages ("Ämter A–Z"), published as a versioned static file tree. No server — the app syncs from plain static hosting.
+form definitions (JSON, de + en), fillable PDFs, hints catalogs, the office-type
+pages ("Ämter A–Z") and the Wegweiser (situation → questions → result), published as a
+versioned static file tree. No server — the app syncs from plain static hosting.
 
 ## Layout
 
@@ -10,7 +11,8 @@ pages ("Ämter A–Z"), published as a versioned static file tree. No server —
 content/            # source of truth — edit this
 ├── forms/<form>/   #   form_<form>.json, form_<form>-en.json, <pdf>
 ├── hints/          #   hints_<id>.json, hints_<id>-en.json
-└── authorities/    #   authorities.json, authorities-en.json (one optional bundle)
+├── authorities/    #   authorities.json, authorities-en.json (one optional bundle)
+└── wegweiser/      #   wegweiser.json, wegweiser-en.json (one optional bundle)
 docs/               # contracts with the Android app
 src/                # Kotlin CLI: validator + generator (JDK 17)
 dist/               # generated, deployed by CI (gitignored)
@@ -35,6 +37,7 @@ config/151.json           the manifest: every bundle with version, sha256, minCo
 forms/kindergeld/3/       de/form.json · en/form.json · kg1_antrag_kindergeld.pdf
 hints/buergergeld/2/      de/hints.json · en/hints.json
 authorities/1/            de/authorities.json · en/authorities.json
+wegweiser/1/              de/wegweiser.json · en/wegweiser.json
 ```
 
 Every number is derived — there is nothing to bump by hand:
@@ -56,6 +59,8 @@ Every number is derived — there is nothing to bump by hand:
 - **Change an office page:** edit `content/authorities/authorities.json` and the `-en`
   twin. The bundle is optional and singular — delete the folder and the manifest
   simply omits the `authorities` key again.
+- **Change the Wegweiser:** edit `content/wegweiser/wegweiser.json` and the `-en` twin;
+  same optional/singular rules as `authorities`.
 
 Form JSON authoring rules (the app relies on these):
 
@@ -97,10 +102,28 @@ Authorities JSON authoring rules (`docs/android-content-contract.md` §1):
   `howToFindLocal`) may differ between de and en; everything else must be identical.
 - Plain text only — no HTML, no Markdown.
 
+Wegweiser JSON authoring rules (`docs/android-content-contract.md` §2 as amended by
+`docs/wegweiser-content-review.md` and `docs/backend-reply-2026-09-20.md`):
+
+- Three id spaces (`benefits`, `results`, `situations`), lowercase `^[a-z][a-z0-9_]*$`;
+  `formId` values are manifest form ids, `authorityId` values are authorities-bundle ids.
+- `apply` is `app` (needs `formId`), `online` (needs https `portalUrl`) or `paper`.
+- `documents` and `icon` are **closed sets for `schema: 1`** (16 document names, 8 icons,
+  listed in `WegweiserValidator`). Adding a value means `schema: 2` in the file *and*
+  `ContentSchema.WEGWEISER = 3`, so older apps keep the previous bundle.
+- Situations: 1–12; a node is exactly one of `question` (2–4 answers, exactly one
+  `fallback: true`, at most 3 questions deep), `result` or `checklist` (items carry
+  `authorityId` *or* `benefitId`, never both). Every result must be reachable, every
+  benefit referenced somewhere.
+- Synonym `terms` are per language, lowercase, trimmed, unique per file; the `target`
+  lists must match in order between de and en.
+- Omit optional fields, never write `null`. Only `name`, `what`, `deadline`, `steps`,
+  `title`, `question`, `text` and `terms` may differ between de and en.
+- Plain text only — no HTML, no Markdown.
+
 `validate` blocks anything broken: strict JSON schema, de/en structural parity,
 every referenced field must exist in the PDF's AcroForm tree, hint references must
-resolve, authorities rules above (schema 1, unique ids, known form ids, hotline/URL
-formats, de/en id parity, no HTML), published paths stay immutable.
+resolve, the authorities and Wegweiser rules above, published paths stay immutable.
 
 ## CI
 

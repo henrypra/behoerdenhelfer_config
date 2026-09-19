@@ -26,6 +26,7 @@ data class Violation(
 class Validator(
     private val pdfFieldNames: (Path) -> Set<String> = PdfFieldReader::fieldNames,
     private val authoritiesValidator: AuthoritiesValidator = AuthoritiesValidator(),
+    private val wegweiserValidator: WegweiserValidator = WegweiserValidator(),
 ) {
     private val json = Json
 
@@ -36,7 +37,9 @@ class Validator(
         forms.forEach { bundle ->
             validateForm(bundle, hintNumbers, violations)
         }
-        authoritiesValidator.validate(layout, forms.map { it.formId }.toSet(), violations)
+        val formIds = forms.map { it.formId }.toSet()
+        val authorityIds = authoritiesValidator.validate(layout, formIds, violations)
+        wegweiserValidator.validate(layout, formIds, authorityIds, violations)
         validateNoOrphanFiles(layout, violations)
         return violations
     }

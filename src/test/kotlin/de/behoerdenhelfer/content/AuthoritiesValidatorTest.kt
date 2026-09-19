@@ -41,9 +41,9 @@ class AuthoritiesValidatorTest {
     ) {
         // Given: the bundle is optional — a repo without it must validate like before
         TestContent.writeValid(contentDir)
-        Files.walk(contentDir.resolve("authorities")).use { paths ->
-            paths.sorted(Comparator.reverseOrder()).forEach(Files::delete)
-        }
+        TestContent.deleteBundle(contentDir, "authorities")
+        // wegweiser references authority ids, so it goes too
+        TestContent.deleteBundle(contentDir, "wegweiser")
 
         // When / Then
         assertEquals(emptyList(), sut.validate(ContentLayout(contentDir)))
